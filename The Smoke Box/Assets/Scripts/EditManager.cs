@@ -14,7 +14,8 @@ public class EditManager : MonoBehaviour {
     Mouse _mouse;
     Keyboard _keyboard;
 
-    SawPlane _saw;
+    Plane _sawPlane;
+
 
     public static EditManager Instance;
 
@@ -33,7 +34,6 @@ public class EditManager : MonoBehaviour {
         _mouse = Mouse.current;
         _keyboard = Keyboard.current;
 
-        _saw = GetComponentInChildren<SawPlane>();
     }
 
     // Update is called once per frame
@@ -57,7 +57,7 @@ public class EditManager : MonoBehaviour {
             }
 
             if(_keyboard.spaceKey.wasPressedThisFrame) {
-                _curPiece = _saw.SawPiece(_curPiece);
+                SawPiece(_curPiece);
             }
 
             if (_mouse.rightButton.isPressed) {
@@ -81,5 +81,23 @@ public class EditManager : MonoBehaviour {
         // Hold the new piece
         wPiece.GetComponent<LerpTo>().LerpToPos(transform.position);
         _curPiece = wPiece;
+    }
+
+    public void SawPiece(WoodPiece wPiece) {
+        //Transform the normal so that it is aligned with the object we are slicing's transform.
+        Vector3 transformedNormal = ((Vector3)(wPiece.gameObject.transform.localToWorldMatrix.transpose * Vector3.right)).normalized;
+
+        //Get the enter position relative to the object we're cutting's local transform
+        Vector3 transformedStartingPoint = wPiece.gameObject.transform.InverseTransformPoint(transform.position);
+
+        _sawPlane = new Plane(transformedNormal, transformedStartingPoint);
+
+        // Slice the piece
+        GameObject[] pieces = Slicer.Slice(_sawPlane, wPiece.gameObject);
+
+        // Destroy the original, as there will be 2 game objects made
+        Destroy(wPiece.gameObject);
+
+        _curPiece = pieces[0].GetComponent<WoodPiece>();
     }
 }
