@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class WoodPiece : Sliceable {
+[RequireComponent(typeof(LerpTo))]
+public class WoodPiece : MonoBehaviour {
 
-    Vector3 _startPos;
+    public Vector3 startPos;
 
     LerpTo _lerp;
 
+    private void Awake() {
+        startPos = transform.position;
+        _lerp = GetComponent<LerpTo>();
+    }
     // Start is called before the first frame update
     void Start() {
-        _startPos = transform.position;
-        _lerp = GetComponent<LerpTo>();
     }
 
     // Update is called once per frame
@@ -20,12 +24,20 @@ public class WoodPiece : Sliceable {
     }
 
     private void OnMouseDown() {
-        // Pick up this piece
-        PickUp();
+        if (!IsMouseOverUI()) {
+            // Pick up this piece
+            PickUp();
+        }
     }
 
     private void OnMouseOver() {
-        // Show highlight outline?
+        if (!IsMouseOverUI()) {
+            // Show highlight outline?
+        }
+    }
+
+    bool IsMouseOverUI() {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     void PickUp() {
@@ -36,7 +48,7 @@ public class WoodPiece : Sliceable {
     public void Drop() {
         // Lerp to start position
         if(_lerp != null) {
-            _lerp.LerpToPos(_startPos);
+            _lerp.LerpToPos(startPos, 0.5f);
         }
     }
 }

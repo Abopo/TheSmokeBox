@@ -11,11 +11,12 @@ public class EditManager : MonoBehaviour {
     [SerializeField]
     float _rotSpeed;
 
+    bool _active = true;
+
     Mouse _mouse;
     Keyboard _keyboard;
 
-    Plane _sawPlane;
-
+    SawTool _sawTool;
 
     public static EditManager Instance;
 
@@ -33,12 +34,14 @@ public class EditManager : MonoBehaviour {
     void Start() {
         _mouse = Mouse.current;
         _keyboard = Keyboard.current;
-
+        _sawTool = GetComponentInChildren<SawTool>();
     }
 
     // Update is called once per frame
     void Update() {
-        CheckInput();
+        if (_active) {
+            CheckInput();
+        }
     }
 
     void CheckInput() {
@@ -57,7 +60,8 @@ public class EditManager : MonoBehaviour {
             }
 
             if(_keyboard.spaceKey.wasPressedThisFrame) {
-                SawPiece(_curPiece);
+                _active = false;
+                _sawTool.SlicePiece(_curPiece.gameObject);
             }
 
             if (_mouse.rightButton.isPressed) {
@@ -83,21 +87,7 @@ public class EditManager : MonoBehaviour {
         _curPiece = wPiece;
     }
 
-    public void SawPiece(WoodPiece wPiece) {
-        //Transform the normal so that it is aligned with the object we are slicing's transform.
-        Vector3 transformedNormal = ((Vector3)(wPiece.gameObject.transform.localToWorldMatrix.transpose * Vector3.right)).normalized;
-
-        //Get the enter position relative to the object we're cutting's local transform
-        Vector3 transformedStartingPoint = wPiece.gameObject.transform.InverseTransformPoint(transform.position);
-
-        _sawPlane = new Plane(transformedNormal, transformedStartingPoint);
-
-        // Slice the piece
-        GameObject[] pieces = Slicer.Slice(_sawPlane, wPiece.gameObject);
-
-        // Destroy the original, as there will be 2 game objects made
-        Destroy(wPiece.gameObject);
-
-        _curPiece = pieces[0].GetComponent<WoodPiece>();
+    public void Activate() {
+        _active = true;
     }
 }

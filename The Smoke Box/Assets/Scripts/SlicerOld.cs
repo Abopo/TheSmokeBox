@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Slicer {
+public class SlicerOld {
 
     /// <summary>
     /// Slice the object by the plane

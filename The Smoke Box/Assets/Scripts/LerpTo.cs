@@ -15,7 +15,7 @@ public class LerpTo : MonoBehaviour {
     float _interpolation;
     float timePassed;
 
-    public UnityEvent SlideFinished;
+    public static UnityEvent SlideFinished = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +55,7 @@ public class LerpTo : MonoBehaviour {
         _startTime = Time.time;
         _interpolation = 0f;
     }
-    public void LerpToPos(Vector3 pos, float lerpSpeed) {
+    public void LerpToPos(Vector3 pos, float lerpTime) {
         _lerping = true;
         _startPos = transform.position;
         _endPos = pos;
@@ -67,7 +67,7 @@ public class LerpTo : MonoBehaviour {
             SlideFinished.Invoke();
         }
 
-        _lerpTime = lerpSpeed;
+        _lerpTime = lerpTime;
         _startTime = Time.time;
         _interpolation = 0f;
     }
