@@ -72,4 +72,24 @@ public class LerpTo : MonoBehaviour {
         _interpolation = 0f;
     }
 
+    public void LerpRotation(Quaternion endRot, float lerpTime) {
+        StartCoroutine(DoLerpRotation(endRot, lerpTime));
+    }
+
+    IEnumerator DoLerpRotation(Quaternion endRot, float lerpTime) {
+        Quaternion startRot = transform.rotation;
+        float interpolation = 0;
+        float _startTime = Time.time;
+        float timePassed = 0;
+
+        while (interpolation < 1.0f) {
+            timePassed = Time.time - _startTime;
+            interpolation = timePassed / lerpTime;
+
+            // Rotate lerp
+            transform.rotation = Quaternion.Lerp(startRot, endRot, interpolation);
+
+            yield return null;
+        }
+    }
 }

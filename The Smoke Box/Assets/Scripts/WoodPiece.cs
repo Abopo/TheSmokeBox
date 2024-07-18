@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class WoodPiece : MonoBehaviour {
 
     public Vector3 startPos;
+    public bool isOnTable = true;
+    public bool isLocked;
 
     LerpTo _lerp;
 
@@ -41,14 +43,22 @@ public class WoodPiece : MonoBehaviour {
     }
 
     void PickUp() {
-        // Tell the editor manager to pick us up
-        EditManager.Instance.PickUpPiece(this);
+        if (!isLocked) {
+            // Tell the editor manager to pick us up
+            EditManager.Instance.PickUpPiece(this);
+            isOnTable = false;
+        }
     }
 
     public void Drop() {
         // Lerp to start position
-        if(_lerp != null) {
+        if(!isLocked && _lerp != null) {
             _lerp.LerpToPos(startPos, 0.5f);
+            isOnTable = true;
         }
+    }
+
+    public void GoTo(Vector3 pos) {
+        _lerp.LerpToPos(pos, 0.5f);
     }
 }

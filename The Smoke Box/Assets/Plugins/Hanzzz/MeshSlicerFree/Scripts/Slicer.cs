@@ -268,7 +268,7 @@ namespace Hanzzz.MeshSlicerFree
                 {
                     continue;
                 }
-                UnityEngine.Object.DestroyImmediate(component);
+                //UnityEngine.Object.DestroyImmediate(component);
             }
             GameObject bottomGameObject = UnityEngine.Object.Instantiate(topGameObject);
 
