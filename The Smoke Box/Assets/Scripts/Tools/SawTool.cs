@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Hanzzz.MeshSlicerFree;
 
 public class SawTool : Tool {
@@ -17,7 +18,9 @@ public class SawTool : Tool {
     WoodPiece _rightPiece;
 
     [SerializeField]
-    private SawCanvas _uiCanvas;
+    private GameObject _confirmationUI;
+    [SerializeField]
+    private SawCanvas _postCutCanvas;
 
 
     protected override void Awake() {
@@ -43,25 +46,51 @@ public class SawTool : Tool {
 
     // Update is called once per frame
     void Update() {
-
+        // Scoot the slicing plane left/right
+        if (Keyboard.current.aKey.isPressed) {
+            if (slicePlane.transform.localPosition.x > -1.01f) {
+                slicePlane.transform.Translate(-0.25f * Time.deltaTime, 0f, 0f, Space.World);
+            }
+        }
+        if (Keyboard.current.dKey.isPressed) {
+            if (slicePlane.transform.localPosition.x < 1.01f) {
+                slicePlane.transform.Translate(0.25f * Time.deltaTime, 0f, 0f, Space.World);
+            }
+        }
     }
 
     public override void ActivateTool() {
         base.ActivateTool();
 
+        slicePlane.gameObject.SetActive(true);
+
         gameObject.SetActive(true);
+        _confirmationUI.SetActive(true);
+
+        // Make sure slice plane is in the center
+        slicePlane.transform.localPosition = new Vector3(0, 0, slicePlane.transform.localPosition.z);
     }
 
     public override void DeactivateTool() {
         base.DeactivateTool();
 
         gameObject.SetActive(false);
+        _confirmationUI.SetActive(false);
     }
 
     public override void UseTool() {
         base.UseTool();
 
         SlicePiece(_editManager.curPiece);
+
+        // Hide the confirmation UI
+        _confirmationUI.SetActive(false);
+
+        // Show the post cut UI
+        _postCutCanvas.Activate();
+
+        // Hide the slice plane
+        slicePlane.gameObject.SetActive(false);
     }
 
     public void SlicePiece(WoodPiece wPiece) {
@@ -98,10 +127,12 @@ public class SawTool : Tool {
         StartCoroutine(AdjustMeshPivotPoints(_rightPiece.gameObject));
         StartCoroutine(AdjustMeshPivotPoints(_leftPiece.gameObject));
 
+        // Ignore collision between pieces so stuff doesn't get annoying later
+        Physics.IgnoreCollision(_rightPiece.GetComponent<Collider>(), _leftPiece.GetComponent<Collider>());
+
         // Just hide the original piece until we decide to commit to the cut
         wPiece.gameObject.SetActive(false);
 
-        _uiCanvas.Activate();
     }
 
     private IEnumerator AdjustMeshPivotPoints(GameObject piece) {
@@ -154,7 +185,7 @@ public class SawTool : Tool {
         _editManager.PickUpPiece(_leftPiece);
 
         // Tell the canvas to swap buttons
-        _uiCanvas.SwapButtons();
+        _postCutCanvas.SwapButtons();
     }
 
     public void KeepRightPiece() {
@@ -162,7 +193,7 @@ public class SawTool : Tool {
         _editManager.PickUpPiece(_rightPiece);
 
         // Tell the canvas to swap buttons
-        _uiCanvas.SwapButtons();
+        _postCutCanvas.SwapButtons();
     }
 
     public void DropLeftPiece() {
@@ -194,7 +225,8 @@ public class SawTool : Tool {
     }
 
     void EndSlice() {
-        _uiCanvas.Deactivate();
+        DeactivateTool();
+        _postCutCanvas.Deactivate();
         _editManager.Activate();
     }
 }

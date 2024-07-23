@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
+public enum VIEW { TABLE = 0, SUBMISSION };
+
 public class EditManager : MonoBehaviour {
 
     [SerializeField]
@@ -14,6 +16,11 @@ public class EditManager : MonoBehaviour {
     [SerializeField]
     float _rotSpeed;
 
+    [SerializeField]
+    GameObject _lookUpUI;
+    [SerializeField]
+    GameObject _lookDownUI;
+
     bool _active = true;
 
     Mouse _mouse;
@@ -22,10 +29,16 @@ public class EditManager : MonoBehaviour {
 
     Submission _submission;
 
+    VIEW _view;
+
+    EditorCanvas _canvas;
+
     public static EditManager Instance;
 
     public static UnityEvent OnPickedUpPiece = new UnityEvent();
     public static UnityEvent OnDroppedPiece = new UnityEvent();
+
+    public bool Active { get => _active; }
 
     private void Awake() {
         SingletonCheck();
@@ -43,12 +56,17 @@ public class EditManager : MonoBehaviour {
         _mouse = Mouse.current;
         _keyboard = Keyboard.current;
         _cameraLerp = Camera.main.GetComponent<LerpTo>();
+        _canvas = GetComponentInChildren<EditorCanvas>();
     }
 
     // Update is called once per frame
     void Update() {
         if (_active) {
             CheckInput();
+        }
+
+        if (_mouse.rightButton.isPressed) {
+            RotatePiece();
         }
     }
 
@@ -75,12 +93,7 @@ public class EditManager : MonoBehaviour {
             }
 
             if(_keyboard.spaceKey.wasPressedThisFrame) {
-                _active = false;
                 _curTool.UseTool();
-            }
-
-            if (_mouse.rightButton.isPressed) {
-                RotatePiece();
             }
         }
     }
@@ -91,6 +104,11 @@ public class EditManager : MonoBehaviour {
         _holdPiece = curPiece;
         // Set curPiece to the submission base so we can rotate it
         curPiece = _submission.baseTransform.GetComponent<WoodPiece>();
+
+        _view = VIEW.SUBMISSION;
+
+        _lookDownUI.SetActive(true);
+        _lookUpUI.SetActive(false);
     }
 
     public void LookAtTable() {
@@ -98,6 +116,11 @@ public class EditManager : MonoBehaviour {
         // Set the curPiece back to the hold piece
         // TODO: unless we've just jointed it to the submission?
         curPiece = _holdPiece;
+
+        _view = VIEW.TABLE;
+
+        _lookUpUI.SetActive(true);
+        _lookDownUI.SetActive(false);
     }
 
     public void SetPieceAsSubmissionBase() {
@@ -108,13 +131,15 @@ public class EditManager : MonoBehaviour {
         LookAtSubmission();
 
         // Lose reference to piece
-        curPiece = null;
+        _holdPiece = null;
     }
 
     void RotatePiece() {
-        float h = _rotSpeed * _mouse.delta.x.ReadValue();
-        float v = _rotSpeed * _mouse.delta.y.ReadValue();
-        curPiece.transform.Rotate(new Vector3(v, -h, 0), Space.World);
+        if (curPiece != null) {
+            float h = _rotSpeed * _mouse.delta.x.ReadValue();
+            float v = _rotSpeed * _mouse.delta.y.ReadValue();
+            curPiece.transform.Rotate(new Vector3(v, -h, 0), Space.World);
+        }
     }
 
     public void PickUpPiece(WoodPiece wPiece) {
@@ -127,24 +152,56 @@ public class EditManager : MonoBehaviour {
         wPiece.GoTo(transform.position);
         curPiece = wPiece;
 
+        LerpTo.SlideFinished.AddListener(OnPickUpFinished);
+    }
+
+    void OnPickUpFinished() {
         OnPickedUpPiece.Invoke();
+
+        LerpTo.SlideFinished.RemoveListener(OnPickUpFinished);
+    }
+
+    public void DropPiece() {
+        // Put down our current piece
+        if (curPiece != null) {
+            curPiece.Drop();
+            curPiece = null;
+        }
+
+        OnDroppedPiece.Invoke();
     }
 
     public void SelectTool(Tool tool) {
         if (_curTool == tool) {
             // Deselect that tool
             _curTool.DeactivateTool();
-            _curTool = null;
+            Activate();
         } else {
             if(_curTool != null) {
                 _curTool.DeactivateTool();
             }
             _curTool = tool;
             _curTool.ActivateTool();
+            Deactivate();
         }
     }
 
     public void Activate() {
         _active = true;
+        // If we are being activated, we shouldn't have a curTool
+        _curTool = null;
+
+        // Show the UI if we've got a piece and we're looking at the table
+        if(curPiece != null && _view == VIEW.TABLE) {
+            _canvas.ShowBaseUI();
+        }
+    }
+
+    public void Deactivate() {
+        _active = false;
+
+        if (curPiece != null) {
+            _canvas.HideBaseUI();
+        }
     }
 }
