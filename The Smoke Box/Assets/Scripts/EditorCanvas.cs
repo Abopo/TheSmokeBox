@@ -8,7 +8,7 @@ public class EditorCanvas : MonoBehaviour {
     GameObject _useAsBaseButton;
 
     [SerializeField]
-    GameObject _dropButton;
+    GameObject _holdUI;
 
     Submission _submission;
 
@@ -42,7 +42,7 @@ public class EditorCanvas : MonoBehaviour {
         if(_submission.hasBase) {
             _useAsBaseButton.SetActive(false);
         }
-        _dropButton.SetActive(false);
+        _holdUI.SetActive(false);
     }
 
     public void ShowBaseUI() {
@@ -50,11 +50,11 @@ public class EditorCanvas : MonoBehaviour {
             _useAsBaseButton.SetActive(true);
         }
 
-        _dropButton.SetActive(true);
+        _holdUI.SetActive(true);
     }
 
     public void HideBaseUI() {
         _useAsBaseButton.SetActive(false);
-        _dropButton.SetActive(false);
+        _holdUI.SetActive(false);
     }
 }

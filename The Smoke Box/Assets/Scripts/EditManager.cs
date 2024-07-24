@@ -66,7 +66,13 @@ public class EditManager : MonoBehaviour {
         }
 
         if (_mouse.rightButton.isPressed) {
-            RotatePiece();
+            RotatePieceMouse();
+        }
+        if (_keyboard.dKey.isPressed) {
+            RotatePieceZ(-1);
+        }
+        if (_keyboard.aKey.isPressed) {
+            RotatePieceZ(1);
         }
     }
 
@@ -134,11 +140,22 @@ public class EditManager : MonoBehaviour {
         _holdPiece = null;
     }
 
-    void RotatePiece() {
+    void RotatePieceMouse() {
         if (curPiece != null) {
             float h = _rotSpeed * _mouse.delta.x.ReadValue();
             float v = _rotSpeed * _mouse.delta.y.ReadValue();
-            curPiece.transform.Rotate(new Vector3(v, -h, 0), Space.World);
+
+            curPiece.transform.Rotate(Camera.main.transform.up, -h, Space.World);
+            curPiece.transform.Rotate(Camera.main.transform.right, v, Space.World);
+
+            //curPiece.transform.Rotate(new Vector3(v, -h, 0), Space.World);
+        }
+    }
+
+    void RotatePieceZ(int dir) { 
+        if(curPiece != null) {
+            curPiece.transform.Rotate(Camera.main.transform.forward, 50f * dir * Time.deltaTime, Space.World);
+            //curPiece.transform.Rotate(0f, 0f, 50f * dir * Time.deltaTime, Space.World);
         }
     }
 
