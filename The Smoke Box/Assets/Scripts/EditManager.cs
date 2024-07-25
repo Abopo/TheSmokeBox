@@ -21,6 +21,8 @@ public class EditManager : MonoBehaviour {
     [SerializeField]
     GameObject _lookDownUI;
 
+    public DokoDemoPainterPen pen;
+
     bool _active = true;
 
     Mouse _mouse;
@@ -96,10 +98,6 @@ public class EditManager : MonoBehaviour {
             }
             if (_keyboard.downArrowKey.IsPressed()) {
                 curPiece.transform.Rotate(new Vector3(-_rotSpeed * 50 * Time.deltaTime, 0, 0), Space.World);
-            }
-
-            if(_keyboard.spaceKey.wasPressedThisFrame) {
-                _curTool.UseTool();
             }
         }
     }

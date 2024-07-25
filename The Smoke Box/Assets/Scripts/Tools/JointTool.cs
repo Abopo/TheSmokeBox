@@ -11,9 +11,6 @@ public class JointTool : Tool {
     [SerializeField]
     JointNode _baseJointNode;
 
-    [SerializeField]
-    GameObject _confirmationUI;
-
     JointNode _ghostJointNode;
 
     bool _isJoining;
@@ -34,10 +31,10 @@ public class JointTool : Tool {
             GhostNodeFollow();
             if (_confirming) { 
                 // Allow rotation of the ghost node
-                if(Keyboard.current.aKey.isPressed) {
+                if(Keyboard.current.qKey.isPressed) {
                     _ghostJointNode.transform.Rotate(new Vector3(0f, 0f, 20f * Time.deltaTime));
                 }
-                if(Keyboard.current.dKey.isPressed) {
+                if(Keyboard.current.eKey.isPressed) {
                     _ghostJointNode.transform.Rotate(new Vector3(0f, 0f, -20f * Time.deltaTime));
                 }
             }
@@ -87,7 +84,7 @@ public class JointTool : Tool {
             _confirming = true;
 
             // Ask for confirmation of join
-            _confirmationUI.SetActive(true);
+            _toolUI.SetActive(true);
         }
     }
 
@@ -97,7 +94,7 @@ public class JointTool : Tool {
         string mat = _ghostJointNode.curPiece.GetComponent<MeshRenderer>().sharedMaterial.name;
         // Get rid of the " (Instance)" part of the string that shows up in material names sometimes
         mat = mat.Replace(" (Instance)", "");
-        _ghostJointNode.curPiece.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/" + mat + "_Trans");
+        _ghostJointNode.curPiece.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Wood/" + mat + "_Trans");
         // Also change the piece's layer so it doesn't mess with the node tracking
         _ghostJointNode.curPiece.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
@@ -110,7 +107,7 @@ public class JointTool : Tool {
     }
 
     public void ConfirmJoin() {
-        _confirmationUI.SetActive(false);
+        _toolUI.SetActive(false);
         StartCoroutine(JoinPieces());
     }
 
@@ -121,7 +118,7 @@ public class JointTool : Tool {
         // Reactivate the base node
         _baseJointNode.Activate();
 
-        _confirmationUI.SetActive(false);
+        _toolUI.SetActive(false);
     }
 
     public IEnumerator JoinPieces() {

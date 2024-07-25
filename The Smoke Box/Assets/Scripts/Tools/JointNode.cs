@@ -13,6 +13,8 @@ public class JointNode : MonoBehaviour {
 
     Camera _mainCamera;
 
+    RaycastHit _raycastHit;
+
     private void Awake() {
         _mainCamera = Camera.main;
     }
@@ -52,6 +54,15 @@ public class JointNode : MonoBehaviour {
     void AttachToPiece() {
         // Basically just going to go to the closest point to the mouse that's still on the face of the mesh of the piece
 
+        if (HitPieceCheck()) {
+            // place self on the hit point
+            transform.position = _raycastHit.point;
+            // Also, align with the normal of the face we hit
+            transform.rotation = Quaternion.LookRotation(_raycastHit.normal);
+            // Set this as our curPiece
+            curPiece = _raycastHit.collider.GetComponent<WoodPiece>();
+        }
+
         // Cast a ray from the mouse to the wood piece
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out RaycastHit hitInfo, 100f, _layerMask);
@@ -62,20 +73,35 @@ public class JointNode : MonoBehaviour {
         if (hitInfo.collider != null) {
             // and it's not on the table
             if (!hitInfo.collider.GetComponent<WoodPiece>().isOnTable) {
-                // place self on the hit point
-                transform.position = hitInfo.point;
-                // Also, align with the normal of the face we hit
-                transform.rotation = Quaternion.LookRotation(hitInfo.normal);
-                // Set this as our curPiece
-                curPiece = hitInfo.collider.GetComponent<WoodPiece>();
             }
         }
         //TODO: Still follow the mouse when it's not hitting anything somehow
     }
 
     void ConfirmPlacement() {
-        GetComponentInParent<JointTool>().ActivateNextJoint();
-        isActive = false;
+        // Make sure we clicked on our piece
+        if (HitPieceCheck()) {
+            GetComponentInParent<JointTool>().ActivateNextJoint();
+            isActive = false;
+        }
+    }
+
+    bool HitPieceCheck() {
+        // Cast a ray from the mouse to the wood piece
+        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out _raycastHit, 100f, _layerMask);
+
+        //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.green);
+
+        // If we hit a wood piece, 
+        if (_raycastHit.collider != null) {
+            // and it's not on the table
+            if (!_raycastHit.collider.GetComponent<WoodPiece>().isOnTable) {
+                return true;
+            } 
+        }
+
+        return false;
     }
 
     public void ParentPiece() {

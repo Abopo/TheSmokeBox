@@ -8,6 +8,9 @@ public class EditorCanvas : MonoBehaviour {
     GameObject _useAsBaseButton;
 
     [SerializeField]
+    GameObject _toolsWindow;
+
+    [SerializeField]
     GameObject _holdUI;
 
     Submission _submission;
@@ -32,10 +35,13 @@ public class EditorCanvas : MonoBehaviour {
         if (EditManager.Instance.Active) {
             ShowBaseUI();
         }
+
+        _toolsWindow.SetActive(true);
     }
 
     void OnDroppedPiece() {
         HideBaseUI();
+        _toolsWindow.SetActive(false);
     }
 
     void OnAddedPiece() {
@@ -43,6 +49,7 @@ public class EditorCanvas : MonoBehaviour {
             _useAsBaseButton.SetActive(false);
         }
         _holdUI.SetActive(false);
+        _toolsWindow.SetActive(false);
     }
 
     public void ShowBaseUI() {

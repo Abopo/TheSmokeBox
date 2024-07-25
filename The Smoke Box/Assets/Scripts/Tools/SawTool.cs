@@ -18,8 +18,6 @@ public class SawTool : Tool {
     WoodPiece _rightPiece;
 
     [SerializeField]
-    private GameObject _confirmationUI;
-    [SerializeField]
     private SawCanvas _postCutCanvas;
 
 
@@ -65,7 +63,8 @@ public class SawTool : Tool {
         slicePlane.gameObject.SetActive(true);
 
         gameObject.SetActive(true);
-        _confirmationUI.SetActive(true);
+
+        _toolUI.SetActive(true);
 
         // Make sure slice plane is in the center
         slicePlane.transform.localPosition = new Vector3(0, 0, slicePlane.transform.localPosition.z);
@@ -75,16 +74,21 @@ public class SawTool : Tool {
         base.DeactivateTool();
 
         gameObject.SetActive(false);
-        _confirmationUI.SetActive(false);
+
+        _toolUI.SetActive(false);
     }
 
     public override void UseTool() {
         base.UseTool();
 
+        // Set the intersection material to the piece's current material
+        intersectionMaterial = _editManager.curPiece.GetComponent<MeshRenderer>().material;
+
+        // Slice the piece in two
         SlicePiece(_editManager.curPiece);
 
         // Hide the confirmation UI
-        _confirmationUI.SetActive(false);
+        _toolUI.SetActive(false);
 
         // Show the post cut UI
         _postCutCanvas.Activate();

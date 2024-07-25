@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class Tool : MonoBehaviour {
 
+    [SerializeField]
+    protected GameObject _toolUI;
+
     protected EditManager _editManager;
 
     protected virtual void Awake() {
