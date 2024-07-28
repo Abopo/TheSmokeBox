@@ -1,0 +1,220 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
+
+public enum VIEW { TABLE = 0, SUBMISSION };
+
+public class EditManager : MonoBehaviour {
+
+    [SerializeField]
+    Tool _curTool;
+
+    public WoodPiece curPiece;
+    WoodPiece _holdPiece;
+    [SerializeField]
+    float _rotSpeed;
+
+    [SerializeField]
+    GameObject _lookUpUI;
+    [SerializeField]
+    GameObject _lookDownUI;
+
+    bool _active = true;
+
+    Mouse _mouse;
+    Keyboard _keyboard;
+    LerpTo _cameraLerp;
+
+    Submission _submission;
+
+    VIEW _view;
+
+    EditorCanvas _canvas;
+
+    public static EditManager Instance;
+
+    public static UnityEvent OnPickedUpPiece = new UnityEvent();
+    public static UnityEvent OnDroppedPiece = new UnityEvent();
+
+    public bool Active { get => _active; }
+
+    private void Awake() {
+        SingletonCheck();
+    }
+    void SingletonCheck() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+    }
+    // Start is called before the first frame update
+    void Start() {
+        _submission = FindObjectOfType<Submission>();
+        _mouse = Mouse.current;
+        _keyboard = Keyboard.current;
+        _cameraLerp = Camera.main.GetComponent<LerpTo>();
+        _canvas = GetComponentInChildren<EditorCanvas>();
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (_active) {
+            CheckInput();
+        }
+
+        if (_mouse.rightButton.isPressed) {
+            RotatePieceMouse();
+        }
+        if (_keyboard.dKey.isPressed) {
+            RotatePieceZ(-1);
+        }
+        if (_keyboard.aKey.isPressed) {
+            RotatePieceZ(1);
+        }
+    }
+
+    void CheckInput() {
+        if (_keyboard.wKey.wasPressedThisFrame) {
+            LookAtSubmission();
+        }
+        if (_keyboard.sKey.wasPressedThisFrame) {
+            LookAtTable();
+        }
+
+        if (curPiece != null) {
+            if (_keyboard.rightArrowKey.IsPressed()) {
+                curPiece.transform.Rotate(new Vector3(0, -_rotSpeed * 50 * Time.deltaTime, 0), Space.World);
+            }
+            if (_keyboard.leftArrowKey.IsPressed()) {
+                curPiece.transform.Rotate(new Vector3(0, _rotSpeed * 50 * Time.deltaTime, 0), Space.World);
+            }
+            if (_keyboard.upArrowKey.IsPressed()) {
+                curPiece.transform.Rotate(new Vector3(_rotSpeed * 50 * Time.deltaTime, 0, 0), Space.World);
+            }
+            if (_keyboard.downArrowKey.IsPressed()) {
+                curPiece.transform.Rotate(new Vector3(-_rotSpeed * 50 * Time.deltaTime, 0, 0), Space.World);
+            }
+        }
+    }
+
+    public void LookAtSubmission() {
+        _cameraLerp.LerpRotation(Quaternion.identity, 0.5f);
+        // Save the piece we're working with
+        _holdPiece = curPiece;
+        // Set curPiece to the submission base so we can rotate it
+        curPiece = _submission.baseTransform.GetComponent<WoodPiece>();
+
+        _view = VIEW.SUBMISSION;
+
+        _lookDownUI.SetActive(true);
+        _lookUpUI.SetActive(false);
+    }
+
+    public void LookAtTable() {
+        _cameraLerp.LerpRotation(Quaternion.Euler(50f, 0f, 0f), 0.5f);
+        // Set the curPiece back to the hold piece
+        // TODO: unless we've just jointed it to the submission?
+        curPiece = _holdPiece;
+
+        _view = VIEW.TABLE;
+
+        _lookUpUI.SetActive(true);
+        _lookDownUI.SetActive(false);
+    }
+
+    public void SetPieceAsSubmissionBase() {
+        // Set piece as child of submission
+        _submission.AddPieceAsBase(curPiece);
+
+        // Follow the piece to the submission
+        LookAtSubmission();
+
+        // Lose reference to piece
+        _holdPiece = null;
+    }
+
+    void RotatePieceMouse() {
+        if (curPiece != null) {
+            float h = _rotSpeed * _mouse.delta.x.ReadValue();
+            float v = _rotSpeed * _mouse.delta.y.ReadValue();
+
+            curPiece.transform.Rotate(Camera.main.transform.up, -h, Space.World);
+            curPiece.transform.Rotate(Camera.main.transform.right, v, Space.World);
+
+            //curPiece.transform.Rotate(new Vector3(v, -h, 0), Space.World);
+        }
+    }
+
+    void RotatePieceZ(int dir) { 
+        if(curPiece != null) {
+            curPiece.transform.Rotate(Camera.main.transform.forward, 50f * dir * Time.deltaTime, Space.World);
+            //curPiece.transform.Rotate(0f, 0f, 50f * dir * Time.deltaTime, Space.World);
+        }
+    }
+
+    public void PickUpPiece(WoodPiece wPiece) {
+        // Put down our current piece
+        if (curPiece != null) {
+            curPiece.Drop();
+        }
+
+        // Hold the new piece
+        wPiece.GoTo(transform.position);
+        curPiece = wPiece;
+
+        LerpTo.SlideFinished.AddListener(OnPickUpFinished);
+    }
+
+    void OnPickUpFinished() {
+        OnPickedUpPiece.Invoke();
+
+        LerpTo.SlideFinished.RemoveListener(OnPickUpFinished);
+    }
+
+    public void DropPiece() {
+        // Put down our current piece
+        if (curPiece != null) {
+            curPiece.Drop();
+            curPiece = null;
+        }
+
+        OnDroppedPiece.Invoke();
+    }
+
+    public void SelectTool(Tool tool) {
+        if (_curTool == tool) {
+            // Deselect that tool
+            _curTool.DeactivateTool();
+            Activate();
+        } else {
+            if(_curTool != null) {
+                _curTool.DeactivateTool();
+            }
+            _curTool = tool;
+            _curTool.ActivateTool();
+            Deactivate();
+        }
+    }
+
+    public void Activate() {
+        _active = true;
+        // If we are being activated, we shouldn't have a curTool
+        _curTool = null;
+
+        // Show the UI if we've got a piece and we're looking at the table
+        if(curPiece != null && _view == VIEW.TABLE) {
+            _canvas.ShowBaseUI();
+        }
+    }
+
+    public void Deactivate() {
+        _active = false;
+
+        if (curPiece != null) {
+            _canvas.HideBaseUI();
+        }
+    }
+}
