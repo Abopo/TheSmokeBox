@@ -420,6 +420,14 @@ PrefabInstance:
       propertyPath: character
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.data[0]
+      value: Some dialogue about the submission.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
 --- !u!4 &97018287 stripped
@@ -838,7 +846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501893276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.527409, y: -33.798943, z: -5.6617775}
+  m_LocalPosition: {x: 0, y: 0, z: -22.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -851,8 +859,8 @@ Transform:
   - {fileID: 666007670}
   - {fileID: 1544024815}
   - {fileID: 1783709794}
-  m_Father: {fileID: 1976860667}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &592580133
 PrefabInstance:
@@ -1257,6 +1265,22 @@ PrefabInstance:
     - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
       propertyPath: character
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.data[0]
+      value: This is my submission.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.data[1]
+      value: I worked really hard on it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.data[2]
+      value: I call it _____.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
@@ -2272,8 +2296,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 622680516}
-  m_Father: {fileID: 1976860667}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2368,7 +2392,7 @@ Transform:
   - {fileID: 1144844340}
   - {fileID: 214546968}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298923843
 GameObject:
@@ -3594,14 +3618,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800543169}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 21.07, y: -24.048943, z: 16.81}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.1, y: 7, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1976860667}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1800543173
 Animator:
   serializedVersion: 5
@@ -3612,7 +3636,7 @@ Animator:
   m_GameObject: {fileID: 1800543169}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f975a86a7b04774ea5fed56984344fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3647,7 +3671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932583364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.527409, y: -33.798943, z: 46.79822}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3657,8 +3681,8 @@ Transform:
   - {fileID: 638049887}
   - {fileID: 157698622}
   - {fileID: 982287377}
-  m_Father: {fileID: 1976860667}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1972174309
 PrefabInstance:
@@ -3755,8 +3779,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -8248813919459054724, guid: 8d25b572ea08bd144bbcccda4404a86d, type: 2}
-    value: {fileID: 1800543173}
   - key: {fileID: -5177760260675020900, guid: 8d25b572ea08bd144bbcccda4404a86d, type: 2}
     value: {fileID: 622680518}
   - key: {fileID: -7283165258590982556, guid: 8d25b572ea08bd144bbcccda4404a86d, type: 2}
@@ -3773,6 +3795,8 @@ PlayableDirector:
     value: {fileID: 2127546885}
   - key: {fileID: -2769898804165957512, guid: 8d25b572ea08bd144bbcccda4404a86d, type: 2}
     value: {fileID: 638049888}
+  - key: {fileID: -7459976183561790218, guid: 8d25b572ea08bd144bbcccda4404a86d, type: 2}
+    value: {fileID: 1800543173}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1976860667
@@ -3786,13 +3810,9 @@ Transform:
   m_LocalPosition: {x: -22.527409, y: 33.798943, z: -16.798222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1800543172}
-  - {fileID: 1216706927}
-  - {fileID: 501893277}
-  - {fileID: 1932583365}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1976860668
 MonoBehaviour:
@@ -4135,6 +4155,14 @@ PrefabInstance:
       propertyPath: character
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: _dialogues.Array.data[0]
+      value: Some dialogue about the submission.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
 --- !u!4 &2127546883 stripped
@@ -4455,6 +4483,10 @@ PrefabInstance:
     - target: {fileID: 4089340721091505257, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
       propertyPath: _dialogues.Array.data[2]
       value: This is a self-portrait we call "Cube".
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909449410794497827, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b5b24d1361517f43ba0a09622ae813d, type: 3}

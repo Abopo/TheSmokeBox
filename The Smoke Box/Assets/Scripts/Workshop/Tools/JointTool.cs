@@ -11,6 +11,11 @@ public class JointTool : Tool {
     [SerializeField]
     JointNode _baseJointNode;
 
+    [SerializeField]
+    GameObject _cancelButton;
+    [SerializeField]
+    GameObject _confimation;
+
     JointNode _ghostJointNode;
 
     bool _isJoining;
@@ -47,6 +52,10 @@ public class JointTool : Tool {
         _baseJointNode.gameObject.SetActive(false);
         _newJointNode.Activate();
         _newJointNode.curPiece = _editManager.curPiece;
+
+        _toolUI.SetActive(true);
+        _cancelButton.SetActive(false);
+        _confimation.SetActive(false);
     }
 
     public override void DeactivateTool() {
@@ -58,6 +67,10 @@ public class JointTool : Tool {
         if (_ghostJointNode != null) {
             Destroy(_ghostJointNode.gameObject);
         }
+
+        _toolUI.SetActive(false);
+        _cancelButton.SetActive(false);
+        _confimation.SetActive(false);
 
         _editManager.Activate();
     }
@@ -75,6 +88,8 @@ public class JointTool : Tool {
             // This is the base node, so it should be able to connect with ANY wood piece on the submission
             _baseJointNode.curPiece = _editManager.curPiece;
             _editManager.LookAtSubmission();
+
+            _cancelButton.SetActive(true);
         } else if (_baseJointNode.isActive) {
             // Parent the ghost node to the submission so the player can rotate and see how their placement looks
             _ghostJointNode.transform.parent = _baseJointNode.curPiece.transform.parent;
@@ -84,7 +99,8 @@ public class JointTool : Tool {
             _confirming = true;
 
             // Ask for confirmation of join
-            _toolUI.SetActive(true);
+            _confimation.SetActive(true);
+            _cancelButton.SetActive(false);
         }
     }
 
@@ -111,6 +127,20 @@ public class JointTool : Tool {
         StartCoroutine(JoinPieces());
     }
 
+    public void Cancel() {
+        _editManager.LookAtTable();
+
+        _baseJointNode.gameObject.SetActive(false);
+        _newJointNode.Activate();
+        _newJointNode.curPiece = _editManager.curPiece;
+        _newJointNode.UnParentPiece();
+        if (_ghostJointNode != null) {
+            Destroy(_ghostJointNode.gameObject);
+        }
+
+        _cancelButton.SetActive(false);
+    }
+
     public void CancelJoin() {
         // De-parent the ghost node back to us
         _ghostJointNode.transform.parent = transform;
@@ -118,11 +148,14 @@ public class JointTool : Tool {
         // Reactivate the base node
         _baseJointNode.Activate();
 
-        _toolUI.SetActive(false);
+        _confimation.SetActive(false);
+        _cancelButton.SetActive(true);
     }
 
     public IEnumerator JoinPieces() {
         _isJoining = true;
+        // Fully kill the edit manager while joining
+        EditManager.Instance.enabled = false;
 
         // Parent the piece to the joint node
 
@@ -155,6 +188,9 @@ public class JointTool : Tool {
         // Reparent new piece to the base object
         _newJointNode.curPiece.transform.parent = _baseJointNode.curPiece.transform.parent;
         _newJointNode.curPiece.isLocked = true;
+
+        // Re-enable the edit manager
+        EditManager.Instance.enabled = true;
 
         // Deactivate the tool
         DeactivateTool();

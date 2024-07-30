@@ -45,12 +45,12 @@ public class SawTool : Tool {
     // Update is called once per frame
     void Update() {
         // Scoot the slicing plane left/right
-        if (Keyboard.current.aKey.isPressed) {
+        if (Keyboard.current.qKey.isPressed) {
             if (slicePlane.transform.localPosition.x > -1.01f) {
                 slicePlane.transform.Translate(-0.25f * Time.deltaTime, 0f, 0f, Space.World);
             }
         }
-        if (Keyboard.current.dKey.isPressed) {
+        if (Keyboard.current.eKey.isPressed) {
             if (slicePlane.transform.localPosition.x < 1.01f) {
                 slicePlane.transform.Translate(0.25f * Time.deltaTime, 0f, 0f, Space.World);
             }

@@ -107,4 +107,10 @@ public class JointNode : MonoBehaviour {
     public void ParentPiece() {
         curPiece.transform.parent = transform;
     }
+
+    public void UnParentPiece() {
+        curPiece.transform.parent = null;
+        // Make sure piece is at the proper position
+        curPiece.transform.position = EditManager.Instance.transform.position;
+    }
 }

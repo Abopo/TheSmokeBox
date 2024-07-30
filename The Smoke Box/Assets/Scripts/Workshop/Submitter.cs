@@ -51,17 +51,8 @@ public class Submitter : MonoBehaviour {
     }
 
     void SaveSubmission() {
-        // Save the current submission as a prefab
-        string savePath = "Assets/Resources/Prefabs/Submissions/Submission" + GameManager.Instance.stage.ToString() + ".prefab";
-
-        //savePath = AssetDatabase.GenerateUniqueAssetPath(localPath);
-
-        bool prefabSuccess;
-        PrefabUtility.SaveAsPrefabAsset(_submission.gameObject, savePath, out prefabSuccess);
-        if (prefabSuccess == true)
-            Debug.Log("Submission was saved successfully");
-        else
-            Debug.Log("Submission failed to save" + prefabSuccess);
+        // Run the save function of the submission
+        _submission.SaveData();        
 
         // Load judging scene
 

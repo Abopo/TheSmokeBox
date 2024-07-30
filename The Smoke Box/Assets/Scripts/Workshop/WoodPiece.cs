@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 [RequireComponent(typeof(LerpTo))]
 public class WoodPiece : MonoBehaviour {
 
@@ -15,6 +16,9 @@ public class WoodPiece : MonoBehaviour {
     Collider _collider;
 
     float _restTimer = 0f;
+
+    public int numCuts; // How many times this piece has been cut
+    public PAINTCOLOR paintColor = PAINTCOLOR.WHITE;
 
     private void Awake() {
         startPos = transform.position;
@@ -73,7 +77,7 @@ public class WoodPiece : MonoBehaviour {
     }
 
     void PickUp() {
-        if (!isLocked) {
+        if (!isLocked && EditManager.Instance.Active) {
             // Disable our physics in case we were still moving
             DisablePhysics();
             // Tell the editor manager to pick us up

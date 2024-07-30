@@ -18,6 +18,7 @@ public class Competitor : MonoBehaviour {
     DialogueBubble _dialogueBubble;
 
     private void Awake() {
+        _submission = GetComponentInChildren<Submission>();
         _dialogueBubble = GetComponentInChildren<DialogueBubble>(true);
     }
     // Start is called before the first frame update
@@ -26,7 +27,21 @@ public class Competitor : MonoBehaviour {
     }
 
     void LoadSubmission() {
-        // Load our submission based on who we are, and waht stage it is.
+        if (character == COMPETITOR.PLAYER) {
+            LoadPlayerSubmission();
+        } else {
+            LoadNpcSubmission();
+        }
+    }
+
+    void LoadPlayerSubmission() {
+        // Load our submission based on who we are, and what stage it is.
+        string path = Application.persistentDataPath + "/PlayerSubmissionData" + GameManager.Instance.stage + ".json";
+        _submission.LoadData(path);
+    }
+
+    void LoadNpcSubmission() {
+        // NPC submissions will just be saved as prefabs ahead of time
         GameObject submissionObj = Resources.Load("Prefabs/Submissions/Submission" + character + GameManager.Instance.stage.ToString()) as GameObject;
         if (submissionObj != null) {
             GameObject submissionInstance = Instantiate(submissionObj);
@@ -39,6 +54,11 @@ public class Competitor : MonoBehaviour {
 
     void PositionSubmission() {
         // Move the submission until it rests on the table
+
+        // If any part of the submission is currently touching the table, it needs to be moved upward until it isn't
+
+        // If no part of the submission is currently touching the table, it needs to be moved downard until it is.
+
     }
 
     // Update is called once per frame

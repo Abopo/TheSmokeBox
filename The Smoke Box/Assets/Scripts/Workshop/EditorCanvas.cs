@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EditorCanvas : MonoBehaviour {
+public class EditorCanvas : MonoBehaviour
+{
+    [SerializeField]
+    GameObject _toolsWindow;
 
     [SerializeField]
     GameObject _useAsBaseButton;
 
     [SerializeField]
-    GameObject _toolsWindow;
+    GameObject _holdUI;
 
     [SerializeField]
-    GameObject _holdUI;
+    GameObject _rotates;
 
     Submission _submission;
 
@@ -23,12 +26,13 @@ public class EditorCanvas : MonoBehaviour {
         _submission.OnAddedPiece.AddListener(OnAddedPiece);
         EditManager.OnPickedUpPiece.AddListener(OnPickedUpPiece);
         EditManager.OnDroppedPiece.AddListener(OnDroppedPiece);
+        EditManager.OnLookUp.AddListener(OnLookUp);
+        EditManager.OnLookDown.AddListener(OnLookDown);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
     void OnPickedUpPiece() {
@@ -36,20 +40,23 @@ public class EditorCanvas : MonoBehaviour {
             ShowBaseUI();
         }
 
-        _toolsWindow.SetActive(true);
+        _rotates.SetActive(true);
+        //_toolsWindow.SetActive(true);
     }
 
     void OnDroppedPiece() {
         HideBaseUI();
-        _toolsWindow.SetActive(false);
+
+        _rotates.SetActive(false);
+        //_toolsWindow.SetActive(false);
     }
 
     void OnAddedPiece() {
-        if(_submission.hasBase) {
+        if (_submission.hasBase) {
             _useAsBaseButton.SetActive(false);
         }
         _holdUI.SetActive(false);
-        _toolsWindow.SetActive(false);
+        //_toolsWindow.SetActive(false);
     }
 
     public void ShowBaseUI() {
@@ -63,5 +70,21 @@ public class EditorCanvas : MonoBehaviour {
     public void HideBaseUI() {
         _useAsBaseButton.SetActive(false);
         _holdUI.SetActive(false);
+    }
+
+    public void OnLookUp() {
+
+    }
+
+    public void OnLookDown() {
+        if (EditManager.Instance.Active && EditManager.Instance.HasPiece) {
+            _holdUI.SetActive(true);
+        }
+
+        if (EditManager.Instance.HasPiece) {
+            _rotates.SetActive(true);
+        } else {
+            _rotates.SetActive(false);
+        }
     }
 }

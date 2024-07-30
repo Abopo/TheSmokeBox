@@ -37,8 +37,12 @@ public class EditManager : MonoBehaviour {
 
     public static UnityEvent OnPickedUpPiece = new UnityEvent();
     public static UnityEvent OnDroppedPiece = new UnityEvent();
+    public static UnityEvent OnLookUp = new UnityEvent();
+    public static UnityEvent OnLookDown = new UnityEvent();
 
     public bool Active { get => _active; }
+
+    public bool HasPiece {get => curPiece != null; }
 
     private void Awake() {
         SingletonCheck();
@@ -109,7 +113,11 @@ public class EditManager : MonoBehaviour {
 
         _view = VIEW.SUBMISSION;
 
-        _lookDownUI.SetActive(true);
+        OnLookUp.Invoke();
+
+        if(_active) {
+            _lookDownUI.SetActive(true);
+        }
         _lookUpUI.SetActive(false);
     }
 
@@ -121,7 +129,11 @@ public class EditManager : MonoBehaviour {
 
         _view = VIEW.TABLE;
 
-        _lookUpUI.SetActive(true);
+        OnLookDown.Invoke();
+
+        if (_active) {
+            _lookUpUI.SetActive(true);
+        }
         _lookDownUI.SetActive(false);
     }
 
@@ -204,6 +216,12 @@ public class EditManager : MonoBehaviour {
         // If we are being activated, we shouldn't have a curTool
         _curTool = null;
 
+        if(_view == VIEW.SUBMISSION) {
+            _lookDownUI.SetActive(true);
+        } else {
+            _lookUpUI.SetActive(true);
+        }
+
         // Show the UI if we've got a piece and we're looking at the table
         if(curPiece != null && _view == VIEW.TABLE) {
             _canvas.ShowBaseUI();
@@ -212,6 +230,9 @@ public class EditManager : MonoBehaviour {
 
     public void Deactivate() {
         _active = false;
+
+        _lookUpUI.SetActive(false);
+        _lookDownUI.SetActive(false);
 
         if (curPiece != null) {
             _canvas.HideBaseUI();
