@@ -28,6 +28,10 @@ public class Submission : MonoBehaviour {
     void GetStats() {
         WoodPiece[] wPieces = GetComponentsInChildren<WoodPiece>();
 
+        numPiecesUsed = 0;
+        numCutsUsed = 0;
+        colorsUsed = new List<PAINTCOLOR>();
+
         foreach (WoodPiece piece in wPieces) {
             numPiecesUsed++;
             numCutsUsed += piece.numCuts;
@@ -88,5 +92,8 @@ public class Submission : MonoBehaviour {
 
         // Set rotation
         transform.localRotation = Quaternion.Euler(_submissionDataManager.submissionData.rotation);
+
+        // Now that we've loaded our stuff, get our stats
+        GetStats();
     }
 }

@@ -11,8 +11,9 @@ public class JudgingManager : MonoBehaviour {
         _director = GetComponent<PlayableDirector>();
     }
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        _director.time = 135f;
+        _director.Play();
     }
 
     // Update is called once per frame
