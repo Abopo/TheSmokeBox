@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Workshop.unity
     guid: cc22afb630a2ae14d912ee713acd8a7c
   - enabled: 1
-    path: Assets/Scenes/JudgingScene.unity
+    path: Assets/Scenes/CityScene.unity
     guid: f7e2ae00c7ab37642915df7baa9ed464
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8cfdc271a819fdb4598b72edd08a4437, type: 2}
