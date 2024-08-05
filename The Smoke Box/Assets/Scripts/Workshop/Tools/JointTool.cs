@@ -65,6 +65,7 @@ public class JointTool : Tool {
         _newJointNode.Deactivate();
         _baseJointNode.Deactivate();
         if (_ghostJointNode != null) {
+            _ghostJointNode.transform.parent = null;
             Destroy(_ghostJointNode.gameObject);
         }
 
@@ -169,11 +170,11 @@ public class JointTool : Tool {
         Vector3 endPos = _ghostJointNode.transform.position;
         float interpolation = 0;
         float lerpTime = 1;
-        float _startTime = Time.time;
+        float startTime = Time.time;
         float timePassed = 0;
 
         while(interpolation < 1.0f) {
-            timePassed = Time.time - _startTime;
+            timePassed = Time.time - startTime;
             interpolation = timePassed / lerpTime;
             
             // Rotate lerp
@@ -184,7 +185,6 @@ public class JointTool : Tool {
             yield return null;
         }
 
-        // TODO: wait to do this until confirmation
         // Reparent new piece to the base object
         _newJointNode.curPiece.transform.parent = _baseJointNode.curPiece.transform.parent;
         _newJointNode.curPiece.isLocked = true;
@@ -194,5 +194,7 @@ public class JointTool : Tool {
 
         // Deactivate the tool
         DeactivateTool();
+
+        Submission.OnChanged.Invoke();
     }
 }

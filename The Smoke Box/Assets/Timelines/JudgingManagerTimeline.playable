@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 130.01666666666668
+  m_Time: 130.51666666666668
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 704210b5c593f3b408754e59283038c2, type: 2}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 123.91666666666667
+  m_Time: 124.7
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 03b9f6fe7b21b414ba39e0e9b033ef11, type: 2}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 144
+  m_Time: 143.43333333333334
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: cdfab33110b377b449c355a3c0c679aa, type: 2}
@@ -612,7 +612,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: LookAtJudges3
   - m_Version: 1
-    m_Start: 142
+    m_Start: 141.43333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -8400011185110817199}
     m_Duration: 5
@@ -692,7 +692,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 16
+    m_PostExtrapolationTime: 15.433333333333337
     m_PreExtrapolationTime: 0
     m_DisplayName: LookAtC4
   m_Markers:
@@ -785,6 +785,22 @@ MonoBehaviour:
     - {fileID: -7145100995114512263}
     - {fileID: -3949640296385714323}
     - {fileID: 8848574167363859750}
+--- !u!114 &-6171874285187641199
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 155
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 7253c9e5598bb7b49a88a13cc4907a84, type: 2}
 --- !u!114 &-5893157926209237088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -865,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 152
+  m_Time: 151.43333333333334
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: cdfab33110b377b449c355a3c0c679aa, type: 2}
@@ -1172,6 +1188,7 @@ MonoBehaviour:
   - {fileID: -8454513310142496911}
   - {fileID: -2507720453528163905}
   - {fileID: -2769898804165957512}
+  - {fileID: 9138273733394005094}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -1418,7 +1435,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 148
+  m_Time: 147.43333333333334
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: cdfab33110b377b449c355a3c0c679aa, type: 2}
+--- !u!114 &9138273733394005094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track (8)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -6171874285187641199}

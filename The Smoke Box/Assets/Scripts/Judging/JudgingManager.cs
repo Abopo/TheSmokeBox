@@ -12,13 +12,16 @@ public class JudgingManager : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        _director.time = 135f;
-        _director.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void EndJudgingScene() {
+        // TODO: move to next stage and drive thru scene
+        Application.Quit();
     }
 }

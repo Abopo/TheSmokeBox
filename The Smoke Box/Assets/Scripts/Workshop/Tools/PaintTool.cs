@@ -94,6 +94,8 @@ public class PaintTool : Tool {
 
         wPiece.paintColor = _paintColor;
 
+        Submission.OnChanged.Invoke();
+
         // TODO: Some nice paint splash effect
     }
 }

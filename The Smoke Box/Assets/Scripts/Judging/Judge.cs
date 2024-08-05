@@ -53,13 +53,13 @@ public class Judge : MonoBehaviour {
         // Jims only lasts 1 stage
         switch (_judge) {
             case JUDGE.CHIPP:
-                _dialogue = "Chipp Jims 1";
+                _dialogue = "I see the resemblance...";
                 break;
             case JUDGE.JAMBON:
-                _dialogue = "Jambon Jims 1";
+                _dialogue = "Very...symmetrical";
                 break;
             case JUDGE.PITMASTER:
-                _dialogue = "Pitmaster Jims 1";
+                _dialogue = "square.";
                 break;
         }
     }

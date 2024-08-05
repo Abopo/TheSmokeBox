@@ -11,6 +11,7 @@ public class Submission : MonoBehaviour {
     public bool hasBase;
 
     public UnityEvent OnAddedPiece = new UnityEvent();
+    public static UnityEvent OnChanged = new UnityEvent();
 
     // Stats
     public int numPiecesUsed;
@@ -25,10 +26,10 @@ public class Submission : MonoBehaviour {
         GetStats();
     }
 
-    void GetStats() {
+    public void GetStats() {
         WoodPiece[] wPieces = GetComponentsInChildren<WoodPiece>();
 
-        numPiecesUsed = 0;
+        numPiecesUsed = -1; // Start at -1 cuz the base is technically a piece but shouldn't count
         numCutsUsed = 0;
         colorsUsed = new List<PAINTCOLOR>();
 
@@ -52,6 +53,7 @@ public class Submission : MonoBehaviour {
 
         hasBase = true;
         OnAddedPiece.Invoke();
+        OnChanged.Invoke();
     }
 
     public void SaveData() {

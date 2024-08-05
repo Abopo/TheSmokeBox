@@ -117,9 +117,11 @@ public class SawTool : Tool {
         _rightPiece = sliceReturnValue.topGameObject.GetComponent<WoodPiece>();
         _leftPiece = sliceReturnValue.bottomGameObject.GetComponent<WoodPiece>();
 
-        // Copy over the start pos from the original piece
-        _rightPiece.startPos = wPiece.GetComponent<WoodPiece>().startPos;
-        _leftPiece.startPos = wPiece.GetComponent<WoodPiece>().startPos;
+        // Copy over the data from the original piece
+        _rightPiece.startPos = wPiece.startPos;
+        _rightPiece.numCuts = wPiece.numCuts + 1;
+        _leftPiece.startPos = wPiece.startPos;
+        _leftPiece.numCuts = wPiece.numCuts + 1;
 
         // Update colliders
         _rightPiece.GetComponent<MeshCollider>().sharedMesh = null;

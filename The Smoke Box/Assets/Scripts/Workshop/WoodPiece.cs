@@ -97,7 +97,7 @@ public class WoodPiece : MonoBehaviour {
         if(!isLocked) {
             // Toss the piece onto the table
             EnablePhysics();
-            _rigidbody.AddForce(new Vector3(Random.Range(-500f, 500f), 0f, Random.Range(100f, 800f)));
+            _rigidbody.AddForce(new Vector3(Random.Range(-500f, 500f), 0f, Random.Range(200f, 800f)));
         }
     }
 

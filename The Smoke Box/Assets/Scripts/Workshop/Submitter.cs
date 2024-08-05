@@ -14,14 +14,41 @@ public class Submitter : MonoBehaviour {
     [SerializeField]
     GameObject _confirmStuff;
 
+    RequirementTracker _requirementTracker;
+
     // Start is called before the first frame update
     void Start() {
         _submission = FindObjectOfType<Submission>();
+        _requirementTracker = FindObjectOfType<RequirementTracker>();
+
+        Submission.OnChanged.AddListener(OnSubmissionChanged);
+        EditManager.OnLookUp.AddListener(OnLookUp);
+        EditManager.OnLookDown.AddListener(OnLookDown);
     }
 
     // Update is called once per frame
     void Update() {
         
+    }
+
+    void OnSubmissionChanged() {
+        CheckRequirementStatus();
+    }
+
+    void CheckRequirementStatus() {
+        if (_requirementTracker != null && _requirementTracker.allRequirementsClear) {
+            _submitButton.SetActive(true);
+        } else {
+            _submitButton.SetActive(false);
+        }
+    }
+
+    void OnLookUp() {
+        CheckRequirementStatus();
+    }
+
+    void OnLookDown() {
+        _submitButton.SetActive(false);
     }
 
     public void BeginSubmissionProcess() {
@@ -52,9 +79,9 @@ public class Submitter : MonoBehaviour {
 
     void SaveSubmission() {
         // Run the save function of the submission
-        _submission.SaveData();        
+        _submission.SaveData();
 
         // Load judging scene
-
+        GameManager.Instance.LoadScene("JudgingScene");
     }
 }

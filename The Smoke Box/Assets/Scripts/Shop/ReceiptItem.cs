@@ -11,7 +11,11 @@ public class ReceiptItem : MonoBehaviour {
     [SerializeField]
     TextMeshProUGUI _priceText;
 
+    public int price;
+
     public ShopItemData itemData;
+
+    public ReceiptWindow receiptWindow;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,7 @@ public class ReceiptItem : MonoBehaviour {
         itemData = data;
 
         _nameText.text = data.itemName;
+        price = data.price;
         _priceText.text = data.price.ToString();
     }
 
@@ -30,5 +35,9 @@ public class ReceiptItem : MonoBehaviour {
     void Update()
     {
         
+    }
+
+    public void RemoveItem() {
+        receiptWindow.RemoveItemFromWindow(this);
     }
 }

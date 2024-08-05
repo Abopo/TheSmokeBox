@@ -38,6 +38,7 @@ public class ReceiptWindow : MonoBehaviour {
     public void AddItemToWindow(WoodSlot item) {
         ReceiptItem newItem = Instantiate(_receiptItem, _window).GetComponent<ReceiptItem>();
         newItem.InitializeItem(item.Data);
+        newItem.receiptWindow = this;
 
         _receiptItems.Add(newItem);
 
@@ -48,6 +49,14 @@ public class ReceiptWindow : MonoBehaviour {
         _scrollRect.content.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
         _scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
         _scrollRect.verticalNormalizedPosition = 0;
+    }
+
+    public void RemoveItemFromWindow(ReceiptItem item) {
+        _receiptItems.Remove(item);
+
+        IncreaseTotal(-item.price);
+
+        Destroy(item.gameObject);
     }
 
     void IncreaseTotal(int price) {

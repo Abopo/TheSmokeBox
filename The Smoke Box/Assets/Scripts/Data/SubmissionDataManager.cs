@@ -49,12 +49,13 @@ public class SubmissionDataManager {
             submissionData.woodDatas[i].rot = woodPieces[i].transform.localRotation.eulerAngles;
 
             tempMesh = woodPieces[i].GetComponent<MeshFilter>().mesh;
-            tempMeshData = new MeshData();
-            tempMeshData.verts = tempMesh.vertices;
-            tempMeshData.normals = tempMesh.normals;
-            tempMeshData.uvs = tempMesh.uv;
-            tempMeshData.tris = tempMesh.triangles;
-
+            if (tempMesh != null) {
+                tempMeshData = new MeshData();
+                tempMeshData.verts = tempMesh.vertices;
+                tempMeshData.normals = tempMesh.normals;
+                tempMeshData.uvs = tempMesh.uv;
+                tempMeshData.tris = tempMesh.triangles;
+            }
             submissionData.woodDatas[i].meshData = tempMeshData;
             // Get the material name - minus (Instance)
             submissionData.woodDatas[i].material = woodPieces[i].GetComponent<MeshRenderer>().material.name.Replace(" (Instance)", "");
