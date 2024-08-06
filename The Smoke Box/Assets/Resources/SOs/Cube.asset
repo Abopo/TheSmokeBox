@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cube
   price: 2
-  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  mesh: {fileID: -5495902117074765545, guid: 0915181ba07226b40b991d13f2ff6ded, type: 3}

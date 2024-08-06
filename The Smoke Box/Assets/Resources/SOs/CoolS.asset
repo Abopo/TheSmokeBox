@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd23c650a2fa528499746b4e53e72430, type: 3}
-  m_Name: Cylinder
+  m_Name: CoolS
   m_EditorClassIdentifier: 
-  itemName: Cylinder
-  price: 3
-  mesh: {fileID: 2534964839176971238, guid: 107745fa49803794f94c4a88e1581fd4, type: 3}
+  itemName: Cool S
+  price: 1
+  mesh: {fileID: -5495902117074765545, guid: a9cf04b025eb8e7409760a05a0cedd42, type: 3}

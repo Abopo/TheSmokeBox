@@ -102,6 +102,9 @@ public class WoodPiece : MonoBehaviour {
     }
 
     void EnablePhysics() {
+        if(_collider == null) {
+            _collider = GetComponent<Collider>();
+        }
         _collider.enabled = true;
         _rigidbody.isKinematic = false;
         _rigidbody.useGravity = true;

@@ -146,8 +146,11 @@ public class SawTool : Tool {
         // So, we should save the current rotation, set to identity, then reapply the rotation after.
         Quaternion curRotation = piece.transform.rotation;
         piece.transform.rotation = Quaternion.identity;
+        // Maybe the huge scale is also messing it up?
+        Vector3 curScale = piece.transform.localScale;
+        piece.transform.localScale = new Vector3(1f, 1f, 1f);
 
-        yield return null;
+        yield return new WaitForSecondsRealtime(0.1f);
 
         MeshCollider meshCollider = piece.GetComponent<MeshCollider>();
         Bounds meshBounds = meshCollider.bounds;
@@ -173,6 +176,8 @@ public class SawTool : Tool {
 
         // Reapply rotation
         piece.transform.rotation = curRotation;
+        // and scale
+        piece.transform.localScale = curScale;
     }
 
     public void UndoCut() {
