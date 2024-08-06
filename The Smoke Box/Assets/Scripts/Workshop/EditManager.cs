@@ -17,6 +17,9 @@ public class EditManager : MonoBehaviour {
     float _rotSpeed;
 
     [SerializeField]
+    float _zoomSensitivity = 0.1f;
+
+    [SerializeField]
     GameObject _lookUpUI;
     [SerializeField]
     GameObject _lookDownUI;
@@ -69,6 +72,10 @@ public class EditManager : MonoBehaviour {
             CheckInput();
         }
 
+        if(_mouse.scroll.magnitude != 0) {
+            Camera.main.fieldOfView -= _mouse.scroll.up.value * _zoomSensitivity;
+            Camera.main.fieldOfView += _mouse.scroll.down.value * _zoomSensitivity;
+        }
         if (_mouse.rightButton.isPressed) {
             RotatePieceMouse();
         }
@@ -177,13 +184,13 @@ public class EditManager : MonoBehaviour {
         wPiece.GoTo(transform.position);
         curPiece = wPiece;
 
-        LerpTo.SlideFinished.AddListener(OnPickUpFinished);
+        curPiece.lerp.OnLerpFinished.AddListener(OnPickUpFinished);
     }
 
     void OnPickUpFinished() {
         OnPickedUpPiece.Invoke();
-
-        LerpTo.SlideFinished.RemoveListener(OnPickUpFinished);
+        
+        curPiece.lerp.OnLerpFinished.RemoveListener(OnPickUpFinished);
     }
 
     public void DropPiece() {

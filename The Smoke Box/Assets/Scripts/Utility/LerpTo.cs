@@ -15,7 +15,7 @@ public class LerpTo : MonoBehaviour {
     float _interpolation;
     float timePassed;
 
-    public static UnityEvent SlideFinished = new UnityEvent();
+    public UnityEvent OnLerpFinished = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class LerpTo : MonoBehaviour {
             if (_interpolation >= 1f) {
                 _lerping = false;
 
-                SlideFinished.Invoke();
+                OnLerpFinished.Invoke();
             }
         }
     }
@@ -49,7 +49,7 @@ public class LerpTo : MonoBehaviour {
         if (_distance <= 0) {
             // We're already at the position so just cancel
             _lerping = false;
-            SlideFinished.Invoke();
+            OnLerpFinished.Invoke();
         }
 
         _startTime = Time.time;
@@ -64,7 +64,7 @@ public class LerpTo : MonoBehaviour {
         if (_distance <= 0) {
             // We're already at the position so just cancel
             _lerping = false;
-            SlideFinished.Invoke();
+            OnLerpFinished.Invoke();
         }
 
         _lerpTime = lerpTime;

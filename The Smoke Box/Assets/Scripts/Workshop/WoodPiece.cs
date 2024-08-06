@@ -11,7 +11,7 @@ public class WoodPiece : MonoBehaviour {
     public bool isOnTable = true;
     public bool isLocked;
 
-    LerpTo _lerp;
+    public LerpTo lerp;
     Rigidbody _rigidbody;
     Collider _collider;
 
@@ -22,7 +22,7 @@ public class WoodPiece : MonoBehaviour {
 
     private void Awake() {
         startPos = transform.position;
-        _lerp = GetComponent<LerpTo>();
+        lerp = GetComponent<LerpTo>();
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
     }
@@ -119,6 +119,6 @@ public class WoodPiece : MonoBehaviour {
         // We're being forced to go somewhere so make sure our physics are off
         DisablePhysics();
 
-        _lerp.LerpToPos(pos, 0.5f);
+        lerp.LerpToPos(pos, 0.5f);
     }
 }
