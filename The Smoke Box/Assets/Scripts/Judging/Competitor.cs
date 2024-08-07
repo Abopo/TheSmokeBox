@@ -17,6 +17,10 @@ public class Competitor : MonoBehaviour {
     string[] _dialogues;
     DialogueBubble _dialogueBubble;
 
+    public string SubmissionTitle {
+        get { return _submission.title; }
+    }
+
     private void Awake() {
         _submission = GetComponentInChildren<Submission>();
         _dialogueBubble = GetComponentInChildren<DialogueBubble>(true);
@@ -70,4 +74,5 @@ public class Competitor : MonoBehaviour {
     public void StartDialogue() {
         _dialogueBubble.ShowDialogues(_dialogues);
     }
+
 }

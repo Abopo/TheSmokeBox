@@ -16,6 +16,8 @@ public class DriveThruManager : MonoBehaviour {
     GameObject _dialogueCanvas;
     [SerializeField]
     SuperTextMesh _dialogueText;
+    [SerializeField]
+    RectTransform _dialogueArrow;
 
     [SerializeField]
     float _nextLineTime;
@@ -49,11 +51,10 @@ public class DriveThruManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if(_inDialogue && _lineFinished) {
             _nextLineTimer += Time.deltaTime;
-            if(_nextLineTimer > _nextLineTime - 1f) {
+            if(_nextLineTimer > _nextLineTime - 0.5f) {
                 _dialogueCanvas.SetActive(false);
             }
             if (_nextLineTimer >= _nextLineTime) {
@@ -64,13 +65,31 @@ public class DriveThruManager : MonoBehaviour {
 
     void ShowNextDialogue() {
         if (_dialogueIndex < _dtDialogueSO.dialogueList.Length) {
-            _lineFinished = true;
-            _nextLineTimer = 0f;
-
+            // Show the dialogue canvas
             _dialogueCanvas.SetActive(true);
 
+            // Set the line of dialogue
             _dialogueText.text = _dtDialogueSO.dialogueList[_dialogueIndex].dialogueLine;
+
+            // Move the speaker arrow to the right spot
+            switch (_dtDialogueSO.dialogueList[_dialogueIndex].speaker) {
+                case FRIENDS.MC:
+                    _dialogueArrow.anchoredPosition = new Vector2(-610f, _dialogueArrow.anchoredPosition.y);
+                    break;
+                case FRIENDS.DF:
+                    _dialogueArrow.anchoredPosition = new Vector2(735f, _dialogueArrow.anchoredPosition.y);
+                    break;
+                case FRIENDS.BF1:
+                    _dialogueArrow.anchoredPosition = new Vector2(-210f, _dialogueArrow.anchoredPosition.y);
+                    break;
+                case FRIENDS.BF2:
+                    _dialogueArrow.anchoredPosition = new Vector2(210f, _dialogueArrow.anchoredPosition.y);
+                    break;
+            }
+
             _dialogueIndex++;
+            _lineFinished = false;
+            _nextLineTimer = 0f;
 
             CheckCarMovement();
         } else {
@@ -90,6 +109,7 @@ public class DriveThruManager : MonoBehaviour {
     }
 
     void OnLineFinished() {
+        Debug.Log("Line finished.");
         _lineFinished = true;
     }
 

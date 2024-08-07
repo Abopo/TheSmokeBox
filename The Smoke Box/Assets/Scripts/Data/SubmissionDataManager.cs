@@ -23,6 +23,7 @@ public class SubmissionData
 {
     public WoodData[] woodDatas;
     public Vector3 rotation;
+    public string title;
 }
 
 public class SubmissionDataManager {
@@ -64,6 +65,8 @@ public class SubmissionDataManager {
 
         // The first wood piece is the base, so it determines the rotation the submission should be at
         submissionData.rotation = woodPieces[0].transform.localRotation.eulerAngles;
+
+        submissionData.title = submission.title;
     }
 
     public void LoadSubmissionData(string path = "") {

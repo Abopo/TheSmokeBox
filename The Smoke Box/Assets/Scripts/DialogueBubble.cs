@@ -11,8 +11,11 @@ public class DialogueBubble : MonoBehaviour {
     string[] _dialogueToShow;
     int _dialogueIndex = 0;
 
+    Competitor _competitor;
+
     private void Awake() {
         _dialogueText = GetComponentInChildren<SuperTextMesh>(true);
+        _competitor = GetComponentInParent<Competitor>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -25,6 +28,11 @@ public class DialogueBubble : MonoBehaviour {
     }
 
     public void ShowDialogue(string dialogue) {
+        if(dialogue.Contains("[Submission]")) {
+            // Replace it with the submission name
+            dialogue = dialogue.Replace("[Submission]", _competitor.SubmissionTitle);
+        }
+
         _dialogueText.text = dialogue;
         _speechBubble.SetActive(true);
     }

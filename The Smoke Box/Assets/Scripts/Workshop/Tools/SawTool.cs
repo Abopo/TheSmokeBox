@@ -85,19 +85,21 @@ public class SawTool : Tool {
         intersectionMaterial = _editManager.curPiece.GetComponent<MeshRenderer>().material;
 
         // Slice the piece in two
-        SlicePiece(_editManager.curPiece);
+        bool success = SlicePiece(_editManager.curPiece);
 
-        // Hide the confirmation UI
-        _toolUI.SetActive(false);
+        if (success) {
+            // Hide the confirmation UI
+            _toolUI.SetActive(false);
 
-        // Show the post cut UI
-        _postCutCanvas.Activate();
+            // Show the post cut UI
+            _postCutCanvas.Activate();
 
-        // Hide the slice plane
-        slicePlane.gameObject.SetActive(false);
+            // Hide the slice plane
+            slicePlane.gameObject.SetActive(false);
+        }
     }
 
-    public void SlicePiece(WoodPiece wPiece) {
+    public bool SlicePiece(WoodPiece wPiece) {
         _originalPiece = wPiece.gameObject;
         Plane plane = new Plane(slicePlane.up, slicePlane.position);
         Slicer.SliceReturnValue sliceReturnValue;
@@ -109,7 +111,7 @@ public class SawTool : Tool {
         }
 
         if (null == sliceReturnValue) {
-            return;
+            return false;
         }
 
         sliceReturnValue.topGameObject.transform.position += topMoveDistance;
@@ -139,6 +141,7 @@ public class SawTool : Tool {
         // Just hide the original piece until we decide to commit to the cut
         wPiece.gameObject.SetActive(false);
 
+        return true;
     }
 
     private IEnumerator AdjustMeshPivotPoints(GameObject piece) {

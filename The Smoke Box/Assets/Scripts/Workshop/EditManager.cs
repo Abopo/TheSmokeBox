@@ -112,36 +112,40 @@ public class EditManager : MonoBehaviour {
     }
 
     public void LookAtSubmission() {
-        _cameraLerp.LerpRotation(Quaternion.identity, 0.5f);
-        // Save the piece we're working with
-        _holdPiece = curPiece;
-        // Set curPiece to the submission base so we can rotate it
-        curPiece = _submission.baseTransform.GetComponent<WoodPiece>();
+        if (_view != VIEW.SUBMISSION) {
+            _cameraLerp.LerpRotation(Quaternion.identity, 0.5f);
+            // Save the piece we're working with
+            _holdPiece = curPiece;
+            // Set curPiece to the submission base so we can rotate it
+            curPiece = _submission.baseTransform.GetComponent<WoodPiece>();
 
-        _view = VIEW.SUBMISSION;
+            _view = VIEW.SUBMISSION;
 
-        OnLookUp.Invoke();
+            OnLookUp.Invoke();
 
-        if(_active) {
-            _lookDownUI.SetActive(true);
+            if (_active) {
+                _lookDownUI.SetActive(true);
+            }
+            _lookUpUI.SetActive(false);
         }
-        _lookUpUI.SetActive(false);
     }
 
     public void LookAtTable() {
-        _cameraLerp.LerpRotation(Quaternion.Euler(50f, 0f, 0f), 0.5f);
-        // Set the curPiece back to the hold piece
-        // TODO: unless we've just jointed it to the submission?
-        curPiece = _holdPiece;
+        if (_view != VIEW.TABLE) {
+            _cameraLerp.LerpRotation(Quaternion.Euler(50f, 0f, 0f), 0.5f);
+            // Set the curPiece back to the hold piece
+            // TODO: unless we've just jointed it to the submission?
+            curPiece = _holdPiece;
 
-        _view = VIEW.TABLE;
+            _view = VIEW.TABLE;
 
-        OnLookDown.Invoke();
+            OnLookDown.Invoke();
 
-        if (_active) {
-            _lookUpUI.SetActive(true);
+            if (_active) {
+                _lookUpUI.SetActive(true);
+            }
+            _lookDownUI.SetActive(false);
         }
-        _lookDownUI.SetActive(false);
     }
 
     public void SetPieceAsSubmissionBase() {

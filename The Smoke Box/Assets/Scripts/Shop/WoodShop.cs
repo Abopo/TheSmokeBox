@@ -11,6 +11,8 @@ public class WoodShop : MonoBehaviour {
 
     ReceiptWindow _receiptWindow;
 
+    int _playerMoney = 10;
+
     private void Awake() {
         _slots = GetComponentsInChildren<WoodSlot>();
         _receiptWindow = FindObjectOfType<ReceiptWindow>();

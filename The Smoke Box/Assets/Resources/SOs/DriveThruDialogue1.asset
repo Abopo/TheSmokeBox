@@ -13,27 +13,42 @@ MonoBehaviour:
   m_Name: DriveThruDialogue1
   m_EditorClassIdentifier: 
   dialogueList:
-  - dialogueLine: Dialogue Line 1
+  - dialogueLine: 'Bro, I''m staaarving. '
+    speaker: 2
+  - dialogueLine: Me too! I want a hot blunk today.
+    speaker: 3
+  - dialogueLine: You always get the hot blunk, man.
+    speaker: 1
+  - dialogueLine: Hahaha!
+    speaker: 2
+  - dialogueLine: MC, you good? What do you want?
+    speaker: 1
+  - dialogueLine: Huh?! Oh, yeah. I guess I'll have a colonial pretzel.
     speaker: 0
-  - dialogueLine: Dialogue Line 2
+  - dialogueLine: You seem kinda spaced out today, MC.
+    speaker: 3
+  - dialogueLine: Yeah, I'm thinking about what I'm going to make this week.
     speaker: 0
-  - dialogueLine: Dialogue Line 3
+  - dialogueLine: Oh, right. You're doing that woodworking competition thing.
+    speaker: 1
+  - dialogueLine: Yup, round 5 is this week.
     speaker: 0
-  - dialogueLine: Dialogue Line 4
+  - dialogueLine: 'Yo, round 5?! That''s great! '
+    speaker: 2
+  - dialogueLine: That puts you in the top 4 right?
+    speaker: 2
+  - dialogueLine: Yeah...
     speaker: 0
-  - dialogueLine: Dialogue Line 5
+  - dialogueLine: I heard the judging is done live in Peak Park for the last few
+      rounds.
+    speaker: 1
+  - dialogueLine: Really?! We should go!
+    speaker: 3
+  - dialogueLine: Eh, you guys want to come?
     speaker: 0
-  - dialogueLine: Dialogue Line 6
+  - dialogueLine: Yeah! I wanna see what you make!
+    speaker: 3
+  - dialogueLine: O-Okay, it's this Friday at 3 p.m.
     speaker: 0
-  - dialogueLine: Dialogue Line 7
-    speaker: 0
-  - dialogueLine: Dialogue Line 8
-    speaker: 0
-  - dialogueLine: Dialogue Line 9
-    speaker: 0
-  - dialogueLine: Dialogue Line 10
-    speaker: 0
-  - dialogueLine: Dialogue Line 11
-    speaker: 0
-  - dialogueLine: Dialogue Line 12
-    speaker: 0
+  - dialogueLine: Yo, we're up. Let's order...
+    speaker: 1

@@ -14,6 +14,9 @@ public class Submitter : MonoBehaviour {
     [SerializeField]
     GameObject _confirmStuff;
 
+    [SerializeField]
+    GameObject _titleStuff;
+
     RequirementTracker _requirementTracker;
 
     // Start is called before the first frame update
@@ -64,15 +67,27 @@ public class Submitter : MonoBehaviour {
 
     }
 
+    public void ShowTitleSubmission() {
+        _submitButton.SetActive(false);
+        _confirmStuff.SetActive(false);
+        _titleStuff.SetActive(true);
+    }
+
+    public void SetTitle(string inTitle) {
+        _submission.title = inTitle;
+    }
+
     public void CancelSubmission() {
         _submitButton.SetActive(true);
         _confirmStuff.SetActive(false);
+        _titleStuff.SetActive(false);
     }
 
     public void ConfirmSubmission() {
         // Hide all UI
         _submitButton.SetActive(false);
         _confirmStuff.SetActive(false);
+        _titleStuff.SetActive(false);
 
         SaveSubmission();
     }

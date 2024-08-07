@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 [SelectionBase]
 public class Submission : MonoBehaviour {
-    
+
+    public string title;
     public Transform baseTransform;
 
     public bool hasBase;
@@ -94,6 +95,9 @@ public class Submission : MonoBehaviour {
 
         // Set rotation
         transform.localRotation = Quaternion.Euler(_submissionDataManager.submissionData.rotation);
+
+        // Set title
+        title = _submissionDataManager.submissionData.title;
 
         // Now that we've loaded our stuff, get our stats
         GetStats();
