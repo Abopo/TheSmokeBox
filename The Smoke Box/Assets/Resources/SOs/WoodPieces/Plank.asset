@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Plank
   m_EditorClassIdentifier: 
   itemName: Plank
-  price: 1
+  price: 2
   mesh: {fileID: -5495902117074765545, guid: 4e20858d9b2c6424c827ba26af5ce639, type: 3}

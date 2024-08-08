@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class JudgingManager : MonoBehaviour {
 
@@ -22,6 +23,10 @@ public class JudgingManager : MonoBehaviour {
 
     public void EndJudgingScene() {
         // TODO: move to next stage and drive thru scene
-        Application.Quit();
+        GameManager.Instance.stage += 1;
+
+        SceneManager.LoadScene("Shop" + GameManager.Instance.stage.ToString());
+
+        //Application.Quit();
     }
 }

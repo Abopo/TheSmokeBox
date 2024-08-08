@@ -13,6 +13,8 @@ public class WoodShop : MonoBehaviour {
 
     int _playerMoney = 10;
 
+    public bool _lastPage;
+
     private void Awake() {
         _slots = GetComponentsInChildren<WoodSlot>();
         _receiptWindow = FindObjectOfType<ReceiptWindow>();
@@ -25,7 +27,7 @@ public class WoodShop : MonoBehaviour {
     void FillSlotsWithInventory() {
         for (int i = 0; i < _slots.Length; i++) {
             if(i < _inventory.inventory.Length) {
-                _slots[i].ItemName = _inventory.inventory[i].name;
+                _slots[i].ItemName = _inventory.inventory[i].itemName;
                 _slots[i].Price = _inventory.inventory[i].price;
                 _slots[i].Mesh = _inventory.inventory[i].mesh;
 
@@ -43,5 +45,31 @@ public class WoodShop : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
+    }
+
+    public IEnumerator ChangePage() {
+        int _check = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            for(int j = i; j <= i + 8; j += 4)
+            {
+                if (j + (_lastPage ? 0 : 9) < _inventory.inventory.Length) {
+                    _slots[j].ChangeItem(_inventory.inventory[j + (_lastPage ? 0 : 9)]);
+                    _check++;
+                }
+                else if(j < _slots.Length) {
+                    _slots[j].ChangeItem(null);
+                }
+            }
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        // TODO: this fails if the last page actually fills in all the slots
+        if(_check == 12) {
+            _lastPage = false;
+        } else {
+            _lastPage = true;
+        }
     }
 }

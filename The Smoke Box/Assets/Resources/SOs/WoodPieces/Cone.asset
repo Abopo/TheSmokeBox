@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cone
   m_EditorClassIdentifier: 
   itemName: Cone
-  price: 1
+  price: 2
   mesh: {fileID: 3613567641014311022, guid: 6cf67ad87d3ea334498c9d190deed461, type: 3}

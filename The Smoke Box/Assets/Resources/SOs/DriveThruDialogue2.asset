@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348e32a81dee7fc419dd807d1acdda9e, type: 3}
+  m_Name: DriveThruDialogue2
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - dialogueLine: MC, you're scultpure was so cool!
+    speaker: 3
+  - dialogueLine: Yeah man, it was very you.
+    speaker: 1
+  - dialogueLine: Thanks...I managed to make it to the next round.
+    speaker: 0
+  - dialogueLine: But, the other competitors are so good...
+    speaker: 0
+  - dialogueLine: I need to do something new for next week.
+    speaker: 0
+  - dialogueLine: I wish I had some other tools...
+    speaker: 0
+  - dialogueLine: I think my brother has an old saw you could use.
+    speaker: 2
+  - dialogueLine: Really?! Having a saw would help so much.
+    speaker: 0
+  - dialogueLine: Okay, lemme text him...
+    speaker: 2
+  - dialogueLine: I've been meaning to ask MC, why do you like woodworking so much?
+    speaker: 3
+  - dialogueLine: Oh, uhhh. There's something about the permanence of it I guess.
+    speaker: 0
+  - dialogueLine: Like when you make a cut or join pieces together there's not just
+      some undo button to fix it.
+    speaker: 0
+  - dialogueLine: That sounds kinda stressful.
+    speaker: 2
+  - dialogueLine: It was at first. But, you learn to accept and work with your mistakes.
+    speaker: 0
+  - dialogueLine: And not stress out so much about everything being perfect.
+    speaker: 0
+  - dialogueLine: We're almost at the thing . What do y'all want?
+    speaker: 1
+  - dialogueLine: The hot blunk please!
+    speaker: 3
+  - dialogueLine: I'll get Smokey Pig Sticks today.
+    speaker: 0
+  - dialogueLine: BF1?
+    speaker: 1
+  - dialogueLine: Hmmm...Pulled Pork Tacos!
+    speaker: 2

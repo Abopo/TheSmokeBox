@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cylinder
   m_EditorClassIdentifier: 
   itemName: Cylinder
-  price: 3
+  price: 2
   mesh: {fileID: 2534964839176971238, guid: 107745fa49803794f94c4a88e1581fd4, type: 3}

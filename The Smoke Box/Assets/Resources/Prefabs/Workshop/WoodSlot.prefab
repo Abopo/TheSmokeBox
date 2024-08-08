@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 9215402754545288955}
   - component: {fileID: 2235281326962603846}
   - component: {fileID: 876259738346023907}
+  - component: {fileID: 933722607018906188}
   m_Layer: 0
   m_Name: WoodSlot
   m_TagString: Untagged
@@ -486,6 +487,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5530864, y: 0.44290963, z: 0.1503129}
   m_Center: {x: -0.018135188, y: 0.01450677, z: 0.07361887}
+--- !u!95 &933722607018906188
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215402754545288952}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a35a66f07a2b8a84181d39ce6f90f645, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9215402754672968422
 GameObject:
   m_ObjectHideFlags: 0

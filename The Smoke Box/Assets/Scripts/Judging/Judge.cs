@@ -50,7 +50,7 @@ public class Judge : MonoBehaviour {
     }
 
     void JimsDialogue() {
-        // Jims only lasts 1 stage
+        // Jims only lasts 1 stage, his piece is just a cube.
         switch (_judge) {
             case JUDGE.CHIPP:
                 _dialogue = "I see the resemblance...";
@@ -78,15 +78,16 @@ public class Judge : MonoBehaviour {
                     break;
             }
         } else if (GameManager.Instance.stage == 2) {
+            // 2nd piece is BB Chicken Sandwich. It looks very cold.
             switch (_judge) {
                 case JUDGE.CHIPP:
-                    _dialogue = "Chipp Alex 2";
+                    _dialogue = "You know this isn't an ice sculpture competition, right?";
                     break;
                 case JUDGE.JAMBON:
-                    _dialogue = "Jambon Alex 2";
+                    _dialogue = "A poor attempt at a sandwich...";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "Pitmaster Alex 2";
+                    _dialogue = "chilling...";
                     break;
             }
         }
@@ -96,13 +97,13 @@ public class Judge : MonoBehaviour {
         if (GameManager.Instance.stage == 1) {
             switch (_judge) {
                 case JUDGE.CHIPP:
-                    _dialogue = "Chipp Franky 1";
+                    _dialogue = "What an electrifying piece!";
                     break;
                 case JUDGE.JAMBON:
-                    _dialogue = "Jambon Franky 1";
+                    _dialogue = "Clean technique, as expected.";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "Pitmaster Franky 1";
+                    _dialogue = "I...like.";
                     break;
             }
         } else if (GameManager.Instance.stage == 2) {
@@ -120,13 +121,13 @@ public class Judge : MonoBehaviour {
         } else if (GameManager.Instance.stage == 3) {
             switch (_judge) {
                 case JUDGE.CHIPP:
-                    _dialogue = "Chipp Franky 3";
+                    _dialogue = "I know it's wood, but it looks so good I could eat it!";
                     break;
                 case JUDGE.JAMBON:
-                    _dialogue = "Jambon Franky 3";
+                    _dialogue = "It's near perfect in every way...";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "Pitmaster Franky 3";
+                    _dialogue = "GIVE ME PRETZEL!";
                     break;
             }
         }
@@ -176,16 +177,16 @@ public class Judge : MonoBehaviour {
             _dialogue = "Despite using so many pieces, it all comes together nicely.";
         } else {
             // Default line
-            _dialogue = "Mmm…impressive.";
+            _dialogue = "Mmm...impressive.";
         }
     }
 
     void PlayerDialoguePitmaster() {
         // Priority of each dialogue will simply be via if statements
         if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.BLACK) >= 2) {
-            _dialogue = "Black…BLACK!";
+            _dialogue = "Black...BLACK!";
         } else if (_playerSubmission.numPiecesUsed >= 5) {
-            _dialogue = "Many pieces…many POINTS!";
+            _dialogue = "Many pieces...many POINTS!";
         } else {
             // Default line
             _dialogue = "...spicy...";

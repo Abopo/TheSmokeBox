@@ -19,11 +19,15 @@ public class WoodSlot : MonoBehaviour {
 
     ShopItemData _data;
 
+    ShopItemData _nextData;
+
     BoxCollider _boxCollider;
+
+    Animator _animator;
 
     WoodShop _shop;
 
-    public string ItemName { 
+    public string ItemName {
         get => _data.itemName;
         set {
             _data.itemName = value;
@@ -51,16 +55,17 @@ public class WoodSlot : MonoBehaviour {
         _boxCollider = GetComponent<BoxCollider>();
         _shop = GetComponentInParent<WoodShop>();
         _data = ScriptableObject.CreateInstance("ShopItemData") as ShopItemData;
+        _animator = GetComponent<Animator>();
     }
     // Start is called before the first frame update
     void Start() {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnMouseEnter() {
@@ -74,7 +79,7 @@ public class WoodSlot : MonoBehaviour {
     private void OnMouseDown() {
         _shop.PurchaseFromSlot(this);
     }
-
+    
     public void EnableSlot() {
         _boxCollider.enabled = true;
     }
@@ -84,5 +89,20 @@ public class WoodSlot : MonoBehaviour {
         Mesh = null;
 
         _boxCollider.enabled = false;
+    }
+    public void ChangeItem(ShopItemData nextData) {
+        _nextData = nextData;
+
+        _animator.Play("WS_ChangeItem");
+    }
+
+    public void SwapModel() {
+        if (_nextData != null) {
+            ItemName = _nextData.itemName;
+            Price = _nextData.price;
+            Mesh = _nextData.mesh;
+        } else {
+            DisableSlot();
+        }
     }
 }

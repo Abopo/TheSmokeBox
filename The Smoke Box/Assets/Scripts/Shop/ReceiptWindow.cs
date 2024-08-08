@@ -15,8 +15,14 @@ public class ReceiptWindow : MonoBehaviour {
     [SerializeField]
     TextMeshProUGUI _totalText;
 
+    [SerializeField]
+    GameObject _checkoutButton;
+    [SerializeField]
+    TextMeshProUGUI _countText;
+
     ScrollRect _scrollRect;
 
+    int _playerMoney;
     int _totalPrice;
 
     List<ReceiptItem> _receiptItems = new List<ReceiptItem>();
@@ -26,8 +32,10 @@ public class ReceiptWindow : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
+        _playerMoney = GameManager.Instance.stage * 15;
         _totalPrice = 0;
-        _totalText.text = "0";
+        _totalText.text = _playerMoney.ToString();
+        CheckCount();
     }
 
     // Update is called once per frame
@@ -43,6 +51,7 @@ public class ReceiptWindow : MonoBehaviour {
         _receiptItems.Add(newItem);
 
         IncreaseTotal(item.Price);
+        CheckCount();
 
         // Force scroll view to follow down
         Canvas.ForceUpdateCanvases();
@@ -55,13 +64,25 @@ public class ReceiptWindow : MonoBehaviour {
         _receiptItems.Remove(item);
 
         IncreaseTotal(-item.price);
+        CheckCount();
 
         Destroy(item.gameObject);
     }
 
     void IncreaseTotal(int price) {
         _totalPrice += price;
-        _totalText.text = _totalPrice.ToString();
+        _totalText.text = (_playerMoney - _totalPrice).ToString();
+    }
+
+    void CheckCount() {
+        _countText.text = _receiptItems.Count.ToString() + " / 5";
+        if (_receiptItems.Count >= 5) {
+            _countText.color = Color.green;
+            _checkoutButton.SetActive(true);
+        } else {
+            _countText.color = Color.red;
+            _checkoutButton.SetActive(false);
+        }
     }
 
     public void Checkout() {

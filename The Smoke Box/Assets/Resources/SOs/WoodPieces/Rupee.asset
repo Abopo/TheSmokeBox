@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Rupee
   m_EditorClassIdentifier: 
   itemName: Rupee
-  price: 1
+  price: 3
   mesh: {fileID: -5495902117074765545, guid: bda07085ec22dac42a4648eccb1837cb, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CoolS
   m_EditorClassIdentifier: 
   itemName: Cool S
-  price: 1
+  price: 3
   mesh: {fileID: -5495902117074765545, guid: a9cf04b025eb8e7409760a05a0cedd42, type: 3}

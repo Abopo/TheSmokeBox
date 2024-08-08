@@ -97,6 +97,6 @@ public class Submitter : MonoBehaviour {
         _submission.SaveData();
 
         // Load judging scene
-        GameManager.Instance.LoadScene("JudgingScene");
+        GameManager.Instance.LoadScene("JudgingScene" + GameManager.Instance.stage.ToString());
     }
 }
