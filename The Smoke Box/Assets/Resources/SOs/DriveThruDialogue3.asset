@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348e32a81dee7fc419dd807d1acdda9e, type: 3}
+  m_Name: DriveThruDialogue3
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - dialogueLine: '*phew* I can''t believe I made it to the finals.'
+    speaker: 0
+  - dialogueLine: Yeah, man. You're actually kinda amazing!
+    speaker: 1
+  - dialogueLine: Thanks for getting me that saw, F2.
+    speaker: 0
+  - dialogueLine: I don't think I would've made it without it.
+    speaker: 0
+  - dialogueLine: No problem, dude!
+    speaker: 2
+  - dialogueLine: Though, my brother did say we have to do all his chores for a week...
+    speaker: 2
+  - dialogueLine: Worth it.
+    speaker: 0
+  - dialogueLine: So, what are you gonna do this week, MC?
+    speaker: 3
+  - dialogueLine: Everything that Franky guy has made is incredible.
+    speaker: 3
+  - dialogueLine: I've got some ideas...but, I need to find some paint.
+    speaker: 0
+  - dialogueLine: Paint, huh...
+    speaker: 1
+  - dialogueLine: Some extra color could really help bring my next piece to life.
+    speaker: 0
+  - dialogueLine: Well, I do have this winning The Smoke Box Monopsony scratch off.
+    speaker: 1
+  - dialogueLine: "Look, one of the prizes is a set of \u2018Hip Brand\u2019 paints."
+    speaker: 1
+  - dialogueLine: "\u2018Hip brand\u2019?! Their paints are the most hip!"
+    speaker: 0
+  - dialogueLine: You'd really give me your winning ticket?
+    speaker: 0
+  - dialogueLine: Of course, man! You gotta win this thing!
+    speaker: 0
+  - dialogueLine: Thanks, dude. You're the best.
+    speaker: 0
+  - dialogueLine: Alright! Go woodwork Franky's butt off!
+    speaker: 2
+  - dialogueLine: Oh! Hot blunk time!
+    speaker: 3

@@ -69,11 +69,11 @@ public class Submission : MonoBehaviour {
         // Spawn wood pieces based on the loaded data
         WoodData[] woodData = _submissionDataManager.submissionData.woodDatas;
         Object woodPieceObj = Resources.Load("Prefabs/Workshop/WoodPiece");
-        GameObject tempObject;
+        GameObject tempPiece;
         for (int i = 0; i < woodData.Length; i++) {
-            tempObject = Instantiate(woodPieceObj, transform) as GameObject;
-            tempObject.transform.localPosition = woodData[i].pos;
-            tempObject.transform.localRotation = Quaternion.Euler(woodData[i].rot);
+            tempPiece = Instantiate(woodPieceObj, transform) as GameObject;
+            tempPiece.transform.localPosition = woodData[i].pos;
+            tempPiece.transform.localRotation = Quaternion.Euler(woodData[i].rot);
 
             // Set the mesh
             Mesh mesh = new Mesh();
@@ -81,8 +81,11 @@ public class Submission : MonoBehaviour {
             mesh.uv = woodData[i].meshData.uvs;
             mesh.normals = woodData[i].meshData.normals;
             mesh.triangles = woodData[i].meshData.tris;
-            tempObject.GetComponent<MeshFilter>().mesh = null;
-            tempObject.GetComponent<MeshFilter>().mesh = mesh;
+
+            tempPiece.GetComponent<WoodPiece>().SetMesh(mesh);
+
+            //tempPiece.GetComponent<MeshFilter>().mesh = null;
+            //tempPiece.GetComponent<MeshFilter>().mesh = mesh;
 
             // Set the materials (sliced pieces need an extra material per slice)
             Material material = Resources.Load<Material>("Materials/Wood/" + woodData[i].material);
@@ -90,7 +93,7 @@ public class Submission : MonoBehaviour {
             for (int j = 0; j < materials.Length; j++) {
                 materials[j] = material;
             }
-            tempObject.GetComponent<MeshRenderer>().materials = materials;
+            tempPiece.GetComponent<MeshRenderer>().materials = materials;
         }
 
         // Set rotation

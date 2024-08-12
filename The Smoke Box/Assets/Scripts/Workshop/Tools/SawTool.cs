@@ -20,6 +20,7 @@ public class SawTool : Tool {
     [SerializeField]
     private SawCanvas _postCutCanvas;
 
+    SawObject _sawObject;
 
     protected override void Awake() {
         base.Awake();
@@ -27,6 +28,8 @@ public class SawTool : Tool {
         if (slicer == null) {
             slicer = new Slicer();
         }
+
+        _sawObject = GetComponentInChildren<SawObject>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -60,7 +63,9 @@ public class SawTool : Tool {
     public override void ActivateTool() {
         base.ActivateTool();
 
-        slicePlane.gameObject.SetActive(true);
+        slicePlane.GetChild(0).gameObject.SetActive(true);
+
+        //slicePlane.gameObject.SetActive(true);
 
         gameObject.SetActive(true);
 
@@ -84,6 +89,9 @@ public class SawTool : Tool {
         // Set the intersection material to the piece's current material
         intersectionMaterial = _editManager.curPiece.GetComponent<MeshRenderer>().material;
 
+        // Start the animation
+        _sawObject.PlayAnimation();
+
         // Slice the piece in two
         bool success = SlicePiece(_editManager.curPiece);
 
@@ -91,11 +99,8 @@ public class SawTool : Tool {
             // Hide the confirmation UI
             _toolUI.SetActive(false);
 
-            // Show the post cut UI
-            _postCutCanvas.Activate();
-
-            // Hide the slice plane
-            slicePlane.gameObject.SetActive(false);
+            // Hide the saw vizualizer
+            slicePlane.GetChild(0).gameObject.SetActive(false);
         }
     }
 
@@ -138,8 +143,12 @@ public class SawTool : Tool {
         // Ignore collision between pieces so stuff doesn't get annoying later
         Physics.IgnoreCollision(_rightPiece.GetComponent<Collider>(), _leftPiece.GetComponent<Collider>());
 
+        // Hide the new pieces until the saw animation is finished
+        _leftPiece.gameObject.SetActive(false);
+        _rightPiece.gameObject.SetActive(false);
+
         // Just hide the original piece until we decide to commit to the cut
-        wPiece.gameObject.SetActive(false);
+        //wPiece.gameObject.SetActive(false);
 
         return true;
     }
@@ -181,6 +190,18 @@ public class SawTool : Tool {
         piece.transform.rotation = curRotation;
         // and scale
         piece.transform.localScale = curScale;
+    }
+
+    public void ShowCut() {
+        // Show the new pieces
+        _leftPiece.gameObject.SetActive(true);
+        _rightPiece.gameObject.SetActive(true);
+
+        // Hide the original piece until we decide to commit to the cut
+        _originalPiece.gameObject.SetActive(false);
+
+        // Show the post cut UI
+        _postCutCanvas.Activate();
     }
 
     public void UndoCut() {

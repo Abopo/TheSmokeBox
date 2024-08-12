@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7391b1289867e134b954bc75de9336a6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Burn Wood
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

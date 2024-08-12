@@ -101,6 +101,7 @@ public class WoodSlot : MonoBehaviour {
             ItemName = _nextData.itemName;
             Price = _nextData.price;
             Mesh = _nextData.mesh;
+            EnableSlot();
         } else {
             DisableSlot();
         }

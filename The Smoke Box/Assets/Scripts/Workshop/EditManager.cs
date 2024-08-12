@@ -24,7 +24,13 @@ public class EditManager : MonoBehaviour {
     [SerializeField]
     GameObject _lookDownUI;
 
+    [SerializeField]
+    float _fovMin;
+    [SerializeField]
+    float _fovMax;
+
     bool _active = true;
+    bool _canRotate = true;
 
     Mouse _mouse;
     Keyboard _keyboard;
@@ -72,18 +78,26 @@ public class EditManager : MonoBehaviour {
             CheckInput();
         }
 
-        if(_mouse.scroll.magnitude != 0) {
-            Camera.main.fieldOfView -= _mouse.scroll.up.value * _zoomSensitivity;
-            Camera.main.fieldOfView += _mouse.scroll.down.value * _zoomSensitivity;
-        }
-        if (_mouse.rightButton.isPressed) {
-            RotatePieceMouse();
-        }
-        if (_keyboard.dKey.isPressed) {
-            RotatePieceZ(-1);
-        }
-        if (_keyboard.aKey.isPressed) {
-            RotatePieceZ(1);
+        if (_canRotate) {
+            if (_mouse.scroll.magnitude != 0) {
+                Camera.main.fieldOfView -= _mouse.scroll.up.value * _zoomSensitivity;
+                if (Camera.main.fieldOfView < _fovMin) {
+                    Camera.main.fieldOfView = _fovMin;
+                }
+                Camera.main.fieldOfView += _mouse.scroll.down.value * _zoomSensitivity;
+                if (Camera.main.fieldOfView > _fovMax) {
+                    Camera.main.fieldOfView = _fovMax;
+                }
+            }
+            if (_mouse.rightButton.isPressed) {
+                RotatePieceMouse();
+            }
+            if (_keyboard.dKey.isPressed) {
+                RotatePieceZ(-1);
+            }
+            if (_keyboard.aKey.isPressed) {
+                RotatePieceZ(1);
+            }
         }
     }
 
@@ -218,12 +232,14 @@ public class EditManager : MonoBehaviour {
             }
             _curTool = tool;
             _curTool.ActivateTool();
-            Deactivate();
+            Deactivate(false);
         }
     }
 
     public void Activate() {
         _active = true;
+        _canRotate = true;
+
         // If we are being activated, we shouldn't have a curTool
         _curTool = null;
 
@@ -239,8 +255,12 @@ public class EditManager : MonoBehaviour {
         }
     }
 
-    public void Deactivate() {
+    public void Deactivate(bool full) {
         _active = false;
+
+        if (full) {
+            _canRotate = false;
+        }
 
         _lookUpUI.SetActive(false);
         _lookDownUI.SetActive(false);

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+using TMPro;
 
 // Handles the process of submitting the submission
 public class Submitter : MonoBehaviour {
@@ -16,6 +16,9 @@ public class Submitter : MonoBehaviour {
 
     [SerializeField]
     GameObject _titleStuff;
+
+    [SerializeField]
+    TMP_InputField _titleField;
 
     RequirementTracker _requirementTracker;
 
@@ -61,16 +64,20 @@ public class Submitter : MonoBehaviour {
         // Drop any pieces held by the edit manager
         //EditManager.Instance.DropPiece();
         // Deactivate the edit manager
-        EditManager.Instance.Deactivate();
+        EditManager.Instance.Deactivate(false);
 
         // Ask player to select proper rotation
 
     }
 
     public void ShowTitleSubmission() {
+        // Stop rotation input of submission
+        EditManager.Instance.Deactivate(true);
+
         _submitButton.SetActive(false);
         _confirmStuff.SetActive(false);
         _titleStuff.SetActive(true);
+        _titleField.ActivateInputField();
     }
 
     public void SetTitle(string inTitle) {
@@ -81,6 +88,8 @@ public class Submitter : MonoBehaviour {
         _submitButton.SetActive(true);
         _confirmStuff.SetActive(false);
         _titleStuff.SetActive(false);
+
+        EditManager.Instance.Activate();
     }
 
     public void ConfirmSubmission() {

@@ -13,8 +13,11 @@ public class ToolsWindow : MonoBehaviour {
     void Start()
     {
         // Disable all buttons by default
-        foreach (ToolButton toolButton in _toolButtons) {
-            toolButton.DisableButton();
+        for (int i = 0; i < _toolButtons.Length; i++) {
+            _toolButtons[i].DisableButton();
+            if (GameManager.Instance.stage <= i) {
+                _toolButtons[i].gameObject.SetActive(false);
+            }
         }
 
         EditManager.OnPickedUpPiece.AddListener(OnPickedUpPiece);

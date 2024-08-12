@@ -34,6 +34,9 @@ public class SubmissionDataManager {
 
         string wood = JsonUtility.ToJson(submissionData);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/PlayerSubmissionData" + GameManager.Instance.stage + ".json", wood);
+
+        // Push to server
+
     }
 
     void PopulateSubmissionData(Submission submission) {

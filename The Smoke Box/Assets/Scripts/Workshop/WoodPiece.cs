@@ -13,7 +13,7 @@ public class WoodPiece : MonoBehaviour {
 
     public LerpTo lerp;
     Rigidbody _rigidbody;
-    Collider _collider;
+    MeshCollider _collider;
 
     float _restTimer = 0f;
 
@@ -24,7 +24,7 @@ public class WoodPiece : MonoBehaviour {
         startPos = transform.position;
         lerp = GetComponent<LerpTo>();
         _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<Collider>();
+        _collider = GetComponent<MeshCollider>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -103,9 +103,12 @@ public class WoodPiece : MonoBehaviour {
 
     void EnablePhysics() {
         if(_collider == null) {
-            _collider = GetComponent<Collider>();
+            _collider = GetComponent<MeshCollider>();
         }
         _collider.enabled = true;
+        // Since we're turning off kinematic, we also need to set the collider to convex
+        _collider.convex = true;
+
         _rigidbody.isKinematic = false;
         _rigidbody.useGravity = true;
     }
@@ -113,6 +116,9 @@ public class WoodPiece : MonoBehaviour {
     void DisablePhysics() {
         _rigidbody.isKinematic = true;
         _rigidbody.useGravity = false;
+
+        // At this point we're no longer moving and can set our collider to non-convex
+        _collider.convex = false;
     }
 
     public void GoTo(Vector3 pos) {

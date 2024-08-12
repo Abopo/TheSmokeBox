@@ -30,7 +30,7 @@ public class PaintTool : Tool {
 
         _toolUI.SetActive(true);
 
-        _editManager.Deactivate();
+        _editManager.Deactivate(false);
     }
 
     public override void DeactivateTool() {

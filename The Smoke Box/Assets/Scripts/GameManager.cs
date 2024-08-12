@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public List<ShopItemData> playerInventory = new List<ShopItemData>();
 
-    public int stage = 1; // 1, 2, or 3 depending on which stage of the contest we're in.
+    public int stage; // 1, 2, or 3 depending on which stage of the contest we're in.
 
     public static GameManager Instance;
 

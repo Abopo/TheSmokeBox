@@ -17,5 +17,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop2.unity
     guid: 9ad52eeb4e2d3944fa16820541b57d8b
+  - enabled: 1
+    path: Assets/Scenes/JudgingScene2.unity
+    guid: 279aec997d127804995838ddbcebeb66
+  - enabled: 1
+    path: Assets/Scenes/Shop3.unity
+    guid: 7bb321e794414864cbc0769ee8a107b5
+  - enabled: 1
+    path: Assets/Scenes/JudgingScene3.unity
+    guid: 4f5dfc10e3e28514f92dd31bf1381fd9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8cfdc271a819fdb4598b72edd08a4437, type: 2}

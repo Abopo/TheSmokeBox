@@ -25,8 +25,10 @@ public class JudgingManager : MonoBehaviour {
         // TODO: move to next stage and drive thru scene
         GameManager.Instance.stage += 1;
 
-        SceneManager.LoadScene("Shop" + GameManager.Instance.stage.ToString());
-
-        //Application.Quit();
+        if (GameManager.Instance.stage <= 3) {
+            SceneManager.LoadScene("Shop" + GameManager.Instance.stage.ToString());
+        } else {
+            Application.Quit();
+        }
     }
 }
