@@ -144,8 +144,8 @@ public class SawTool : Tool {
         Physics.IgnoreCollision(_rightPiece.GetComponent<Collider>(), _leftPiece.GetComponent<Collider>());
 
         // Hide the new pieces until the saw animation is finished
-        _leftPiece.gameObject.SetActive(false);
-        _rightPiece.gameObject.SetActive(false);
+        _leftPiece.GetComponent<MeshRenderer>().enabled = false;
+        _rightPiece.GetComponent<MeshRenderer>().enabled = false;
 
         // Just hide the original piece until we decide to commit to the cut
         //wPiece.gameObject.SetActive(false);
@@ -200,8 +200,8 @@ public class SawTool : Tool {
 
     public void ShowCut() {
         // Show the new pieces
-        _leftPiece.gameObject.SetActive(true);
-        _rightPiece.gameObject.SetActive(true);
+        _leftPiece.GetComponent<MeshRenderer>().enabled = true;
+        _rightPiece.GetComponent<MeshRenderer>().enabled = true;
 
         // Hide the original piece until we decide to commit to the cut
         _originalPiece.gameObject.SetActive(false);
