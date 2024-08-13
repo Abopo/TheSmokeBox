@@ -67,7 +67,7 @@ public class Announcer : MonoBehaviour {
         _dialogues.Add("Oh my! What has Franky cooked up this time for his final piece?!");
         _dialogues.Add("Deeelectable! Do the judges agree?");
         _dialogues.Add("That's gonna be hard to follow up!");
-        _dialogues.Add("What has in got in store for us today?");
+        _dialogues.Add("What has Kaden got in store for us today?");
         _dialogues.Add("I'm speechless! I hope the judges have more to say then me!");
         _dialogues.Add("This is it folks! Let's see the final results!");
     }
