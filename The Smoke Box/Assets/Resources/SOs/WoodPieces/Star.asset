@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Star
   price: 2
   mesh: {fileID: -5495902117074765545, guid: 102bbd2ee3e54384c9df123eef131036, type: 3}
+  rotation: {x: -90, y: 0, z: 0}

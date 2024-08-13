@@ -96,6 +96,13 @@ public class WoodSlot : MonoBehaviour {
         _animator.Play("WS_ChangeItem");
     }
 
+    public void SetData(ShopItemData inData) {
+        ItemName = inData.itemName;
+        Price = inData.price;
+        Mesh = inData.mesh;
+        _filter.transform.localRotation = Quaternion.Euler(inData.rotation);
+    }
+
     public void SwapModel() {
         if (_nextData != null) {
             ItemName = _nextData.itemName;

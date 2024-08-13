@@ -30,6 +30,11 @@ public class Car : MonoBehaviour {
         _lerp.LerpRotation(_waypoint.transform.rotation, lerpTime);
     }
 
+    public void GoToWaypoint(Waypoint waypoint) {
+        _waypoint = waypoint;
+        GoToWaypoint();
+    }
+
     void OnReachedWaypoint() {
         _waypoint = _waypoint.nextWaypoint;
     }

@@ -10615,7 +10615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5999908
+      value: 23.699993
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10637,13 +10637,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.200007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: drawText
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: textMesh
@@ -10651,7 +10659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: hyphenedText
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: latestNumber
@@ -10659,15 +10667,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: preParsedText
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.x
-      value: 679.36
+      value: 1876.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 287.36
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -10679,11 +10687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.x
-      value: 450.8111
+      value: 1648.2512
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -10691,11 +10699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.x
-      value: 907.9088
+      value: 2105.3489
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -10703,11 +10711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.x
-      value: 450.8111
+      value: 1648.2512
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 243.87766
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -10715,19 +10723,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.x
-      value: 679.36
+      value: 1876.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 291.98077
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
-      value: 907.9088
+      value: 2105.3489
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 243.87766
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -10735,11 +10743,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 588.27814
+      value: 1802.7202
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -10747,11 +10755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 770.44183
+      value: 1950.88
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -10759,11 +10767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 588.27814
+      value: 1802.7202
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -10771,11 +10779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 770.44183
+      value: 1950.88
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -10783,19 +10791,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.x
-      value: 679.36
+      value: 1876.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 291.98077
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 588.27814
+      value: 1802.7202
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -10803,19 +10811,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -38.4375
+      value: -31.262497
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -16.400002
+      value: -15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.050003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 20.5
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
@@ -10843,11 +10851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 770.44183
+      value: 1950.88
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -10855,15 +10863,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 44
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinY
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[10].pos.x
@@ -10871,47 +10883,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 34
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxX
-      value: 34
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -14
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
@@ -10987,15 +11003,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 76.875
+      value: 62.525
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 588.27814
+      value: 1802.7202
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -11003,11 +11019,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 770.44183
+      value: 1950.88
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -11015,7 +11031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 77.3875
+      value: 63.550003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
@@ -11180,6 +11196,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.200007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
       value: Undo
@@ -11210,7 +11234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 206.40004
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -11226,7 +11250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -11238,7 +11262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -11250,7 +11274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 162.9177
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -11262,7 +11286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 211.0208
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
@@ -11270,7 +11294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 162.9177
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -11278,11 +11302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 1187.0964
+      value: 1203.4912
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -11290,11 +11314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 1372.9036
+      value: 1356.5088
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -11302,11 +11326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 1187.0964
+      value: 1203.4912
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -11314,11 +11338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 1372.9036
+      value: 1356.5088
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -11330,15 +11354,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 211.0208
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 1187.0964
+      value: 1203.4912
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -11346,19 +11370,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -39.20625
+      value: -32.287506
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -15.631248
+      value: -16.40001
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.8187485
+      value: 1.5374908
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 21.268753
+      value: 18.449997
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
@@ -11386,11 +11410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 1372.9036
+      value: 1356.5088
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -11398,11 +11422,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 43
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 4
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMinY
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[10].pos.x
@@ -11410,47 +11442,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
-      propertyPath: info.Array.data[1].chMinX
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
-      propertyPath: info.Array.data[1].chMinY
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
-      propertyPath: info.Array.data[2].chMaxX
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMinX
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMinY
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[2].chMaxX
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 47
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
@@ -11526,15 +11562,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 78.4125
+      value: 64.575005
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 1187.0964
+      value: 1203.4912
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -11542,11 +11578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 1372.9036
+      value: 1356.5088
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -11554,7 +11590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 78.924995
+      value: 66.1125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
@@ -11719,6 +11755,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.200007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
       value: Keep
@@ -11749,7 +11793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 206.40004
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -11765,7 +11809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -11777,7 +11821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -11789,7 +11833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 162.9177
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -11801,7 +11845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 211.0208
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
@@ -11809,7 +11853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 162.9177
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -11817,11 +11861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 1785.7181
+      value: 1799.0769
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -11829,11 +11873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 1967.8818
+      value: 1954.5232
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -11841,11 +11885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 1785.7181
+      value: 1799.0769
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -11853,11 +11897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 1967.8818
+      value: 1954.5232
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -11869,15 +11913,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 211.0208
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 1785.7181
+      value: 1799.0769
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -11885,19 +11929,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -38.4375
+      value: -32.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -16.400002
+      value: -14.862503
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.050003
+      value: 1.0250015
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 20.5
+      value: 16.912506
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
@@ -11925,11 +11969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 1967.8818
+      value: 1954.5232
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -11937,11 +11981,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 44
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinY
@@ -11953,47 +12001,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 34
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxX
-      value: 34
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -14
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
@@ -12069,15 +12121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 76.875
+      value: 65.6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 1785.7181
+      value: 1799.0769
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -12085,11 +12137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 1967.8818
+      value: 1954.5232
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -12097,7 +12149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 77.3875
+      value: 66.625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
@@ -12262,6 +12314,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.200007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
       value: Keep
@@ -12292,7 +12352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 206.40004
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -12308,7 +12368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -12320,7 +12380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -12332,7 +12392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 162.9177
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -12344,7 +12404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 211.0208
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
@@ -12352,7 +12412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 162.9177
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -12360,11 +12420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 588.27814
+      value: 601.6368
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -12372,11 +12432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 770.44183
+      value: 757.0832
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -12384,11 +12444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 588.27814
+      value: 601.6368
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -12396,11 +12456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 770.44183
+      value: 757.0832
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -12412,15 +12472,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 211.0208
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 588.27814
+      value: 601.6368
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -12428,19 +12488,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -38.4375
+      value: -32.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -16.400002
+      value: -14.862503
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.050003
+      value: 1.0250015
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 20.5
+      value: 16.912506
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
@@ -12468,11 +12528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 770.44183
+      value: 757.0832
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 249.88239
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -12480,11 +12540,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 44
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinY
@@ -12496,47 +12560,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 34
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxX
-      value: 34
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -14
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
@@ -12612,15 +12680,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 76.875
+      value: 65.6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 588.27814
+      value: 601.6368
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -12628,11 +12696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 770.44183
+      value: 757.0832
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 172.15921
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -12640,7 +12708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 77.3875
+      value: 66.625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
@@ -12783,7 +12851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5999908
+      value: -28.6
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12805,13 +12873,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.200007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: drawText
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: textMesh
@@ -12819,15 +12895,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: hyphenedText
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: latestNumber
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: preParsedText
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.x
@@ -12835,7 +12911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -12843,7 +12919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.x
@@ -12851,7 +12927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -12863,7 +12939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -12875,7 +12951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 76.51767
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -12887,7 +12963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 124.62073
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
@@ -12895,7 +12971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 76.51767
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -12903,11 +12979,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 588.27814
+      value: 574.91943
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -12915,11 +12991,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 770.44183
+      value: 783.80054
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -12927,11 +13003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 588.27814
+      value: 574.91943
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -12939,11 +13015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 770.44183
+      value: 783.80054
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -12955,15 +13031,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 124.62073
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 588.27814
+      value: 574.91943
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -12971,27 +13047,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -38.4375
+      value: -44.075
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -16.400002
+      value: -28.1875
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.050003
+      value: -12.300003
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 20.5
+      value: -1.5375061
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
-      value: -23.574997
+      value: 14.349998
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].pos.x
-      value: -14.349998
+      value: 29.725006
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[6].pos.x
@@ -13011,11 +13087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 770.44183
+      value: 783.80054
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -13023,15 +13099,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 44
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinY
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[10].pos.x
@@ -13039,55 +13119,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 34
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxX
-      value: 34
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 35
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -14
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
-      value: 1
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxY
-      value: 1
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMinX
@@ -13095,23 +13179,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMinY
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMaxX
-      value: 41
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMaxY
-      value: 47
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMinY
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[6].chMaxX
@@ -13155,15 +13239,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 76.875
+      value: 88.15
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 588.27814
+      value: 574.91943
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -13171,11 +13255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 770.44183
+      value: 783.80054
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -13183,7 +13267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 77.3875
+      value: 89.6875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
@@ -13326,7 +13410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5999908
+      value: -28.599998
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13348,13 +13432,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: drawText
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: textMesh
@@ -13362,23 +13454,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: hyphenedText
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: latestNumber
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: preParsedText
-      value: Keep
+      value: Delete
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.x
-      value: 679.36
+      value: 1876.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -13386,15 +13478,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.x
-      value: 450.8111
+      value: 1648.2512
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -13402,11 +13494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.x
-      value: 907.9088
+      value: 2105.3489
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -13414,11 +13506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.x
-      value: 450.8111
+      value: 1648.2512
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 76.51767
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -13426,19 +13518,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.x
-      value: 679.36
+      value: 1876.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 124.62073
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
-      value: 907.9088
+      value: 2105.3489
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 76.51767
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -13446,11 +13538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 588.27814
+      value: 1772.3595
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -13458,11 +13550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 770.44183
+      value: 1981.2406
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -13470,11 +13562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 588.27814
+      value: 1772.3595
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -13482,11 +13574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 770.44183
+      value: 1981.2406
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -13494,19 +13586,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.x
-      value: 679.36
+      value: 1876.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 124.62073
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 588.27814
+      value: 1772.3595
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -13514,27 +13606,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -38.4375
+      value: -44.075
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -16.400002
+      value: -28.1875
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.050003
+      value: -12.300003
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 20.5
+      value: -1.5375061
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
-      value: -23.574997
+      value: 14.349998
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].pos.x
-      value: -14.349998
+      value: 29.725006
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[6].pos.x
@@ -13554,11 +13646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 770.44183
+      value: 1981.2406
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 163.48233
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -13566,15 +13658,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 44
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinY
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[10].pos.x
@@ -13582,55 +13678,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 34
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxX
-      value: 34
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 35
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -14
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
-      value: 1
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxY
-      value: 1
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMinX
@@ -13638,23 +13738,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMinY
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMaxX
-      value: 41
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMaxY
-      value: 47
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[5].chMinY
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[6].chMaxX
@@ -13698,15 +13798,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 76.875
+      value: 88.15
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 588.27814
+      value: 1772.3595
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -13714,11 +13814,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 770.44183
+      value: 1981.2406
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 85.759125
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -13726,7 +13826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 77.3875
+      value: 89.6875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
@@ -13869,7 +13969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5999908
+      value: 23.699997
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694602, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13891,13 +13991,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.200007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfd31da902d88ca4fa6aa468009ab2d2, type: 3}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: _text
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: drawText
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: textMesh
@@ -13905,7 +14013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: hyphenedText
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: latestNumber
@@ -13913,7 +14021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: preParsedText
-      value: Keep
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.x
@@ -13921,7 +14029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.y
-      value: 213.44003
+      value: 287.36
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerBounds.z
@@ -13937,7 +14045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftBounds.z
@@ -13949,7 +14057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightBounds.z
@@ -13961,7 +14069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 169.95767
+      value: 243.87766
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftBounds.z
@@ -13973,7 +14081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: centerTextBounds.y
-      value: 218.06079
+      value: 291.98077
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.x
@@ -13981,7 +14089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.y
-      value: 169.95767
+      value: 243.87766
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightBounds.z
@@ -13989,11 +14097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 588.27814
+      value: 605.2801
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topLeftTextBounds.z
@@ -14001,11 +14109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.x
-      value: 770.44183
+      value: 753.43994
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: topRightTextBounds.z
@@ -14013,11 +14121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 588.27814
+      value: 605.2801
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomLeftTextBounds.z
@@ -14025,11 +14133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 770.44183
+      value: 753.43994
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: bottomRightTextBounds.z
@@ -14041,15 +14149,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 218.06079
+      value: 291.98077
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 588.27814
+      value: 605.2801
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopLeftTextBounds.z
@@ -14057,19 +14165,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].pos.x
-      value: -38.4375
+      value: -31.262497
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].pos.x
-      value: -16.400002
+      value: -15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].pos.x
-      value: 2.050003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].pos.x
-      value: 20.5
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].pos.x
@@ -14097,11 +14205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 770.44183
+      value: 753.43994
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 256.9224
+      value: 330.84235
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalTopRightTextBounds.z
@@ -14109,15 +14217,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMaxX
-      value: 44
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[0].chMaxY
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[0].chMinY
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[10].pos.x
@@ -14125,47 +14237,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMaxX
-      value: 34
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
+      propertyPath: info.Array.data[1].chMaxY
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[1].chMinY
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxX
-      value: 34
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMaxY
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinX
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[2].chMinY
-      value: -2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxX
-      value: 35
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMaxY
-      value: 35
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinX
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[3].chMinY
-      value: -14
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: info.Array.data[4].chMaxX
@@ -14241,15 +14357,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: rawBottomRightTextBounds.x
-      value: 76.875
+      value: 62.525
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 588.27814
+      value: 605.2801
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomLeftTextBounds.z
@@ -14257,11 +14373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 770.44183
+      value: 753.43994
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 179.19919
+      value: 253.11917
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: finalBottomRightTextBounds.z
@@ -14269,7 +14385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051715986167387632, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: unwrappedBottomRightTextBounds.x
-      value: 77.3875
+      value: 63.550003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}

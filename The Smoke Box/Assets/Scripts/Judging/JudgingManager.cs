@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class JudgingManager : MonoBehaviour {
 
@@ -16,19 +17,26 @@ public class JudgingManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        // Debugging TODO: remove
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
+            ForceEnd();
+        }
     }
 
     public void EndJudgingScene() {
         // TODO: move to next stage and drive thru scene
-        GameManager.Instance.stage += 1;
+        GameManager.Instance.IncreaseStage();
 
         if (GameManager.Instance.stage <= 3) {
-            SceneManager.LoadScene("Shop" + GameManager.Instance.stage.ToString());
+            GameManager.Instance.LoadScene("Shop" + GameManager.Instance.stage.ToString());
         } else {
             Application.Quit();
         }
+    }
+
+    void ForceEnd() {
+        // Skip to the last frame of the timeline
+        _director.time = _director.duration;
     }
 }

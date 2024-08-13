@@ -1,7 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.InputSystem;
 
 public class DriveThruManager : MonoBehaviour {
 
@@ -30,6 +31,9 @@ public class DriveThruManager : MonoBehaviour {
     int _carMoveRatio = 0;
     [SerializeField]
     CarCam _carCam;
+
+    [SerializeField]
+    Waypoint _finalWaypoint; // For debugging
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +64,11 @@ public class DriveThruManager : MonoBehaviour {
             if (_nextLineTimer >= _nextLineTime) {
                 ShowNextDialogue();
             }
+        }
+
+        // Debugging TODO: remove
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
+            StartCoroutine(ForceEnd());
         }
     }
 
@@ -119,5 +128,13 @@ public class DriveThruManager : MonoBehaviour {
         _dialogueCanvas.SetActive(false);
         // Turn the camera to face the shop window
         _carCam.GoToShopView();
+    }
+
+    IEnumerator ForceEnd() {
+        _car.GoToWaypoint(_finalWaypoint);
+
+        yield return new WaitForSeconds(2);
+
+        EndScene();
     }
 }

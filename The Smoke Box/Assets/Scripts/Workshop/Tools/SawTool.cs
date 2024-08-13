@@ -132,9 +132,9 @@ public class SawTool : Tool {
 
         // Update colliders
         _rightPiece.GetComponent<MeshCollider>().sharedMesh = null;
-        _rightPiece.GetComponent<MeshCollider>().sharedMesh = _rightPiece.GetComponent<MeshFilter>().mesh;
+        _rightPiece.GetComponent<MeshCollider>().sharedMesh = _rightPiece.GetComponent<MeshFilter>().sharedMesh;
         _leftPiece.GetComponent<MeshCollider>().sharedMesh = null;
-        _leftPiece.GetComponent<MeshCollider>().sharedMesh = _leftPiece.GetComponent<MeshFilter>().mesh;
+        _leftPiece.GetComponent<MeshCollider>().sharedMesh = _leftPiece.GetComponent<MeshFilter>().sharedMesh;
 
         // Move the mesh pivot point to the center of the object
         StartCoroutine(AdjustMeshPivotPoints(_rightPiece.gameObject));
@@ -166,7 +166,7 @@ public class SawTool : Tool {
 
         MeshCollider meshCollider = piece.GetComponent<MeshCollider>();
         Bounds meshBounds = meshCollider.bounds;
-        Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
+        Mesh mesh = piece.GetComponent<MeshFilter>().sharedMesh;
         //Determine the offset
         Vector3 offset = piece.transform.position - meshBounds.center;
 
@@ -182,9 +182,15 @@ public class SawTool : Tool {
 
         yield return null;
 
+        // Assign the updated mesh back
+        piece.GetComponent<MeshFilter>().sharedMesh = null;
+        piece.GetComponent<MeshFilter>().sharedMesh = mesh;
+
         // Update the mesh collider
         meshCollider.sharedMesh = null;
+        yield return null;
         meshCollider.sharedMesh = mesh;
+        yield return null;
 
         // Reapply rotation
         piece.transform.rotation = curRotation;

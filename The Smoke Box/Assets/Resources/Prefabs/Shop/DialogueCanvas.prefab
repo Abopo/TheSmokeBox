@@ -101,7 +101,7 @@ RectTransform:
   m_GameObject: {fileID: 2319620555973451436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31938, y: 0.31938, z: 0.31938}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2319620557190751308}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -389,14 +389,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 1
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 56
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -395.59674, y: 13.7221985, z: 0}
+  - pos: {x: -395.55777, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -433,14 +433,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -379.59674, y: 13.7221985, z: 0}
+  - pos: {x: -379.34998, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -477,14 +477,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
-    chMinY: -7
-    chMaxY: 17
-    chSize: 32
+    chMinX: 1
+    chMaxX: 36
+    chMinY: -14
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -364.59674, y: 13.7221985, z: 0}
+  - pos: {x: -363.97336, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -521,14 +521,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 9
-    chMinY: -6
-    chMaxY: 5
-    chSize: 32
+    chMinX: 0
+    chMaxX: 20
+    chMinY: -12
+    chMaxY: 10
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -355.59674, y: 13.7221985, z: 0}
+  - pos: {x: -355.2461, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -569,10 +569,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -347.59674, y: 13.7221985, z: 0}
+  - pos: {x: -347.34998, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -609,14 +609,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 12
+    chMinX: 0
+    chMaxX: 27
     chMinY: -1
-    chMaxY: 21
-    chSize: 32
+    chMaxY: 49
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -335.59674, y: 13.7221985, z: 0}
+  - pos: {x: -335.71362, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -653,14 +653,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -319.59674, y: 13.7221985, z: 0}
+  - pos: {x: -319.92142, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -697,14 +697,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 7
+    chMinX: 0
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 23
-    chSize: 32
+    chMaxY: 52
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -312.59674, y: 13.7221985, z: 0}
+  - pos: {x: -313.27206, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -741,14 +741,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -296.59674, y: 13.7221985, z: 0}
+  - pos: {x: -297.47986, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -789,10 +789,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -288.59674, y: 13.7221985, z: 0}
+  - pos: {x: -289.58374, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -829,14 +829,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 7
+    chMinX: 0
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 23
-    chSize: 32
+    chMaxY: 52
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -281.59674, y: 13.7221985, z: 0}
+  - pos: {x: -282.9344, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -873,14 +873,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -265.59674, y: 13.7221985, z: 0}
+  - pos: {x: -267.1422, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -921,10 +921,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -257.59674, y: 13.7221985, z: 0}
+  - pos: {x: -259.2461, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -961,14 +961,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 1
+    chMaxX: 36
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -241.59674, y: 13.7221985, z: 0}
+  - pos: {x: -243.45389, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1009,10 +1009,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -233.59674, y: 13.7221985, z: 0}
+  - pos: {x: -235.55779, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1049,14 +1049,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 6
+    chMinX: 2
+    chMaxX: 13
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -227.59674, y: 13.7221985, z: 0}
+  - pos: {x: -229.73961, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1093,14 +1093,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 7
+    chMinX: 0
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 23
-    chSize: 32
+    chMaxY: 52
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -220.59674, y: 13.7221985, z: 0}
+  - pos: {x: -223.09026, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1137,14 +1137,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 36
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -205.59674, y: 13.7221985, z: 0}
+  - pos: {x: -207.71364, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1181,14 +1181,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -189.59674, y: 13.7221985, z: 0}
+  - pos: {x: -191.50584, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1229,10 +1229,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -181.59674, y: 13.7221985, z: 0}
+  - pos: {x: -183.60974, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1269,14 +1269,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 18
+    chMinX: 0
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -164.59674, y: 13.7221985, z: 0}
+  - pos: {x: -166.57079, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1313,14 +1313,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 15
-    chMinY: -8
-    chMaxY: 17
-    chSize: 32
+    chMinX: 0
+    chMaxX: 33
+    chMinY: -18
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -150.59674, y: 13.7221985, z: 0}
+  - pos: {x: -152.44092, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1361,10 +1361,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -142.59674, y: 13.7221985, z: 0}
+  - pos: {x: -144.5448, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1401,14 +1401,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 18
+    chMinX: 2
+    chMaxX: 42
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -124.59674, y: 13.7221985, z: 0}
+  - pos: {x: -126.259094, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1445,14 +1445,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 7
+    chMinX: 0
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 23
-    chSize: 32
+    chMaxY: 52
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -117.59674, y: 13.7221985, z: 0}
+  - pos: {x: -119.60974, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1489,14 +1489,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 1
+    chMaxX: 36
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -101.59674, y: 13.7221985, z: 0}
+  - pos: {x: -103.817535, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1533,14 +1533,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 6
+    chMinX: 2
+    chMaxX: 13
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -95.59674, y: 13.7221985, z: 0}
+  - pos: {x: -97.99936, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1577,14 +1577,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 18
+    chMinX: 0
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -78.59674, y: 13.7221985, z: 0}
+  - pos: {x: -80.96039, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1621,14 +1621,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 19
-    chMinY: -9
-    chMaxY: 17
-    chSize: 32
+    chMinX: 1
+    chMaxX: 44
+    chMinY: -20
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -59.59674, y: 13.7221985, z: 0}
+  - pos: {x: -62.259094, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1665,14 +1665,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 15
-    chMinY: -2
-    chMaxY: 17
-    chSize: 32
+    chMinX: 0
+    chMaxX: 33
+    chMinY: -3
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -45.59674, y: 13.7221985, z: 0}
+  - pos: {x: -48.12921, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1709,14 +1709,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -29.59674, y: 13.7221985, z: 0}
+  - pos: {x: -31.921417, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1753,14 +1753,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 2
-    chMaxX: 7
+    chMinX: 7
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 6
-    chSize: 32
+    chMaxY: 12
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -20.59674, y: 13.7221985, z: 0}
+  - pos: {x: -23.194153, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1801,10 +1801,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -12.596741, y: 13.7221985, z: 0}
+  - pos: {x: -15.298035, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1841,14 +1841,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 23
+    chMinX: 0
+    chMaxX: 52
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 56
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 9.403259, y: 13.7221985, z: 0}
+  - pos: {x: 6.727936, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1885,14 +1885,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 25.40326, y: 13.7221985, z: 0}
+  - pos: {x: 22.520142, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1929,14 +1929,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 41.40326, y: 13.7221985, z: 0}
+  - pos: {x: 38.727936, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1973,14 +1973,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
-    chMinY: -7
-    chMaxY: 17
-    chSize: 32
+    chMinX: 1
+    chMaxX: 36
+    chMinY: -14
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 56.40326, y: 13.7221985, z: 0}
+  - pos: {x: 54.104553, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2021,10 +2021,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 64.40326, y: 13.7221985, z: 0}
+  - pos: {x: 62.00067, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2061,14 +2061,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 80.40326, y: 13.7221985, z: 0}
+  - pos: {x: 77.79288, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2105,14 +2105,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 96.40326, y: 13.7221985, z: 0}
+  - pos: {x: 93.58508, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2149,14 +2149,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 18
+    chMinX: 0
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 113.40326, y: 13.7221985, z: 0}
+  - pos: {x: 110.62402, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2193,14 +2193,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 15
-    chMinY: -2
-    chMaxY: 17
-    chSize: 32
+    chMinX: 0
+    chMaxX: 33
+    chMinY: -3
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 127.40326, y: 13.7221985, z: 0}
+  - pos: {x: 124.75391, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2237,14 +2237,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 6
+    chMinX: 2
+    chMaxX: 13
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 133.40326, y: 13.7221985, z: 0}
+  - pos: {x: 130.57208, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2281,14 +2281,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 18
+    chMinX: 2
+    chMaxX: 42
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 151.40326, y: 13.7221985, z: 0}
+  - pos: {x: 148.85779, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2329,10 +2329,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 159.40326, y: 13.7221985, z: 0}
+  - pos: {x: 156.7539, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2369,14 +2369,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 1
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 176.40326, y: 13.7221985, z: 0}
+  - pos: {x: 173.79285, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2413,14 +2413,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 192.40326, y: 13.7221985, z: 0}
+  - pos: {x: 190.00061, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2461,10 +2461,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 200.40326, y: 13.7221985, z: 0}
+  - pos: {x: 197.89673, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2501,14 +2501,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 14
-    chMinY: -8
-    chMaxY: 17
-    chSize: 32
+    chMinX: 0
+    chMaxX: 33
+    chMinY: -16
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 214.40326, y: 13.7221985, z: 0}
+  - pos: {x: 211.61102, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2545,14 +2545,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 13
+    chMinX: 0
+    chMaxX: 30
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 227.40326, y: 13.7221985, z: 0}
+  - pos: {x: 224.49414, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2589,14 +2589,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 243.40326, y: 13.7221985, z: 0}
+  - pos: {x: 240.7019, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2633,14 +2633,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 12
+    chMinX: 0
+    chMaxX: 27
     chMinY: -1
-    chMaxY: 21
-    chSize: 32
+    chMaxY: 49
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 255.40326, y: 13.7221985, z: 0}
+  - pos: {x: 252.33826, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2677,14 +2677,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 12
+    chMinX: 0
+    chMaxX: 27
     chMinY: -1
-    chMaxY: 21
-    chSize: 32
+    chMaxY: 49
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 267.40326, y: 13.7221985, z: 0}
+  - pos: {x: 263.9746, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2721,14 +2721,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
-    chMinY: -7
-    chMaxY: 17
-    chSize: 32
+    chMinX: 1
+    chMaxX: 36
+    chMinY: -14
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 282.40326, y: 13.7221985, z: 0}
+  - pos: {x: 279.35126, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2769,10 +2769,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 290.40326, y: 13.7221985, z: 0}
+  - pos: {x: 287.24738, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2809,14 +2809,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 306.40326, y: 13.7221985, z: 0}
+  - pos: {x: 303.0396, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2853,14 +2853,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 322.40326, y: 13.7221985, z: 0}
+  - pos: {x: 318.83185, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2897,14 +2897,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 18
+    chMinX: 0
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 339.40326, y: 13.7221985, z: 0}
+  - pos: {x: 335.8708, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2941,14 +2941,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 13
+    chMinX: 0
+    chMaxX: 30
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 352.40326, y: 13.7221985, z: 0}
+  - pos: {x: 348.7539, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -2985,14 +2985,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 12
+    chMinX: 0
+    chMaxX: 27
     chMinY: -1
-    chMaxY: 21
-    chSize: 32
+    chMaxY: 49
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 364.40326, y: 13.7221985, z: 0}
+  - pos: {x: 360.39026, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3029,14 +3029,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 2
-    chMaxX: 7
+    chMinX: 7
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 6
-    chSize: 32
+    chMaxY: 12
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: 373.40326, y: 13.7221985, z: 0}
+  - pos: {x: 369.11755, y: 13.7221985, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3077,7 +3077,7 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
   - pos: {x: -412.59674, y: -18.277802, z: 0}
@@ -3117,14 +3117,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 19
-    chMinY: -4
-    chMaxY: 24
-    chSize: 32
+    chMinX: 1
+    chMaxX: 45
+    chMinY: -7
+    chMaxY: 56
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -393.59674, y: -18.277802, z: 0}
+  - pos: {x: -393.47986, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3161,14 +3161,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 1
+    chMaxX: 36
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -377.59674, y: -18.277802, z: 0}
+  - pos: {x: -377.68765, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3205,14 +3205,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -2
-    chMaxX: 14
-    chMinY: -3
-    chMaxY: 18
-    chSize: 32
+    chMinX: -3
+    chMaxX: 31
+    chMinY: -6
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -364.59674, y: -18.277802, z: 0}
+  - pos: {x: -364.38895, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3253,10 +3253,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -356.59674, y: -18.277802, z: 0}
+  - pos: {x: -356.49286, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3293,14 +3293,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 18
+    chMinX: 0
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -339.59674, y: -18.277802, z: 0}
+  - pos: {x: -339.4539, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3337,14 +3337,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 15
-    chMinY: -8
-    chMaxY: 17
-    chSize: 32
+    chMinX: 0
+    chMaxX: 33
+    chMinY: -18
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -325.59674, y: -18.277802, z: 0}
+  - pos: {x: -325.32404, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3385,10 +3385,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -317.59674, y: -18.277802, z: 0}
+  - pos: {x: -317.42792, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3426,13 +3426,13 @@ MonoBehaviour:
     IdxIdentifier: 0
     InfoInUse: 0
     chMinX: -1
-    chMaxX: 17
+    chMaxX: 39
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -300.59674, y: -18.277802, z: 0}
+  - pos: {x: -299.9734, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3473,10 +3473,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -292.59674, y: -18.277802, z: 0}
+  - pos: {x: -292.07727, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3513,14 +3513,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 6
+    chMinX: 2
+    chMaxX: 13
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -286.59674, y: -18.277802, z: 0}
+  - pos: {x: -286.2591, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3557,14 +3557,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 7
+    chMinX: 0
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 23
-    chSize: 32
+    chMaxY: 52
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -279.59674, y: -18.277802, z: 0}
+  - pos: {x: -279.60974, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3601,14 +3601,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 36
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -264.59674, y: -18.277802, z: 0}
+  - pos: {x: -264.23312, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3645,14 +3645,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -248.59674, y: -18.277802, z: 0}
+  - pos: {x: -248.02533, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3689,14 +3689,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -232.59674, y: -18.277802, z: 0}
+  - pos: {x: -232.23312, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3737,10 +3737,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -224.59674, y: -18.277802, z: 0}
+  - pos: {x: -224.33702, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3777,14 +3777,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 22
+    chMinX: 0
+    chMaxX: 50
     chMinY: -1
-    chMaxY: 18
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -203.59674, y: -18.277802, z: 0}
+  - pos: {x: -203.14221, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3821,14 +3821,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 18
+    chMinX: 0
+    chMaxX: 40
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 39
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -186.59674, y: -18.277802, z: 0}
+  - pos: {x: -186.10326, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3865,14 +3865,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
+    chMinX: 0
+    chMaxX: 37
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -170.59674, y: -18.277802, z: 0}
+  - pos: {x: -170.31105, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3909,14 +3909,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 12
+    chMinX: 0
+    chMaxX: 27
     chMinY: -1
-    chMaxY: 21
-    chSize: 32
+    chMaxY: 49
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -158.59674, y: -18.277802, z: 0}
+  - pos: {x: -158.67468, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3957,10 +3957,10 @@ MonoBehaviour:
     chMaxX: 1
     chMinY: -1
     chMaxY: 1
-    chSize: 32
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -150.59674, y: -18.277802, z: 0}
+  - pos: {x: -150.77856, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -3997,14 +3997,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 6
+    chMinX: 2
+    chMaxX: 13
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -144.59674, y: -18.277802, z: 0}
+  - pos: {x: -144.96039, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -4041,14 +4041,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 7
+    chMinX: 0
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 23
-    chSize: 32
+    chMaxY: 52
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -137.59674, y: -18.277802, z: 0}
+  - pos: {x: -138.31104, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -4085,14 +4085,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 15
+    chMinX: 1
+    chMaxX: 33
     chMinY: -1
-    chMaxY: 22
-    chSize: 32
+    chMaxY: 51
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -123.59674, y: -18.277802, z: 0}
+  - pos: {x: -124.18115, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -4129,14 +4129,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 17
+    chMinX: 0
+    chMaxX: 38
     chMinY: -1
-    chMaxY: 17
-    chSize: 32
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -107.59674, y: -18.277802, z: 0}
+  - pos: {x: -107.97336, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -4173,14 +4173,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 6
+    chMinX: 2
+    chMaxX: 13
     chMinY: -1
-    chMaxY: 24
-    chSize: 32
+    chMaxY: 55
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -101.59674, y: -18.277802, z: 0}
+  - pos: {x: -102.15518, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -4217,14 +4217,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 16
-    chMinY: -7
-    chMaxY: 17
-    chSize: 32
+    chMinX: 1
+    chMaxX: 36
+    chMinY: -14
+    chMaxY: 40
+    chSize: 77
     submeshChange: 0
     invoked: 1
-  - pos: {x: -86.59674, y: -18.277802, z: 0}
+  - pos: {x: -86.778564, y: -18.277802, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -4261,11 +4261,11 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 2
-    chMaxX: 7
+    chMinX: 7
+    chMaxX: 15
     chMinY: -1
-    chMaxY: 6
-    chSize: 32
+    chMaxY: 12
+    chSize: 77
     submeshChange: 0
     invoked: 1
   lineHeights:
@@ -4309,7 +4309,7 @@ MonoBehaviour:
   size: 32
   minSize: 0
   bestFitMulti: 1
-  quality: 32
+  quality: 77
   filterMode: 1
   maskMode: 0
   style: 0
@@ -4332,23 +4332,23 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   rawTopLeftBounds: {x: 412.59674, y: -45.7222, z: 0}
   rawBottomRightBounds: {x: -412.59674, y: 45.7222, z: 0}
-  rawBottomRightTextBounds: {x: 784, y: -64, z: 0}
-  topLeftBounds: {x: 155.64014, y: 1331.529, z: 0}
-  topRightBounds: {x: 2403.137, y: 1331.529, z: 0}
-  bottomLeftBounds: {x: 155.64014, y: 1082.471, z: 0}
-  bottomRightBounds: {x: 2403.137, y: 1082.471, z: 0}
-  centerBounds: {x: 1279.3885, y: 1207, z: 0}
-  topLeftTextBounds: {x: 155.64014, y: 1331.529, z: 0}
-  topRightTextBounds: {x: 2290.9424, y: 1331.529, z: 0}
-  bottomLeftTextBounds: {x: 155.64014, y: 1157.2185, z: 0}
-  bottomRightTextBounds: {x: 2290.9424, y: 1157.2185, z: 0}
-  centerTextBounds: {x: 1223.2913, y: 1244.3738, z: 0}
-  finalTopLeftTextBounds: {x: 155.64014, y: 1331.529, z: 0}
-  finalTopRightTextBounds: {x: 2290.9424, y: 1331.529, z: 0}
-  finalBottomLeftTextBounds: {x: 155.64014, y: 1157.2185, z: 0}
-  finalBottomRightTextBounds: {x: 2290.9424, y: 1157.2185, z: 0}
-  finalCenterTextBounds: {x: 1223.2913, y: 1244.3738, z: 0}
-  unwrappedBottomRightTextBounds: {x: 1129, y: -32, z: 0}
+  rawBottomRightTextBounds: {x: 779.22076, y: -64, z: 0}
+  topLeftBounds: {x: 98.164734, y: 1008.74426, z: 0}
+  topRightBounds: {x: 1820.898, y: 1008.74426, z: 0}
+  bottomLeftBounds: {x: 98.164734, y: 817.8384, z: 0}
+  bottomRightBounds: {x: 1820.898, y: 817.8384, z: 0}
+  centerBounds: {x: 959.5314, y: 913.2913, z: 0}
+  topLeftTextBounds: {x: 98.164734, y: 1008.74426, z: 0}
+  topRightTextBounds: {x: 1724.9219, y: 1008.74426, z: 0}
+  bottomLeftTextBounds: {x: 98.164734, y: 875.1333, z: 0}
+  bottomRightTextBounds: {x: 1724.9219, y: 875.1333, z: 0}
+  centerTextBounds: {x: 911.54333, y: 941.9388, z: 0}
+  finalTopLeftTextBounds: {x: 98.164734, y: 1008.74426, z: 0}
+  finalTopRightTextBounds: {x: 1724.9219, y: 1008.74426, z: 0}
+  finalBottomLeftTextBounds: {x: 98.164734, y: 875.1333, z: 0}
+  finalBottomRightTextBounds: {x: 1724.9219, y: 875.1333, z: 0}
+  finalCenterTextBounds: {x: 911.54333, y: 941.9388, z: 0}
+  unwrappedBottomRightTextBounds: {x: 1124.156, y: -32, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []

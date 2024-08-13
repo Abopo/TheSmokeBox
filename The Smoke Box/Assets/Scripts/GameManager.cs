@@ -33,4 +33,14 @@ public class GameManager : MonoBehaviour {
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void IncreaseStage() {
+        stage += 1;
+        if(stage > 3) {
+            stage = 3;
+        }
+
+        // Since we're moving to another stage, clear our inventory
+        playerInventory.Clear();
+    }
 }

@@ -27,9 +27,10 @@ public class WoodShop : MonoBehaviour {
     void FillSlotsWithInventory() {
         for (int i = 0; i < _slots.Length; i++) {
             if(i < _inventory.inventory.Length) {
-                _slots[i].ItemName = _inventory.inventory[i].itemName;
-                _slots[i].Price = _inventory.inventory[i].price;
-                _slots[i].Mesh = _inventory.inventory[i].mesh;
+                _slots[i].SetData(_inventory.inventory[i]);
+                //_slots[i].ItemName = _inventory.inventory[i].itemName;
+                //_slots[i].Price = _inventory.inventory[i].price;
+                //_slots[i].Mesh = _inventory.inventory[i].mesh;
 
                 _slots[i].EnableSlot();
             } else {

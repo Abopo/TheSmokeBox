@@ -8,5 +8,6 @@ public class ShopItemData : ScriptableObject {
     public string itemName;
     public int price;
     public Mesh mesh;
+    public Vector3 rotation;
 
 }

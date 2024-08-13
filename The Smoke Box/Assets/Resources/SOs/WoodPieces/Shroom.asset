@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd23c650a2fa528499746b4e53e72430, type: 3}
-  m_Name: Cone
+  m_Name: Shroom
   m_EditorClassIdentifier: 
-  itemName: Cone
-  price: 2
-  mesh: {fileID: 3613567641014311022, guid: 6cf67ad87d3ea334498c9d190deed461, type: 3}
-  rotation: {x: -90, y: 0, z: 0}
+  itemName: Rupee
+  price: 3
+  mesh: {fileID: 2534964839176971238, guid: cba7b175ca073e948b26c617906f4879, type: 3}
+  rotation: {x: 0, y: 0, z: 0}

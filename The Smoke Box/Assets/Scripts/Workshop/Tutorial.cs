@@ -11,6 +11,8 @@ public class Tutorial : MonoBehaviour {
     [SerializeField]
     GameObject _rotateTut;
 
+    bool _done;
+
     // Start is called before the first frame update
     void Start() {
         if (GameManager.Instance.stage == 1) {
@@ -26,7 +28,9 @@ public class Tutorial : MonoBehaviour {
     }
 
     void OnPickUpPiece() {
-        StartCoroutine(ShowRotateTut());
+        if (!_done) {
+            StartCoroutine(ShowRotateTut());
+        }
     }
 
     IEnumerator ShowRotateTut() {
@@ -43,6 +47,7 @@ public class Tutorial : MonoBehaviour {
         if (_rotateTut.activeSelf) {
             if (Mouse.current.rightButton.wasPressedThisFrame) {
                 _rotateTut.SetActive(false);
+                _done = true;
             }
         }
     }
