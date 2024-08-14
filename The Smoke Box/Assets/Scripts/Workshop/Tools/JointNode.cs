@@ -63,26 +63,13 @@ public class JointNode : MonoBehaviour {
             curPiece = _raycastHit.collider.GetComponent<WoodPiece>();
         }
 
-        // Cast a ray from the mouse to the wood piece
-        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out RaycastHit hitInfo, 100f, _layerMask);
-
-        //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.green);
-
-        // If we hit a wood piece, 
-        if (hitInfo.collider != null) {
-            // and it's not on the table
-            if (!hitInfo.collider.GetComponent<WoodPiece>().isOnTable) {
-            }
-        }
         //TODO: Still follow the mouse when it's not hitting anything somehow
     }
 
     void ConfirmPlacement() {
         // Make sure we clicked on our piece
         if (HitPieceCheck()) {
-            GetComponentInParent<JointTool>().ActivateNextJoint();
-            isActive = false;
+            GetComponentInParent<JointTool>().ApplyJoint();
         }
     }
 

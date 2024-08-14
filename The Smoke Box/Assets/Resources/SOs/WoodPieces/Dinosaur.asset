@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Dinosaur
   price: 2
   mesh: {fileID: 4711208715938537054, guid: 5e206aede74f9af4195a5f7bb41ed146, type: 3}
-  rotation: {x: 0, y: 0, z: 0}
+  rotation: {x: -90, y: 0, z: 0}

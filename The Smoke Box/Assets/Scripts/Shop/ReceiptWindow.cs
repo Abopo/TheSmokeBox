@@ -32,7 +32,7 @@ public class ReceiptWindow : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        _playerMoney = GameManager.Instance.stage * 15;
+        _playerMoney = GameManager.Instance.stage * 10;
         _totalPrice = 0;
         _totalText.text = _playerMoney.ToString();
         CheckCount();
@@ -44,20 +44,25 @@ public class ReceiptWindow : MonoBehaviour {
     }
 
     public void AddItemToWindow(WoodSlot item) {
-        ReceiptItem newItem = Instantiate(_receiptItem, _window).GetComponent<ReceiptItem>();
-        newItem.InitializeItem(item.Data);
-        newItem.receiptWindow = this;
+        if (_playerMoney - _totalPrice >= item.Price) {
+            ReceiptItem newItem = Instantiate(_receiptItem, _window).GetComponent<ReceiptItem>();
+            newItem.InitializeItem(item.Data);
+            newItem.receiptWindow = this;
 
-        _receiptItems.Add(newItem);
+            _receiptItems.Add(newItem);
 
-        IncreaseTotal(item.Price);
-        CheckCount();
+            IncreaseTotal(item.Price);
+            CheckCount();
 
-        // Force scroll view to follow down
-        Canvas.ForceUpdateCanvases();
-        _scrollRect.content.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
-        _scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-        _scrollRect.verticalNormalizedPosition = 0;
+            // Force scroll view to follow down
+            Canvas.ForceUpdateCanvases();
+            _scrollRect.content.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
+            _scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+            _scrollRect.verticalNormalizedPosition = 0;
+        } else {
+            // Play error sound?
+
+        }
     }
 
     public void RemoveItemFromWindow(ReceiptItem item) {

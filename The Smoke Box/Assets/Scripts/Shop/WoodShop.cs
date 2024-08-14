@@ -11,8 +11,6 @@ public class WoodShop : MonoBehaviour {
 
     ReceiptWindow _receiptWindow;
 
-    int _playerMoney = 10;
-
     public bool _lastPage;
 
     private void Awake() {
@@ -54,8 +52,8 @@ public class WoodShop : MonoBehaviour {
         {
             for(int j = i; j <= i + 8; j += 4)
             {
-                if (j + (_lastPage ? 0 : 9) < _inventory.inventory.Length) {
-                    _slots[j].ChangeItem(_inventory.inventory[j + (_lastPage ? 0 : 9)]);
+                if (j + (_lastPage ? 0 : 12) < _inventory.inventory.Length) {
+                    _slots[j].ChangeItem(_inventory.inventory[j + (_lastPage ? 0 : 12)]);
                     _check++;
                 }
                 else if(j < _slots.Length) {

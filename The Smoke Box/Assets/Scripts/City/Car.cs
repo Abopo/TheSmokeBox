@@ -12,8 +12,11 @@ public class Car : MonoBehaviour {
     [SerializeField]
     Waypoint _waypoint;
 
+    AudioSource _audioSource;
+
     private void Awake() {
         _lerp = GetComponent<LerpTo>();
+        _audioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -26,6 +29,16 @@ public class Car : MonoBehaviour {
     }
 
     public void GoToWaypoint() {
+        StartCoroutine(GoToWaypointLater());
+
+        // Start the acceleration audio
+        _audioSource.Play();
+    }
+
+    IEnumerator GoToWaypointLater() {
+        // Give the audio clip a sec to start up
+        yield return new WaitForSeconds(0.5f);
+
         _lerp.LerpToPos(_waypoint.transform.position, lerpTime);
         _lerp.LerpRotation(_waypoint.transform.rotation, lerpTime);
     }

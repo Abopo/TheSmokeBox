@@ -9,12 +9,18 @@ public class PaintTool : Tool {
 
     public LayerMask _layerMask;
 
+    [SerializeField]
     Material _paintMaterial;
     PAINTCOLOR _paintColor;
+
+    PaintBrush _paintBrush;
 
     // Start is called before the first frame update
     void Start()
     {
+        _paintBrush = GetComponentInChildren<PaintBrush>();
+
+        SetPaint(_paintMaterial);
     }
 
     // Update is called once per frame
@@ -43,6 +49,8 @@ public class PaintTool : Tool {
 
     public void SetPaint(Material paintMat) {
         _paintMaterial = paintMat;
+
+        _paintBrush.SetPaint(paintMat);
 
         if(paintMat.name.Contains("White")) {
             _paintColor = PAINTCOLOR.WHITE;
@@ -79,12 +87,12 @@ public class PaintTool : Tool {
             // and it's not on the table
             WoodPiece wPiece = hitInfo.collider.GetComponent<WoodPiece>();
             if (!wPiece.isOnTable) {
-                PaintPiece(wPiece);
+                PaintPiece(wPiece, hitInfo.point);
             }
         }
     }
 
-    void PaintPiece(WoodPiece wPiece) {
+    void PaintPiece(WoodPiece wPiece, Vector3 paintPos) {
         // Set the editors curPiece materials to the paint material
         Material[] mats = wPiece.GetComponent<MeshRenderer>().materials;
         for (int i = 0; i < mats.Length; i++) {
@@ -96,6 +104,6 @@ public class PaintTool : Tool {
 
         Submission.OnChanged.Invoke();
 
-        // TODO: Some nice paint splash effect
+        _paintBrush.Paint(paintPos);
     }
 }

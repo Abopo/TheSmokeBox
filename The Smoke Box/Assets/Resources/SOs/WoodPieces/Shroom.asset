@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Shroom
   price: 2
   mesh: {fileID: 2534964839176971238, guid: cba7b175ca073e948b26c617906f4879, type: 3}
-  rotation: {x: 0, y: 0, z: 0}
+  rotation: {x: -90, y: 0, z: 0}

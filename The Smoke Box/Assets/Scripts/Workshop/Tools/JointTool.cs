@@ -16,11 +16,21 @@ public class JointTool : Tool {
     [SerializeField]
     GameObject _confimation;
 
+    GlueBottle _glueBottle;
+
     JointNode _ghostJointNode;
 
     bool _isJoining;
     bool _confirming;
 
+    AudioSource _audioSource;
+
+    protected override void Awake() {
+        base.Awake();
+
+        _glueBottle = GetComponentInChildren<GlueBottle>();
+        _audioSource = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start() {
 
@@ -56,6 +66,8 @@ public class JointTool : Tool {
         _toolUI.SetActive(true);
         _cancelButton.SetActive(false);
         _confimation.SetActive(false);
+
+        _glueBottle.GetComponent<MouseFollow>().enabled = true;
     }
 
     public override void DeactivateTool() {
@@ -76,8 +88,22 @@ public class JointTool : Tool {
         _editManager.Activate();
     }
 
+    public void ApplyJoint() {
+        if (_newJointNode.isActive) {
+            // Play the glue animation before activating the next joint
+            _glueBottle.ApplyGlue(_newJointNode.transform.position);
+        } else if (_baseJointNode.isActive) {
+            _glueBottle.PlayGlueClip();
+
+            // Just go ahead and activate the next joint
+            ActivateNextJoint();
+        }
+    }
+
     public void ActivateNextJoint() {
         if (_newJointNode.isActive) {
+            _newJointNode.isActive = false;
+
             // Parent the piece and new joint node
             _newJointNode.ParentPiece();
 
@@ -88,10 +114,12 @@ public class JointTool : Tool {
             _baseJointNode.Activate();
             // This is the base node, so it should be able to connect with ANY wood piece on the submission
             _baseJointNode.curPiece = _editManager.curPiece;
-            _editManager.LookAtSubmission();
+            //_editManager.LookAtSubmission();
 
             _cancelButton.SetActive(true);
         } else if (_baseJointNode.isActive) {
+            _baseJointNode.isActive = false;
+
             // Parent the ghost node to the submission so the player can rotate and see how their placement looks
             _ghostJointNode.transform.parent = _baseJointNode.curPiece.transform.parent;
 
@@ -135,6 +163,8 @@ public class JointTool : Tool {
         _newJointNode.Activate();
         _newJointNode.curPiece = _editManager.curPiece;
         _newJointNode.UnParentPiece();
+        _glueBottle.GetComponent<MouseFollow>().enabled = true;
+
         if (_ghostJointNode != null) {
             Destroy(_ghostJointNode.gameObject);
         }
@@ -188,6 +218,8 @@ public class JointTool : Tool {
         // Reparent new piece to the base object
         _newJointNode.curPiece.transform.parent = _baseJointNode.curPiece.transform.parent;
         _newJointNode.curPiece.isLocked = true;
+
+        EditManager.Instance.editAudio.PlayJointClip();
 
         // Re-enable the edit manager
         EditManager.Instance.enabled = true;
