@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DriveThruDialogue2
   m_EditorClassIdentifier: 
   dialogueList:
-  - dialogueLine: MC, your scultpure was so cool!
+  - dialogueLine: MC, your sculpture was so cool!
     speaker: 3
   - dialogueLine: Yeah man, it was very you.
     speaker: 1

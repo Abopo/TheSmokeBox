@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class SawTool : Tool {
 
     private static Slicer slicer;
 
+    bool _success;
     GameObject _originalPiece;
     WoodPiece _leftPiece;
     WoodPiece _rightPiece;
@@ -93,9 +95,9 @@ public class SawTool : Tool {
         _sawObject.PlayAnimation();
 
         // Slice the piece in two
-        bool success = SlicePiece(_editManager.curPiece);
+        _success = SlicePiece(_editManager.curPiece);
 
-        if (success) {
+        if (_success) {
             // Hide the confirmation UI
             _toolUI.SetActive(false);
 
@@ -111,8 +113,9 @@ public class SawTool : Tool {
         try {
             int triangleCount = wPiece.GetComponent<MeshFilter>().sharedMesh.triangles.Length;
             sliceReturnValue = slicer.Slice(wPiece.gameObject, plane, intersectionMaterial);
-        } catch {
+        } catch (Exception e) {
             sliceReturnValue = null;
+            Debug.LogError(e.Message);
         }
 
         if (null == sliceReturnValue) {
@@ -199,15 +202,17 @@ public class SawTool : Tool {
     }
 
     public void ShowCut() {
-        // Show the new pieces
-        _leftPiece.GetComponent<MeshRenderer>().enabled = true;
-        _rightPiece.GetComponent<MeshRenderer>().enabled = true;
+        if (_success) {
+            // Show the new pieces
+            _leftPiece.GetComponent<MeshRenderer>().enabled = true;
+            _rightPiece.GetComponent<MeshRenderer>().enabled = true;
 
-        // Hide the original piece until we decide to commit to the cut
-        _originalPiece.gameObject.SetActive(false);
+            // Hide the original piece until we decide to commit to the cut
+            _originalPiece.gameObject.SetActive(false);
 
-        // Show the post cut UI
-        _postCutCanvas.Activate();
+            // Show the post cut UI
+            _postCutCanvas.Activate();
+        }
     }
 
     public void UndoCut() {
@@ -267,6 +272,7 @@ public class SawTool : Tool {
 
     void EndSlice() {
         DeactivateTool();
+
         _postCutCanvas.Deactivate();
         _editManager.Activate();
     }

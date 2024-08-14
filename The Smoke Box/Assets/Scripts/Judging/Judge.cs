@@ -56,7 +56,7 @@ public class Judge : MonoBehaviour {
                 _dialogue = "I see the resemblance...";
                 break;
             case JUDGE.JAMBON:
-                _dialogue = "Very...symmetrical";
+                _dialogue = "Very...symmetrical.";
                 break;
             case JUDGE.PITMASTER:
                 _dialogue = "square.";
@@ -68,13 +68,13 @@ public class Judge : MonoBehaviour {
         if (GameManager.Instance.stage == 1) {
             switch (_judge) {
                 case JUDGE.CHIPP:
-                    _dialogue = "Chipp Alex 1";
+                    _dialogue = "Hell yeah! This is my kind of piece!";
                     break;
                 case JUDGE.JAMBON:
-                    _dialogue = "Jambon Alex 1";
+                    _dialogue = "Clean angles, and fabulous color scheme.";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "Pitmaster Alex 1";
+                    _dialogue = "go...FAST!";
                     break;
             }
         } else if (GameManager.Instance.stage == 2) {
@@ -163,7 +163,18 @@ public class Judge : MonoBehaviour {
             _dialogue = "Woah! Look at all the pieces they used!";
         } else {
             // Default line
-            _dialogue = "Loving the vibe of this piece.";
+            switch(GameManager.Instance.stage) {
+                case 1:
+                    _dialogue = "Loving the vibe of this piece.";
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    _dialogue = "Loving the vibe of this piece.";
+                    break;
+            }
         }
     }
 
@@ -171,13 +182,24 @@ public class Judge : MonoBehaviour {
         // Priority of each dialogue will simply be via if statements
         if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.PINK) >= 2) {
             _dialogue = "Ah, another who appreciates the depth of pink.";
-        } else if (_playerSubmission.numCutsUsed >= 5) {
+        } else if (_playerSubmission.numCutsUsed >= 3) {
             _dialogue = "Exquisite cuts.";
         } else if (_playerSubmission.numCutsUsed >= 5) {
             _dialogue = "Despite using so many pieces, it all comes together nicely.";
         } else {
             // Default line
-            _dialogue = "Mmm...impressive.";
+            switch (GameManager.Instance.stage) {
+                case 1:
+                    _dialogue = "Mmm...impressive.";
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    _dialogue = "Mmm...impressive.";
+                    break;
+            }
         }
     }
 
@@ -189,7 +211,18 @@ public class Judge : MonoBehaviour {
             _dialogue = "Many pieces...many POINTS!";
         } else {
             // Default line
-            _dialogue = "...spicy...";
+            switch (GameManager.Instance.stage) {
+                case 1:
+                    _dialogue = "...spicy...";
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    _dialogue = "...spicy...";
+                    break;
+            }
         }
     }
 }
