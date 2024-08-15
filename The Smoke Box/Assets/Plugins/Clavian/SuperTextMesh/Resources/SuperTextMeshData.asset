@@ -15,7 +15,7 @@ MonoBehaviour:
   showEffectsFoldout: 1
   showWavesFoldout: 0
   showJittersFoldout: 0
-  showDrawAnimsFoldout: 1
+  showDrawAnimsFoldout: 0
   showTextColorFoldout: 0
   showColorsFoldout: 0
   showGradientsFoldout: 0
@@ -26,10 +26,10 @@ MonoBehaviour:
   showFontsFoldout: 0
   showSoundClipsFoldout: 0
   showAudioClipsFoldout: 0
-  showQuadsFoldout: 1
+  showQuadsFoldout: 0
   showMaterialsFoldout: 0
   showAutomaticFoldout: 0
-  showAutoClipsFoldout: 1
+  showAutoClipsFoldout: 0
   showAutoDelaysFoldout: 0
   showMasterFoldout: 0
   disableAnimatedText: 0

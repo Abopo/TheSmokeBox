@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5561a259203e449ea11d3143b24c507, type: 3}
   m_Name: tab
   m_EditorClassIdentifier: 
-  showFoldout: 1
+  showFoldout: 0
   type: 0
   character: 9
   quadName: 
