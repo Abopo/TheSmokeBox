@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1c93d2feb874fd49d1e903476e914b, type: 3}
   m_Name: typewriter
   m_EditorClassIdentifier: 
-  showFoldout: 1
+  showFoldout: 0
   clips:
   - {fileID: 8300000, guid: 072593704dda347758e15c362240f322, type: 3}

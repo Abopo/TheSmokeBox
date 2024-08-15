@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96148ec3adfd14570a81c93fe91c018d, type: 3}
   m_Name: typewriter
   m_EditorClassIdentifier: 
-  showFoldout: 1
+  showFoldout: 0
   clips:
   - type: 2
     _character: 0
