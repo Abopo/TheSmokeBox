@@ -38,6 +38,8 @@ public class WoodSpawner : MonoBehaviour {
         Rigidbody tempRigidbody;
 
         foreach (ShopItemData piece in _spawnTestList) {
+            if(piece == null) continue;
+
             tempPiece = Instantiate(_woodPieceObj);
 
             _spawnList.Add(tempPiece);
