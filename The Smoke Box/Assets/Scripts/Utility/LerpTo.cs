@@ -17,6 +17,8 @@ public class LerpTo : MonoBehaviour {
 
     public UnityEvent OnLerpFinished = new UnityEvent();
 
+    public bool IsLerping { get { return _lerping; } }
+
     // Start is called before the first frame update
     void Start()
     {

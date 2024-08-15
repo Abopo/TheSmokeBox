@@ -41,6 +41,7 @@ public class EditManager : MonoBehaviour {
     VIEW _view;
 
     EditorCanvas _canvas;
+    public EditAudio editAudio;
 
     public static EditManager Instance;
 
@@ -70,6 +71,7 @@ public class EditManager : MonoBehaviour {
         _keyboard = Keyboard.current;
         _cameraLerp = Camera.main.GetComponent<LerpTo>();
         _canvas = GetComponentInChildren<EditorCanvas>();
+        editAudio = GetComponentInChildren<EditAudio>();
     }
 
     // Update is called once per frame

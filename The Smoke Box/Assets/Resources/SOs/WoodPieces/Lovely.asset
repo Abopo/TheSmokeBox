@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd23c650a2fa528499746b4e53e72430, type: 3}
   m_Name: Lovely
   m_EditorClassIdentifier: 
-  itemName: Rupee
+  itemName: Lovely
   price: 3
+<<<<<<< HEAD
   mesh: {fileID: -6549010850040202938, guid: 9281cd21664bc1241b494ece99fdf757, type: 3}
   rotation: {x: 0, y: 0, z: 0}
+=======
+  mesh: {fileID: -2541054571083645345, guid: 9281cd21664bc1241b494ece99fdf757, type: 3}
+  rotation: {x: -90, y: 0, z: 180}
+>>>>>>> e0bbd9c (The sound update.)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static UnityEditor.Progress;
 
 public class ReceiptItem : MonoBehaviour {
 
@@ -24,7 +25,12 @@ public class ReceiptItem : MonoBehaviour {
     }
 
     public void InitializeItem(ShopItemData data) {
-        itemData = data;
+        itemData = ScriptableObject.CreateInstance<ShopItemData>();
+
+        itemData.price = data.price;
+        itemData.itemName = data.itemName;
+        itemData.mesh = data.mesh;
+        itemData.rotation = data.rotation;
 
         _nameText.text = data.itemName;
         price = data.price;

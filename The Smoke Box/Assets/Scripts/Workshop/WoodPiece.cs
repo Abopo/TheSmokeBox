@@ -20,11 +20,14 @@ public class WoodPiece : MonoBehaviour {
     public int numCuts; // How many times this piece has been cut
     public PAINTCOLOR paintColor = PAINTCOLOR.WHITE;
 
+    WoodSFX _woodSFX;
+
     private void Awake() {
         startPos = transform.position;
         lerp = GetComponent<LerpTo>();
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<MeshCollider>();
+        _woodSFX = FindObjectOfType<WoodSFX>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -65,6 +68,8 @@ public class WoodPiece : MonoBehaviour {
         if(collision.transform.tag == "Table") {
             isOnTable = true;
         }
+
+        _woodSFX.PlayWoodCollisionSFX();
     }
 
     public void SetMesh(Mesh mesh) {

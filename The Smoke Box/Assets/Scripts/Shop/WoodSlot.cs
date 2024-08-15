@@ -17,6 +17,12 @@ public class WoodSlot : MonoBehaviour {
     [SerializeField]
     GameObject _backer;
 
+    [SerializeField]
+    AudioClip _hoverClip;
+    [SerializeField]
+    AudioClip _selectClip;
+    AudioSource _audioSource;
+
     ShopItemData _data;
 
     ShopItemData _nextData;
@@ -56,6 +62,8 @@ public class WoodSlot : MonoBehaviour {
         _shop = GetComponentInParent<WoodShop>();
         _data = ScriptableObject.CreateInstance("ShopItemData") as ShopItemData;
         _animator = GetComponent<Animator>();
+
+        _audioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -70,6 +78,9 @@ public class WoodSlot : MonoBehaviour {
 
     private void OnMouseEnter() {
         _backer.SetActive(true);
+
+        _audioSource.clip = _hoverClip;
+        _audioSource.Play();
     }
 
     private void OnMouseExit() {
@@ -78,8 +89,11 @@ public class WoodSlot : MonoBehaviour {
 
     private void OnMouseDown() {
         _shop.PurchaseFromSlot(this);
+
+        _audioSource.clip = _selectClip;
+        _audioSource.Play();
     }
-    
+
     public void EnableSlot() {
         _boxCollider.enabled = true;
     }
@@ -105,9 +119,7 @@ public class WoodSlot : MonoBehaviour {
 
     public void SwapModel() {
         if (_nextData != null) {
-            ItemName = _nextData.itemName;
-            Price = _nextData.price;
-            Mesh = _nextData.mesh;
+            SetData(_nextData);
             EnableSlot();
         } else {
             DisableSlot();

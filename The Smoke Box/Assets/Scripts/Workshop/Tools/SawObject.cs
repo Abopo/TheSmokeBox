@@ -8,11 +8,13 @@ public class SawObject : MonoBehaviour {
 
     Animator _animator;
     SawTool _sawTool;
+    AudioSource _audioSource;
 
     private void Awake() {
         _sawDustParticles = GetComponentsInChildren<ParticleSystem>();
         _animator = GetComponent<Animator>();
         _sawTool = GetComponentInParent<SawTool>();
+        _audioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -25,6 +27,14 @@ public class SawObject : MonoBehaviour {
     }
 
     public void PlayAnimation() {
+        // start sound
+        _audioSource.Play();
+
+        StartCoroutine(PlayAnimationLater());
+    }
+
+    IEnumerator PlayAnimationLater() {
+        yield return new WaitForSeconds(1.5f);
         _animator.Play("SawForward");
     }
 
