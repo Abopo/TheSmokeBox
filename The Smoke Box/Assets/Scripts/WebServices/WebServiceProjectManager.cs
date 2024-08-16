@@ -40,7 +40,7 @@ public class WebServiceProjectManager : MonoBehaviour
         }
 
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-        formData.Add(new MultipartFormFileSection("file", data, Path.GetFileName(path), "file"));
+        formData.Add(new MultipartFormFileSection("file", data, name + ".json", "file"));
 
         string url = PlayerPrefs.GetString("apiPath") + _projectEndpoint + "?userName=" + ownerName + "&projectName=" + name;
 
