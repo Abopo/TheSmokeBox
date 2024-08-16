@@ -15,6 +15,9 @@ public class TitleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // wake up server hopefully
+        WebServiceProjectManager.Instance.GetProjects(null, null);
+
         LoadSubmissions();
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,9 +60,9 @@ public class Submission : MonoBehaviour {
         OnChanged.Invoke();
     }
 
-    public void SaveData() {
+    public void SaveData(Action<Project> OnSaveCompleted, Action<string> OnSaveFailed) {
         // Save the data
-        _submissionDataManager.SaveSubmissionData(this);
+        _submissionDataManager.SaveSubmissionData(this, OnSaveCompleted, OnSaveFailed);
     }
 
     public void LoadData(string path = "") {
@@ -80,7 +81,7 @@ public class Submission : MonoBehaviour {
     {
         // Spawn wood pieces based on the loaded data
         WoodData[] woodData = _submissionDataManager.submissionData.woodDatas;
-        Object woodPieceObj = Resources.Load("Prefabs/Workshop/WoodPiece");
+        UnityEngine.Object woodPieceObj = Resources.Load("Prefabs/Workshop/WoodPiece");
         GameObject tempPiece;
         WoodPiece tempWood;
         for (int i = 0; i < woodData.Length; i++)

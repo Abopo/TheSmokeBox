@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JudgingScene3.unity
     guid: 4f5dfc10e3e28514f92dd31bf1381fd9
+  - enabled: 1
+    path: Assets/Scenes/Gallery.unity
+    guid: e1cc5e64b2da2c043b8202dfcedbef99
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8cfdc271a819fdb4598b72edd08a4437, type: 2}

@@ -32,7 +32,7 @@ public class SubmissionData
 public class SubmissionDataManager {
     public SubmissionData submissionData = new SubmissionData();
 
-    public void SaveSubmissionData(Submission submission) {
+    public void SaveSubmissionData(Submission submission, Action<Project> OnSaveCompleted, Action<string> OnSaveFailed) {
         PopulateSubmissionData(submission);
 
         string wood = JsonUtility.ToJson(submissionData);
@@ -41,7 +41,7 @@ public class SubmissionDataManager {
 
         // Push to server
         var playerName = PlayerPrefs.GetString("PlayerName");
-        WebServiceProjectManager.Instance.UploadProjectFile(playerName, submission.title, path, OnSubmissionUploaded, OnSubmissionUploadFailed);
+        WebServiceProjectManager.Instance.UploadProjectFile(playerName, submission.title, path, OnSaveCompleted, OnSaveFailed);
     }
 
     void PopulateSubmissionData(Submission submission) {
@@ -88,19 +88,5 @@ public class SubmissionDataManager {
         }
         string json = System.IO.File.ReadAllText(path);
         submissionData = JsonUtility.FromJson<SubmissionData>(json);
-    }
-
-    private void OnSubmissionUploaded(Project project)
-    {
-        if (project != null)
-        {
-            Debug.Log("upload successful");
-        }
-        Debug.Log("upload successful, no return");
-    }
-
-    private void OnSubmissionUploadFailed(string message)
-    {
-        Debug.Log("upload failed");
     }
 }
