@@ -67,13 +67,24 @@ public class Submission : MonoBehaviour {
     public void LoadData(string path = "") {
         // Load the data
         _submissionDataManager.LoadSubmissionData(path);
+        LoadFromSubmissionDataManager();
+    }
 
+    public void LoadData(SubmissionData data)
+    {
+        _submissionDataManager.submissionData = data;
+        LoadFromSubmissionDataManager();
+    }
+
+    private void LoadFromSubmissionDataManager()
+    {
         // Spawn wood pieces based on the loaded data
         WoodData[] woodData = _submissionDataManager.submissionData.woodDatas;
         Object woodPieceObj = Resources.Load("Prefabs/Workshop/WoodPiece");
         GameObject tempPiece;
         WoodPiece tempWood;
-        for (int i = 0; i < woodData.Length; i++) {
+        for (int i = 0; i < woodData.Length; i++)
+        {
             tempPiece = Instantiate(woodPieceObj, transform) as GameObject;
             tempPiece.transform.localPosition = woodData[i].pos;
             tempPiece.transform.localRotation = Quaternion.Euler(woodData[i].rot);
@@ -94,7 +105,8 @@ public class Submission : MonoBehaviour {
             // Set the materials (sliced pieces need an extra material per slice)
             Material material = Resources.Load<Material>("Materials/Wood/" + woodData[i].material);
             Material[] materials = new Material[woodData[i].numMats];
-            for (int j = 0; j < materials.Length; j++) {
+            for (int j = 0; j < materials.Length; j++)
+            {
                 materials[j] = material;
             }
             tempPiece.GetComponent<MeshRenderer>().materials = materials;

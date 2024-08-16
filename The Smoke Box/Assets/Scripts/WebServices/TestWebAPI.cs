@@ -93,9 +93,9 @@ public class TestWebAPI : MonoBehaviour
         results.text = JsonConvert.SerializeObject(projects);
     }
 
-    private void HandleGetProjectSuccess(string response)
+    private void HandleGetProjectSuccess(SubmissionData response)
     {
-        results.text = response;
+        results.text = response.ToString();
     }
 
     private void HandlePostProjectSuccess(Project project)

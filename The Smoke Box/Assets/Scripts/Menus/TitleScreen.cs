@@ -9,6 +9,9 @@ public class TitleScreen : MonoBehaviour
     [SerializeField]
     Submission[] _submissions;
 
+    [SerializeField] GameObject _userNameEntry;
+    [SerializeField] TMPro.TMP_InputField _nameInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +36,24 @@ public class TitleScreen : MonoBehaviour
     }
 
     public void StartGame() {
+
+        _nameInput.text = PlayerPrefs.GetString("PlayerName");
+        _userNameEntry.SetActive(true);
+    }
+
+    public void ConfirmNameEntry()
+    {
+        PlayerPrefs.SetString("PlayerName", _nameInput.text);
         SceneManager.LoadScene("Shop1");
     }
 
-    public void Gallery() {
+    public void CancelNameEntry()
+    {
+        _userNameEntry.SetActive(false);
+    }
 
+    public void Gallery() {
+        SceneManager.LoadScene("Gallery");
     }
 
     public void Quit() {

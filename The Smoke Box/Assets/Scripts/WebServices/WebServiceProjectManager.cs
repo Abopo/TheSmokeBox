@@ -63,10 +63,10 @@ public class WebServiceProjectManager : MonoBehaviour
 
     // here im giving back a string, but you could probably change that
     // out for whatever data your serializing and get the class back
-    public void GetProjectFile(int id, Action<string> handleSuccess, Action<string> handleFailure)
+    public void GetProjectFile(int id, Action<SubmissionData> handleSuccess, Action<string> handleFailure)
     {
         string url = PlayerPrefs.GetString("apiPath") + _projectEndpoint + "/" + id;
 
-        StartCoroutine(WebRequestUtil.GetRequest<string>(url, handleSuccess, handleFailure));
+        StartCoroutine(WebRequestUtil.GetRequest<SubmissionData>(url, handleSuccess, handleFailure));
     }
 }
