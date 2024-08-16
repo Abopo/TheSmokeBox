@@ -17,8 +17,10 @@ public class WoodPiece : MonoBehaviour {
 
     float _restTimer = 0f;
 
+    // stats
     public int numCuts; // How many times this piece has been cut
     public PAINTCOLOR paintColor = PAINTCOLOR.WHITE;
+    public string pieceName;
 
     WoodSFX _woodSFX;
 
@@ -70,6 +72,12 @@ public class WoodPiece : MonoBehaviour {
         }
 
         _woodSFX.PlayWoodCollisionSFX();
+    }
+
+    public void SetData(ShopItemData wData) {
+        SetMesh(wData.mesh);
+
+        pieceName = wData.itemName;
     }
 
     public void SetMesh(Mesh mesh) {

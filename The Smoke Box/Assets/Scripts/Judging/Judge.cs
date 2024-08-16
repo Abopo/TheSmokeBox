@@ -5,6 +5,8 @@ using UnityEngine;
 
 public enum JUDGE { CHIPP = 0, JAMBON, PITMASTER };
 
+public enum TOPIC { PIECES = 0, CUTS, FAVPIECE };
+
 public class Judge : MonoBehaviour {
 
     [SerializeField]
@@ -18,8 +20,11 @@ public class Judge : MonoBehaviour {
 
     DialogueBubble _dialogueBubble;
 
+    JudgingManager _judgingManager;
+
     private void Awake() {
         _dialogueBubble = GetComponentInChildren<DialogueBubble>();
+        _judgingManager = FindObjectOfType<JudgingManager>();
     }
     // Start is called before the first frame update
     void Start() {
@@ -27,7 +32,7 @@ public class Judge : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+
     }
 
     public void ChooseDialogue(int character) {
@@ -137,7 +142,7 @@ public class Judge : MonoBehaviour {
         // Player's dialogue is the most complicated. It needs to be based on what the player used in their sculpture
 
         // Get the player's submission
-        if(_playerCompetitor != null) {
+        if (_playerCompetitor != null) {
             _playerSubmission = _playerCompetitor.GetComponentInChildren<Submission>();
         }
 
@@ -157,13 +162,23 @@ public class Judge : MonoBehaviour {
 
     void PlayerDialogueChipp() {
         // Priority of each dialogue will simply be via if statements
-        if(_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.RED) >= 1) {
+        // Favorite Piece
+        if (_playerSubmission.pieceNames.Contains("Cool S") && CanSay(TOPIC.FAVPIECE)) {
+            _dialogue = "That piece is almost as COOL as me!";
+
+            GameManager.Instance.chippTopics.Add(TOPIC.FAVPIECE);
+            // Favorite Color
+        } else if(_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.RED) >= 2) {
             _dialogue = "The use of red is spectacular!";
-        } else if(_playerSubmission.numPiecesUsed >= 5) {
+        } else if (_playerSubmission.numPiecesUsed >= 6 && CanSay(TOPIC.PIECES)) {
             _dialogue = "Woah! Look at all the pieces they used!";
+
+            // Add to the topics lists
+            _judgingManager.topics.Add(TOPIC.PIECES);
+            GameManager.Instance.chippTopics.Add(TOPIC.PIECES);
         } else {
             // Default line
-            switch(GameManager.Instance.stage) {
+            switch (GameManager.Instance.stage) {
                 case 1:
                     _dialogue = "Loving the vibe of this piece.";
                     break;
@@ -182,12 +197,26 @@ public class Judge : MonoBehaviour {
 
     void PlayerDialogueJambon() {
         // Priority of each dialogue will simply be via if statements
-        if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.PINK) >= 1) {
+        // Favorite Piece
+        if (_playerSubmission.pieceNames.Contains("Lovely") && CanSay(TOPIC.FAVPIECE)) {
+            _dialogue = "Oh what a LOVELY piece!";
+            
+            GameManager.Instance.jambonTopics.Add(TOPIC.FAVPIECE);
+        // Favorite Color
+        } else if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.PINK) >= 2) {
             _dialogue = "Ah, another who appreciates the depth of pink.";
-        } else if (_playerSubmission.numCutsUsed >= 3) {
+        } else if (_playerSubmission.numCutsUsed >= 3 && CanSay(TOPIC.CUTS)) {
             _dialogue = "Exquisite cuts.";
-        } else if (_playerSubmission.numCutsUsed >= 5) {
+
+            // Add to the topics lists
+            _judgingManager.topics.Add(TOPIC.CUTS);
+            GameManager.Instance.jambonTopics.Add(TOPIC.CUTS);
+        } else if (_playerSubmission.numPiecesUsed >= 5 && CanSay(TOPIC.PIECES)) {
             _dialogue = "Despite using so many pieces, it all comes together nicely.";
+
+            // Add to the topics lists
+            _judgingManager.topics.Add(TOPIC.PIECES);
+            GameManager.Instance.jambonTopics.Add(TOPIC.PIECES);
         } else {
             // Default line
             switch (GameManager.Instance.stage) {
@@ -209,10 +238,30 @@ public class Judge : MonoBehaviour {
 
     void PlayerDialoguePitmaster() {
         // Priority of each dialogue will simply be via if statements
-        if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.BLACK) >= 1) {
-            _dialogue = "Black...BLACK!";
-        } else if (_playerSubmission.numPiecesUsed >= 5) {
-            _dialogue = "Many pieces...many POINTS!";
+
+        // Favorite Piece
+        if(_playerSubmission.pieceNames.Contains("Dinosaur") && CanSay(TOPIC.FAVPIECE)) {
+            _dialogue = "Dino dino dino<j=sample>SAAUURR!!!";
+            
+            GameManager.Instance.pitmasterTopics.Add(TOPIC.FAVPIECE);
+        // Favorite Color
+        } else if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.BLACK) >= 2) {
+            _dialogue = "Black...<j=sample>BLACK!";
+        // Pieces
+        } else if (_playerSubmission.numPiecesUsed >= 5 && CanSay(TOPIC.PIECES)) {
+            _dialogue = "Many pieces...many <j=sample>POINTS!";
+
+            // Add to the topics lists
+            _judgingManager.topics.Add(TOPIC.PIECES);
+            GameManager.Instance.pitmasterTopics.Add(TOPIC.PIECES);
+        // Cuts
+        } else if (_playerSubmission.numCutsUsed >= 3 && CanSay(TOPIC.CUTS)) {
+            _dialogue = "sliced...diced...perfection.";
+
+            // Add to the topics lists
+            _judgingManager.topics.Add(TOPIC.CUTS);
+            GameManager.Instance.pitmasterTopics.Add(TOPIC.CUTS);
+        // Default
         } else {
             // Default line
             switch (GameManager.Instance.stage) {
@@ -220,15 +269,43 @@ public class Judge : MonoBehaviour {
                     _dialogue = "...spicy...";
                     break;
                 case 2:
-                    _dialogue = "oooo....OOHHHHHH";
+                    _dialogue = "oooo....<j=sample>OOHHHHHH";
                     break;
                 case 3:
-                    _dialogue = "in...CREDIBLE!";
+                    _dialogue = "in...<j=sample>CREDIBLE!";
                     break;
                 default:
                     _dialogue = "...spicy...";
                     break;
             }
         }
+    }
+
+    bool CanSay(TOPIC topic) {
+        bool canSay = true;
+
+        if(_judgingManager.topics.Contains(topic)) {
+            canSay = false;
+        }
+
+        switch (_judge) {
+            case JUDGE.CHIPP:
+                if (GameManager.Instance.chippTopics.Contains(topic)) {
+                    canSay = false;
+                }
+                break;
+            case JUDGE.JAMBON:
+                if (GameManager.Instance.jambonTopics.Contains(topic)) {
+                    canSay = false;
+                }
+                break;
+            case JUDGE.PITMASTER:
+                if (GameManager.Instance.pitmasterTopics.Contains(topic)) {
+                    canSay = false;
+                }
+                break;
+        }
+
+        return canSay;
     }
 }

@@ -16,6 +16,9 @@ public class WoodData {
     public MeshData meshData;
     public string material;
     public int numMats;
+    public int numCuts;
+    public string pieceName;
+    public PAINTCOLOR color;
 }    
 
 [Serializable]
@@ -64,6 +67,11 @@ public class SubmissionDataManager {
             // Get the material name - minus (Instance)
             submissionData.woodDatas[i].material = woodPieces[i].GetComponent<MeshRenderer>().material.name.Replace(" (Instance)", "");
             submissionData.woodDatas[i].numMats = woodPieces[i].GetComponent<MeshRenderer>().materials.Length;
+
+            // Save stats
+            submissionData.woodDatas[i].numCuts = woodPieces[i].numCuts;
+            submissionData.woodDatas[i].pieceName = woodPieces[i].pieceName;
+            submissionData.woodDatas[i].color = woodPieces[i].paintColor;
         }
 
         // The first wood piece is the base, so it determines the rotation the submission should be at

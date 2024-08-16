@@ -44,7 +44,7 @@ public class WoodSpawner : MonoBehaviour {
 
             _spawnList.Add(tempPiece);
 
-            tempPiece.GetComponent<WoodPiece>().SetMesh(piece.mesh);
+            tempPiece.GetComponent<WoodPiece>().SetData(piece);
             PositionPiece(tempPiece.gameObject);
 
             tempRigidbody = tempPiece.GetComponent<Rigidbody>();
@@ -79,15 +79,11 @@ public class WoodSpawner : MonoBehaviour {
 
             _spawnList.Add(tempPiece);
 
-            tempPiece.GetComponent<WoodPiece>().SetMesh(piece.mesh);
+            tempPiece.GetComponent<WoodPiece>().SetData(piece);
             PositionPiece(tempPiece.gameObject);
 
             tempRigidbody = tempPiece.GetComponent<Rigidbody>();
             tempRigidbody.isKinematic = false;
-
-            //tempRigidbody.AddForce(new Vector3(Random.Range(-5f, 5f), -1f, Random.Range(-5f, 5f)), ForceMode.Impulse);
-
-            //yield return new WaitForSeconds(0.2f);
         }
 
         yield return new WaitForSeconds(0.1f);

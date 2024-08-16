@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour {
 
     public int stage; // 1, 2, or 3 depending on which stage of the contest we're in.
 
+    // Judges topic lists
+    public List<TOPIC> chippTopics = new List<TOPIC>();
+    public List<TOPIC> jambonTopics = new List<TOPIC>();
+    public List<TOPIC> pitmasterTopics = new List<TOPIC>();
+
     public static GameManager Instance;
 
     private void Awake() {

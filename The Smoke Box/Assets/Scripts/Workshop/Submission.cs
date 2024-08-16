@@ -18,6 +18,7 @@ public class Submission : MonoBehaviour {
     public int numPiecesUsed;
     public int numCutsUsed;
     public List<PAINTCOLOR> colorsUsed = new List<PAINTCOLOR>();
+    public List<string> pieceNames = new List<string>();
     // List of meshes used?
 
     SubmissionDataManager _submissionDataManager = new SubmissionDataManager();
@@ -38,6 +39,7 @@ public class Submission : MonoBehaviour {
             numPiecesUsed++;
             numCutsUsed += piece.numCuts;
             colorsUsed.Add(piece.paintColor);
+            pieceNames.Add(piece.pieceName);
         }
     }
 
@@ -70,6 +72,7 @@ public class Submission : MonoBehaviour {
         WoodData[] woodData = _submissionDataManager.submissionData.woodDatas;
         Object woodPieceObj = Resources.Load("Prefabs/Workshop/WoodPiece");
         GameObject tempPiece;
+        WoodPiece tempWood;
         for (int i = 0; i < woodData.Length; i++) {
             tempPiece = Instantiate(woodPieceObj, transform) as GameObject;
             tempPiece.transform.localPosition = woodData[i].pos;
@@ -82,10 +85,11 @@ public class Submission : MonoBehaviour {
             mesh.normals = woodData[i].meshData.normals;
             mesh.triangles = woodData[i].meshData.tris;
 
-            tempPiece.GetComponent<WoodPiece>().SetMesh(mesh);
-
-            //tempPiece.GetComponent<MeshFilter>().mesh = null;
-            //tempPiece.GetComponent<MeshFilter>().mesh = mesh;
+            tempWood = tempPiece.GetComponent<WoodPiece>();
+            tempWood.SetMesh(mesh);
+            tempWood.numCuts = woodData[i].numCuts;
+            tempWood.pieceName = woodData[i].pieceName;
+            tempWood.paintColor = woodData[i].color;
 
             // Set the materials (sliced pieces need an extra material per slice)
             Material material = Resources.Load<Material>("Materials/Wood/" + woodData[i].material);

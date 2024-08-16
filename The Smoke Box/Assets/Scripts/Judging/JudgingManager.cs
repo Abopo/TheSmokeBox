@@ -9,6 +9,8 @@ public class JudgingManager : MonoBehaviour {
 
     PlayableDirector _director;
 
+    public List<TOPIC> topics = new List<TOPIC>();
+
     private void Awake() {
         _director = GetComponent<PlayableDirector>();
     }
