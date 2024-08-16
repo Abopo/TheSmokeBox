@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GalleryController : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class GalleryController : MonoBehaviour
     {
         InitializeGallery();
         SpawnSubmissions();
+    }
+
+    public void BackToTitleScreen()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 
     private void InitializeGallery()
