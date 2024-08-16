@@ -39,14 +39,14 @@ MonoBehaviour:
     speaker: 0
   - dialogueLine: Well, I do have this winning The Smoke Box Monopsony scratch off.
     speaker: 1
-  - dialogueLine: "Look, one of the prizes is a set of \u2018Hip Brand\u2019 paints."
+  - dialogueLine: "Look, one of the prizes is a set of \u2018Pelvis Brand\u2019 paints."
     speaker: 1
-  - dialogueLine: "\u2018Hip brand\u2019?! Their paints are the most hip!"
+  - dialogueLine: Pelvis paints?! Their paints are the most hip!
     speaker: 0
   - dialogueLine: You'd really give me your winning ticket?
     speaker: 0
   - dialogueLine: Of course, man! You gotta win this thing!
-    speaker: 0
+    speaker: 1
   - dialogueLine: Thanks, dude. You're the best.
     speaker: 0
   - dialogueLine: Alright! Go woodwork Franky's butt off!

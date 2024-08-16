@@ -6,6 +6,8 @@ public class ToolsWindow : MonoBehaviour {
 
     ToolButton[] _toolButtons;
 
+    public bool hasBase;
+
     private void Awake() {
         _toolButtons = GetComponentsInChildren<ToolButton>();
     }
@@ -27,14 +29,18 @@ public class ToolsWindow : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 
     void EnableButtons() {
         foreach (ToolButton toolButton in _toolButtons) {
             toolButton.EnableButton();
+        }
+
+        if (!hasBase) {
+            // The first button is the joint tool, which is disabled until there's a base.
+            _toolButtons[0].DisableButton();
         }
     }
 

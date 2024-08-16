@@ -62,5 +62,8 @@ public class GlueBottle : MonoBehaviour {
     void OnLerpFinished2() {
         EditManager.Instance.LookAtSubmission();
         _model.OnLerpFinished.RemoveListener(OnLerpFinished2);
+
+        // Hide self 
+        gameObject.SetActive(false);
     }
 }

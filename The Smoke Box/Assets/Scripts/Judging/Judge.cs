@@ -109,13 +109,13 @@ public class Judge : MonoBehaviour {
         } else if (GameManager.Instance.stage == 2) {
             switch (_judge) {
                 case JUDGE.CHIPP:
-                    _dialogue = "Chipp Franky 2";
+                    _dialogue = "YEOW! I'm sweating just thinking about it!";
                     break;
                 case JUDGE.JAMBON:
-                    _dialogue = "Jambon Franky 2";
+                    _dialogue = "Oh my...";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "Pitmaster Franky 2";
+                    _dialogue = "HOTHOTHOTHOTHOTHOTHOTHOT";
                     break;
             }
         } else if (GameManager.Instance.stage == 3) {
@@ -157,7 +157,7 @@ public class Judge : MonoBehaviour {
 
     void PlayerDialogueChipp() {
         // Priority of each dialogue will simply be via if statements
-        if(_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.RED) >= 2) {
+        if(_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.RED) >= 1) {
             _dialogue = "The use of red is spectacular!";
         } else if(_playerSubmission.numPiecesUsed >= 5) {
             _dialogue = "Woah! Look at all the pieces they used!";
@@ -168,8 +168,10 @@ public class Judge : MonoBehaviour {
                     _dialogue = "Loving the vibe of this piece.";
                     break;
                 case 2:
+                    _dialogue = "I could imagine this piece being in my foyer.";
                     break;
                 case 3:
+                    _dialogue = "What a Chipptastic piece!";
                     break;
                 default:
                     _dialogue = "Loving the vibe of this piece.";
@@ -180,7 +182,7 @@ public class Judge : MonoBehaviour {
 
     void PlayerDialogueJambon() {
         // Priority of each dialogue will simply be via if statements
-        if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.PINK) >= 2) {
+        if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.PINK) >= 1) {
             _dialogue = "Ah, another who appreciates the depth of pink.";
         } else if (_playerSubmission.numCutsUsed >= 3) {
             _dialogue = "Exquisite cuts.";
@@ -190,11 +192,13 @@ public class Judge : MonoBehaviour {
             // Default line
             switch (GameManager.Instance.stage) {
                 case 1:
-                    _dialogue = "Mmm...impressive.";
+                    _dialogue = "Mmm...not bad.";
                     break;
                 case 2:
+                    _dialogue = "An improvement from last time for certain.";
                     break;
                 case 3:
+                    _dialogue = "...I'm impressed.";
                     break;
                 default:
                     _dialogue = "Mmm...impressive.";
@@ -205,7 +209,7 @@ public class Judge : MonoBehaviour {
 
     void PlayerDialoguePitmaster() {
         // Priority of each dialogue will simply be via if statements
-        if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.BLACK) >= 2) {
+        if (_playerSubmission.colorsUsed.Count(n => n == PAINTCOLOR.BLACK) >= 1) {
             _dialogue = "Black...BLACK!";
         } else if (_playerSubmission.numPiecesUsed >= 5) {
             _dialogue = "Many pieces...many POINTS!";
@@ -216,8 +220,10 @@ public class Judge : MonoBehaviour {
                     _dialogue = "...spicy...";
                     break;
                 case 2:
+                    _dialogue = "oooo....OOHHHHHH";
                     break;
                 case 3:
+                    _dialogue = "in...CREDIBLE!";
                     break;
                 default:
                     _dialogue = "...spicy...";

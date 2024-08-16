@@ -36,8 +36,15 @@ public class DriveThruManager : MonoBehaviour {
     Waypoint _finalWaypoint; // For debugging
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        _dialogueCanvas.SetActive(false);
+
+        StartCoroutine(DelayStart());
+    }
+
+    IEnumerator DelayStart() {
+        yield return new WaitForSeconds(1.0f);
+
         StartDialogue();
     }
 

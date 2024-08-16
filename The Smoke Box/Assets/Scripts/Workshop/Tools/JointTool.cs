@@ -67,6 +67,7 @@ public class JointTool : Tool {
         _cancelButton.SetActive(false);
         _confimation.SetActive(false);
 
+        _glueBottle.gameObject.SetActive(true);
         _glueBottle.GetComponent<MouseFollow>().enabled = true;
     }
 
@@ -114,7 +115,6 @@ public class JointTool : Tool {
             _baseJointNode.Activate();
             // This is the base node, so it should be able to connect with ANY wood piece on the submission
             _baseJointNode.curPiece = _editManager.curPiece;
-            //_editManager.LookAtSubmission();
 
             _cancelButton.SetActive(true);
         } else if (_baseJointNode.isActive) {
@@ -163,6 +163,8 @@ public class JointTool : Tool {
         _newJointNode.Activate();
         _newJointNode.curPiece = _editManager.curPiece;
         _newJointNode.UnParentPiece();
+
+        _glueBottle.gameObject.SetActive(true);
         _glueBottle.GetComponent<MouseFollow>().enabled = true;
 
         if (_ghostJointNode != null) {
@@ -222,6 +224,7 @@ public class JointTool : Tool {
         EditManager.Instance.editAudio.PlayJointClip();
 
         // Re-enable the edit manager
+        EditManager.Instance.ClearHoldPiece();
         EditManager.Instance.enabled = true;
 
         // Deactivate the tool

@@ -47,17 +47,21 @@ public class SawCanvas : MonoBehaviour {
         gameObject.SetActive(true);
     }
 
-    public void SwapButtons() {
+    public void SwapButtons(bool keptLeft) {
         _undoButton.SetActive(false);
-        // Both keep buttons are active by default
+        // Hide the keep buttons
         _leftKeepButton.SetActive(false);
         _rightKeepButton.SetActive(false);
 
-        // All others are hidden
-        _leftDropButton.SetActive(true);
-        _rightDropButton.SetActive(true);
-        _leftDeleteButton.SetActive(true);
-        _rightDeleteButton.SetActive(true);
+        // Show only the buttons of the non kept side
+        if (keptLeft) {
+            _rightDropButton.SetActive(true);
+            _rightDeleteButton.SetActive(true);
+        } else {
+            _leftDropButton.SetActive(true);
+            _leftDeleteButton.SetActive(true);
+
+        }
     }
 
     public void Deactivate() {

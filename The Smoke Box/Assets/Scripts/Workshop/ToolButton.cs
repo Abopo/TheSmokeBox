@@ -7,6 +7,8 @@ public class ToolButton : MonoBehaviour {
 
     public bool canBeUsedOnSubmission;
 
+    public GameObject xOverlay;
+
     Toggle _button;
 
     private void Awake() {
@@ -26,9 +28,11 @@ public class ToolButton : MonoBehaviour {
 
     public void EnableButton() {
         _button.interactable = true;
+        xOverlay.SetActive(false);
     }
 
     public void DisableButton() {
         _button.interactable = false;
+        xOverlay.SetActive(true);
     }
 }

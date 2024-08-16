@@ -20,6 +20,9 @@ public class ReceiptWindow : MonoBehaviour {
     [SerializeField]
     TextMeshProUGUI _countText;
 
+    [SerializeField]
+    GameObject _extraText;
+
     ScrollRect _scrollRect;
 
     int _playerMoney;
@@ -32,7 +35,7 @@ public class ReceiptWindow : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        _playerMoney = GameManager.Instance.stage * 10;
+        _playerMoney = 5 + GameManager.Instance.stage * 5;
         _totalPrice = 0;
         _totalText.text = _playerMoney.ToString();
         CheckCount();
@@ -88,6 +91,20 @@ public class ReceiptWindow : MonoBehaviour {
             _countText.color = Color.red;
             _checkoutButton.SetActive(false);
         }
+    }
+
+    public void OpenConfirmWindow() {
+        if(_playerMoney - _totalPrice > 0) {
+            // Show the extra text
+            _extraText.SetActive(true);
+        } else {
+            // Hide the extra text
+            _extraText.SetActive(false);
+        }
+    }
+
+    public void CloseConfirmWindow() {
+        _extraText.SetActive(false);
     }
 
     public void Checkout() {

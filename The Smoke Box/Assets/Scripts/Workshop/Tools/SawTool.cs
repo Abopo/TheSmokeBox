@@ -14,6 +14,7 @@ public class SawTool : Tool {
 
     private static Slicer slicer;
 
+    bool _isSlicing;
     bool _success;
     GameObject _originalPiece;
     WoodPiece _leftPiece;
@@ -21,6 +22,9 @@ public class SawTool : Tool {
 
     [SerializeField]
     private SawCanvas _postCutCanvas;
+
+    [SerializeField]
+    GameObject _errorMessage;
 
     SawObject _sawObject;
 
@@ -49,15 +53,17 @@ public class SawTool : Tool {
 
     // Update is called once per frame
     void Update() {
-        // Scoot the slicing plane left/right
-        if (Keyboard.current.qKey.isPressed) {
-            if (slicePlane.transform.localPosition.x > -1.01f) {
-                slicePlane.transform.Translate(-0.25f * Time.deltaTime, 0f, 0f, Space.World);
+        if (!_isSlicing) {
+            // Scoot the slicing plane left/right
+            if (Keyboard.current.qKey.isPressed) {
+                if (slicePlane.transform.localPosition.x > -1.01f) {
+                    slicePlane.transform.Translate(-0.25f * Time.deltaTime, 0f, 0f, Space.World);
+                }
             }
-        }
-        if (Keyboard.current.eKey.isPressed) {
-            if (slicePlane.transform.localPosition.x < 1.01f) {
-                slicePlane.transform.Translate(0.25f * Time.deltaTime, 0f, 0f, Space.World);
+            if (Keyboard.current.eKey.isPressed) {
+                if (slicePlane.transform.localPosition.x < 1.01f) {
+                    slicePlane.transform.Translate(0.25f * Time.deltaTime, 0f, 0f, Space.World);
+                }
             }
         }
     }
@@ -81,12 +87,19 @@ public class SawTool : Tool {
         base.DeactivateTool();
 
         gameObject.SetActive(false);
-
         _toolUI.SetActive(false);
+        _errorMessage.SetActive(false);
     }
 
     public override void UseTool() {
         base.UseTool();
+
+        _isSlicing = true;
+
+        _errorMessage.SetActive(false);
+
+        // Full disable all edit controls
+        _editManager.DisableRotation();
 
         // Set the intersection material to the piece's current material
         intersectionMaterial = _editManager.curPiece.GetComponent<MeshRenderer>().material;
@@ -97,13 +110,11 @@ public class SawTool : Tool {
         // Slice the piece in two
         _success = SlicePiece(_editManager.curPiece);
 
-        if (_success) {
-            // Hide the confirmation UI
-            _toolUI.SetActive(false);
+        // Hide the confirmation UI
+        _toolUI.SetActive(false);
 
-            // Hide the saw vizualizer
-            slicePlane.GetChild(0).gameObject.SetActive(false);
-        }
+        // Hide the saw vizualizer
+        slicePlane.GetChild(0).gameObject.SetActive(false);
     }
 
     public bool SlicePiece(WoodPiece wPiece) {
@@ -202,6 +213,8 @@ public class SawTool : Tool {
     }
 
     public void ShowCut() {
+        _isSlicing = false;
+
         if (_success) {
             // Show the new pieces
             _leftPiece.GetComponent<MeshRenderer>().enabled = true;
@@ -212,6 +225,11 @@ public class SawTool : Tool {
 
             // Show the post cut UI
             _postCutCanvas.Activate();
+        } else {
+            _editManager.EnableRotation();
+            _toolUI.SetActive(true);
+            slicePlane.GetChild(0).gameObject.SetActive(true);
+            _errorMessage.SetActive(true);
         }
     }
 
@@ -231,7 +249,7 @@ public class SawTool : Tool {
         _editManager.PickUpPiece(_leftPiece);
 
         // Tell the canvas to swap buttons
-        _postCutCanvas.SwapButtons();
+        _postCutCanvas.SwapButtons(true);
     }
 
     public void KeepRightPiece() {
@@ -239,7 +257,7 @@ public class SawTool : Tool {
         _editManager.PickUpPiece(_rightPiece);
 
         // Tell the canvas to swap buttons
-        _postCutCanvas.SwapButtons();
+        _postCutCanvas.SwapButtons(false);
     }
 
     public void DropLeftPiece() {

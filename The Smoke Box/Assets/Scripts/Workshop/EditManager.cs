@@ -173,6 +173,8 @@ public class EditManager : MonoBehaviour {
 
         // Lose reference to piece
         _holdPiece = null;
+
+        FindObjectOfType<ToolsWindow>().hasBase = true;
     }
 
     void RotatePieceMouse() {
@@ -270,5 +272,17 @@ public class EditManager : MonoBehaviour {
         if (curPiece != null) {
             _canvas.HideBaseUI();
         }
+    }
+
+    public void DisableRotation() {
+        _canRotate = false;
+    }
+
+    public void EnableRotation() {
+        _canRotate = true;
+    }
+
+    public void ClearHoldPiece() {
+        _holdPiece = null;
     }
 }
