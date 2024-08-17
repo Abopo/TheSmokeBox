@@ -33,6 +33,14 @@ public class DriveThruManager : MonoBehaviour {
     CarCam _carCam;
 
     [SerializeField]
+    AudioSource _BGM;
+
+    [SerializeField]
+    GameObject _shopTutorial;
+    [SerializeField]
+    Credits _credits;
+
+    [SerializeField]
     Waypoint _finalWaypoint; // For debugging
 
     // Start is called before the first frame update
@@ -135,6 +143,16 @@ public class DriveThruManager : MonoBehaviour {
         _dialogueCanvas.SetActive(false);
         // Turn the camera to face the shop window
         _carCam.GoToShopView();
+
+        // Up the volume of the music for the shop
+        _BGM.volume = 0.3f;
+
+        if (_shopTutorial != null) {
+            _shopTutorial.SetActive(true);
+        }
+        if(_credits != null) {
+            _credits.RollCredits();
+        }
     }
 
     IEnumerator ForceEnd() {

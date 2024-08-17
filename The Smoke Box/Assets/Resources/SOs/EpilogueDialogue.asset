@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348e32a81dee7fc419dd807d1acdda9e, type: 3}
+  m_Name: EpilogueDialogue
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - dialogueLine: It's too bad you didn't win the competition, MC.
+    speaker: 3
+  - dialogueLine: Yeah, your final piece was so cool!
+    speaker: 2
+  - dialogueLine: Thanks, and it's okay. I'm really happy I was able to get 2nd place
+      with the pieces I wanted to make.
+    speaker: 0
+  - dialogueLine: That's great, man.
+    speaker: 1
+  - dialogueLine: Next year, though. That Franky guy is goin' down!
+    speaker: 1
+  - dialogueLine: Hahaha for sure.
+    speaker: 0
+  - dialogueLine: I'm inspired! Can you teach me woodworking sometime, MC?
+    speaker: 3
+  - dialogueLine: Really? Of course!
+    speaker: 0
+  - dialogueLine: Yay!
+    speaker: 3
+  - dialogueLine: Alright, almost time to order.
+    speaker: 1
+  - dialogueLine: Let's celebrate with some Cayenne Pepper Chocolate Lava Cake!
+    speaker: 2
+  - dialogueLine: Ooooh good idea! I also want a Hot Blunk, though.
+    speaker: 3
+  - dialogueLine: That sounds good. I think I'll get a Colonial Pretzel too.
+    speaker: 0
+  - dialogueLine: It honestly looked really good.
+    speaker: 0

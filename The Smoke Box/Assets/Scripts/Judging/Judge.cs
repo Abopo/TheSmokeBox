@@ -79,7 +79,7 @@ public class Judge : MonoBehaviour {
                     _dialogue = "Clean angles, and fabulous color scheme.";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "go...FAST!";
+                    _dialogue = "go...<j=sample>FAST!";
                     break;
             }
         } else if (GameManager.Instance.stage == 2) {
@@ -120,7 +120,7 @@ public class Judge : MonoBehaviour {
                     _dialogue = "Oh my...";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "HOTHOTHOTHOTHOTHOTHOTHOT";
+                    _dialogue = "<j=sample>HOTHOTHOTHOTHOTHOTHOTHOT";
                     break;
             }
         } else if (GameManager.Instance.stage == 3) {
@@ -132,7 +132,7 @@ public class Judge : MonoBehaviour {
                     _dialogue = "It's near perfect in every way...";
                     break;
                 case JUDGE.PITMASTER:
-                    _dialogue = "GIVE ME PRETZEL!";
+                    _dialogue = "<j=sample>GIVE ME PRETZEL!";
                     break;
             }
         }

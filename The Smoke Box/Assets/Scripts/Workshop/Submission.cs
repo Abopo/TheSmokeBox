@@ -103,6 +103,11 @@ public class Submission : MonoBehaviour {
             tempWood.pieceName = woodData[i].pieceName;
             tempWood.paintColor = woodData[i].color;
 
+            // Destroy the rigidbody since we don't need it
+            DestroyImmediate(tempWood.GetComponent<Rigidbody>());
+            // We don't need any woodpiece functionality happening
+            tempWood.enabled = false;
+
             // Set the materials (sliced pieces need an extra material per slice)
             Material material = Resources.Load<Material>("Materials/Wood/" + woodData[i].material);
             Material[] materials = new Material[woodData[i].numMats];

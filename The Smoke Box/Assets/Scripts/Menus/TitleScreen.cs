@@ -47,7 +47,7 @@ public class TitleScreen : MonoBehaviour
     public void ConfirmNameEntry()
     {
         PlayerPrefs.SetString("PlayerName", _nameInput.text);
-        SceneManager.LoadScene("Shop1");
+        GameManager.Instance.LoadScene("Shop1");
     }
 
     public void CancelNameEntry()
@@ -56,7 +56,7 @@ public class TitleScreen : MonoBehaviour
     }
 
     public void Gallery() {
-        SceneManager.LoadScene("Gallery");
+        GameManager.Instance.LoadScene("Gallery");
     }
 
     public void Quit() {

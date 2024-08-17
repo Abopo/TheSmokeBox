@@ -23,7 +23,7 @@ MonoBehaviour:
     speaker: 2
   - dialogueLine: MC, you good? What do you want?
     speaker: 1
-  - dialogueLine: Huh?! Oh, yeah. I guess I'll have a colonial pretzel.
+  - dialogueLine: Huh?! Oh, yeah. I guess I'll have some BBQ Chips.
     speaker: 0
   - dialogueLine: You seem kinda spaced out today, MC.
     speaker: 3

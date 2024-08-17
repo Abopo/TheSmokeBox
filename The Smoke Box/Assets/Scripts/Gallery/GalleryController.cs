@@ -30,7 +30,7 @@ public class GalleryController : MonoBehaviour
 
     public void BackToTitleScreen()
     {
-        SceneManager.LoadScene("TitleScreen");
+        GameManager.Instance.LoadScene("TitleScreen");
     }
 
     private void InitializeGallery()

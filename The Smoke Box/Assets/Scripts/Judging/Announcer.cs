@@ -34,7 +34,7 @@ public class Announcer : MonoBehaviour {
     }
 
     void LoadStage1Dialogues() {
-        _dialogues.Add("Welcome to the 16th annual Whakado City Woodworking competition!");
+        _dialogues.Add("Welcome to the 16th annual Heartwood Woodworking competition!");
         _dialogues.Add("Today is the live judging of our Top 4 competitors!");
         _dialogues.Add("Our first entrant is Jims!");
         _dialogues.Add("Let's hear what he has to say about his submission.");
@@ -51,7 +51,7 @@ public class Announcer : MonoBehaviour {
         _dialogues.Add("Alright! Let's take a look at the results!");
     }
     void LoadStage2Dialogues() {
-        _dialogues.Add("Welcome back to the 16th annual Whakado City Woodworking competition!");
+        _dialogues.Add("Welcome back to the 16th annual Heartwood Woodworking competition!");
         _dialogues.Add("We're down to the Top 3 competitors!");
         _dialogues.Add("Back again is Alex. What's your piece this time?");
         _dialogues.Add("Uhhh okay...judges?");

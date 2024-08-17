@@ -153,6 +153,7 @@ MonoBehaviour:
   lerp: {fileID: 0}
   numCuts: 0
   paintColor: 0
+  pieceName: 
 --- !u!1 &1464555393
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +163,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464555395}
-  - component: {fileID: 1464555394}
   m_Layer: 0
   m_Name: SubmissionAlex1
   m_TagString: Untagged
@@ -187,27 +187,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1464555394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464555393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f2a6758486efe4ca4c5d6f123b2a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: 
-  baseTransform: {fileID: 693172827}
-  hasBase: 1
-  OnAddedPiece:
-    m_PersistentCalls:
-      m_Calls: []
-  numPiecesUsed: 0
-  numCutsUsed: 0
-  colorsUsed: 
 --- !u!1 &1691488660492782462
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +201,6 @@ GameObject:
   - component: {fileID: 3758904897191386059}
   - component: {fileID: 4456941027841998361}
   - component: {fileID: 6570386010789127214}
-  - component: {fileID: 2169677409201457655}
   m_Layer: 6
   m_Name: Ship
   m_TagString: Untagged
@@ -263,6 +241,7 @@ MonoBehaviour:
   lerp: {fileID: 0}
   numCuts: 0
   paintColor: 0
+  pieceName: 
 --- !u!114 &3536777994918991119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,22 +322,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4493585093827132993, guid: ea7e46da2cb49bd44ace7121b2e362a5, type: 3}
---- !u!54 &2169677409201457655
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691488660492782462}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 2
-  m_AngularDrag: 0.5
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1927119027891912358
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +336,6 @@ GameObject:
   - component: {fileID: 153015064936883208}
   - component: {fileID: 6220410460244006642}
   - component: {fileID: 4748346337460127494}
-  - component: {fileID: 5078909782761072626}
   m_Layer: 6
   m_Name: WoodPiece(Clone) (1)
   m_TagString: Untagged
@@ -414,6 +376,7 @@ MonoBehaviour:
   lerp: {fileID: 0}
   numCuts: 0
   paintColor: 0
+  pieceName: 
 --- !u!114 &5715877341284038580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,22 +457,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5078909782761072626
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927119027891912358}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 2
-  m_AngularDrag: 0.5
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4729544470733000946
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +471,6 @@ GameObject:
   - component: {fileID: 1525833305630334322}
   - component: {fileID: 1343821229929460162}
   - component: {fileID: 1767560976082143480}
-  - component: {fileID: 6993943473505147786}
   m_Layer: 6
   m_Name: WoodPiece(Clone)
   m_TagString: Untagged
@@ -565,6 +511,7 @@ MonoBehaviour:
   lerp: {fileID: 0}
   numCuts: 0
   paintColor: 0
+  pieceName: 
 --- !u!114 &2050506476078477527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,19 +592,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &6993943473505147786
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4729544470733000946}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 2
-  m_AngularDrag: 0.5
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0

@@ -9,6 +9,11 @@ public class JudgingManager : MonoBehaviour {
 
     PlayableDirector _director;
 
+    [SerializeField]
+    AudioSource _BGM;
+    [SerializeField]
+    AudioClip _judgingTrack;
+
     public List<TOPIC> topics = new List<TOPIC>();
 
     private void Awake() {
@@ -16,6 +21,7 @@ public class JudgingManager : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
+        PlayFanfare();
     }
 
     // Update is called once per frame
@@ -24,6 +30,22 @@ public class JudgingManager : MonoBehaviour {
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
             ForceEnd();
         }
+
+        // Once the fanfare is done
+        if (!_BGM.isPlaying) {
+            // Play the music
+            PlayMusic();
+        }
+    }
+
+    public void PlayFanfare() {
+        _BGM.Play();
+    }
+
+    public void PlayMusic() {
+        _BGM.clip = _judgingTrack;
+        _BGM.loop = true;
+        _BGM.Play();
     }
 
     public void EndJudgingScene() {
@@ -33,7 +55,7 @@ public class JudgingManager : MonoBehaviour {
         if (GameManager.Instance.stage <= 3) {
             GameManager.Instance.LoadScene("Shop" + GameManager.Instance.stage.ToString());
         } else {
-            Application.Quit();
+            GameManager.Instance.LoadScene("Epilogue");
         }
     }
 

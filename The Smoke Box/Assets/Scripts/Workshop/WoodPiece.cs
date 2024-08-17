@@ -71,7 +71,9 @@ public class WoodPiece : MonoBehaviour {
             isOnTable = true;
         }
 
-        _woodSFX.PlayWoodCollisionSFX();
+        if (_woodSFX != null) {
+            _woodSFX.PlayWoodCollisionSFX();
+        }
     }
 
     public void SetData(ShopItemData wData) {
