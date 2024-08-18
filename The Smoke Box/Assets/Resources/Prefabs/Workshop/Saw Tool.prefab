@@ -136,6 +136,7 @@ MonoBehaviour:
   topMoveDistance: {x: 0.5, y: 0, z: 0}
   bottomMoveDistance: {x: -0.5, y: 0, z: 0}
   _postCutCanvas: {fileID: 3908786395312092098}
+  _errorMessage: {fileID: 0}
 --- !u!1 &3908786394113058829
 GameObject:
   m_ObjectHideFlags: 0
@@ -11377,7 +11378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563896576732694603, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7700556839315650025, guid: 77f20711e2046144c91cfa81d3e3cdf8, type: 3}
       propertyPath: m_AnchoredPosition.y

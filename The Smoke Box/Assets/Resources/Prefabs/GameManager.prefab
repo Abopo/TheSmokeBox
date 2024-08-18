@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: []
+  stage: 1
+  chippTopics: 
+  jambonTopics: 
+  pitmasterTopics: 
