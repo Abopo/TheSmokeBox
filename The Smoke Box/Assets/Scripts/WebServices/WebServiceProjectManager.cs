@@ -10,7 +10,7 @@ public class WebServiceProjectManager : MonoBehaviour
 {
     public static WebServiceProjectManager Instance;
 
-    private readonly string _projectEndpoint = "/api/Projects";
+    private readonly string _projectEndpoint = "https://bughunigamejam2024.azurewebsites.net/api/Projects";
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class WebServiceProjectManager : MonoBehaviour
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
         formData.Add(new MultipartFormFileSection("file", data, name + ".json", "file"));
 
-        string url = PlayerPrefs.GetString("apiPath") + _projectEndpoint + "?userName=" + ownerName + "&projectName=" + name;
+        string url = _projectEndpoint + "?userName=" + ownerName + "&projectName=" + name;
 
         try
         {
@@ -56,7 +56,7 @@ public class WebServiceProjectManager : MonoBehaviour
 
     public void GetProjects(Action<List<Project>> handleProjectsResponse, Action<string> handleFailure)
     {
-        string url = PlayerPrefs.GetString("apiPath") + _projectEndpoint;
+        string url = _projectEndpoint;
 
         StartCoroutine(WebRequestUtil.GetRequest<List<Project>>(url, handleProjectsResponse, handleFailure));
     }
@@ -65,7 +65,7 @@ public class WebServiceProjectManager : MonoBehaviour
     // out for whatever data your serializing and get the class back
     public void GetProjectFile(int id, Action<SubmissionData> handleSuccess, Action<string> handleFailure)
     {
-        string url = PlayerPrefs.GetString("apiPath") + _projectEndpoint + "/" + id;
+        string url = _projectEndpoint + "/" + id;
 
         StartCoroutine(WebRequestUtil.GetRequest<SubmissionData>(url, handleSuccess, handleFailure));
     }

@@ -34,8 +34,6 @@ public class TestWebAPI : MonoBehaviour
 
     public void Start()
     {
-        PlayerPrefs.SetString("apiPath", "https://bughunigamejam2024.azurewebsites.net");
-
         getProjectsButton.onClick.AddListener(ClickGetProjectsButton);
         getProjectButton.onClick.AddListener(ClickGetProjectButton);
         postProjectButton.onClick.AddListener(ClickPostProjectButton);

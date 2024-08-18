@@ -83,7 +83,7 @@ public class GalleryController : MonoBehaviour
 
     private void OnGetProjectsFailed(string message)
     {
-
+        Debug.Log(message);
     }
 
     private void ShuffleProjects(ref List<Project> projects)
