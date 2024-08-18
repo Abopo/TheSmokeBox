@@ -18,7 +18,7 @@ public class GalleryNamePlate : MonoBehaviour
     public void Init(Project project, int id)
     {
         _shelfId = id;
-        _textLabel.text = project.Name + "/nBy: " + project.OwnerName;
+        _textLabel.text = project.Name + "\nBy: " + project.OwnerName;
     }
 
     public void setInteractive(bool interactive)

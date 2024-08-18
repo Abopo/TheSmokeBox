@@ -7,7 +7,7 @@ public class DownloadedProject : MonoBehaviour
 {
     private Submission _submission;
 
-    private float _speed = 15f;
+    private float _speed = 20f;
     private Vector3 _startPoint;
     private Vector3 targetPos;
     private bool isMoving = false;
