@@ -11,7 +11,8 @@ public class WoodShop : MonoBehaviour {
 
     ReceiptWindow _receiptWindow;
 
-    public bool _lastPage;
+    public bool turningPage;
+    public bool lastPage;
 
     private void Awake() {
         _slots = GetComponentsInChildren<WoodSlot>();
@@ -47,13 +48,14 @@ public class WoodShop : MonoBehaviour {
     }
 
     public IEnumerator ChangePage() {
+        turningPage = true;
         int _check = 0;
         for (int i = 0; i < 4; i++)
         {
             for(int j = i; j <= i + 8; j += 4)
             {
-                if (j + (_lastPage ? 0 : 12) < _inventory.inventory.Length) {
-                    _slots[j].ChangeItem(_inventory.inventory[j + (_lastPage ? 0 : 12)]);
+                if (j + (lastPage ? 0 : 12) < _inventory.inventory.Length) {
+                    _slots[j].ChangeItem(_inventory.inventory[j + (lastPage ? 0 : 12)]);
                     _check++;
                 }
                 else if(j < _slots.Length) {
@@ -66,9 +68,11 @@ public class WoodShop : MonoBehaviour {
 
         // TODO: this fails if the last page actually fills in all the slots
         if(_check == 12) {
-            _lastPage = false;
+            lastPage = false;
         } else {
-            _lastPage = true;
+            lastPage = true;
         }
+
+        turningPage = false;
     }
 }
