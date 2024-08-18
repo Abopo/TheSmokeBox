@@ -7,7 +7,11 @@ using UnityEngine.UI;
 
 public class GalleryController : MonoBehaviour
 {
+    [SerializeField] private GameObject _mainMenuButton;
+    [SerializeField] private GameObject _backToShelfButton;
+
     [SerializeField] private GameObject _loadingScreen;
+    [SerializeField] private Animator _cameraAnimator;
 
     [SerializeField] private Button _leftButton;
     [SerializeField] private Button _rightButton;
@@ -15,14 +19,17 @@ public class GalleryController : MonoBehaviour
     [SerializeField] private GameObject _downloadingPrefab;
 
     [SerializeField] private List<Transform> _spawnPoints;
-    [SerializeField] private List<TMPro.TMP_Text> _labels;
+    [SerializeField] private Transform _tablePosition;
+
+    [SerializeField] private List<GalleryNamePlate> _namePlates;
 
     private List<DownloadedProject> _downloadProjects = new List<DownloadedProject>();
 
     private List<Project> _projectList;
-    private const int _entriesPerPage = 8;
     private int _currentPage = 0;
     private int _totalPages = 0;
+
+    private DownloadedProject _onTableProject;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +63,42 @@ public class GalleryController : MonoBehaviour
         SetLeftRightButtonInteractable();
     }
 
+    public void ToTable(int shelfID)
+    {
+        _cameraAnimator.SetTrigger("MoveCamera");
+        _onTableProject = _downloadProjects[shelfID];
+        _onTableProject.MoveToPoint(_tablePosition.position);
+
+        // UI stuff
+        foreach (var namePlate in _namePlates)
+        {
+            namePlate.setInteractive(false);
+        }
+
+        _mainMenuButton.SetActive(false);
+        _backToShelfButton.SetActive(true);
+
+        _leftButton.gameObject.SetActive(false);
+        _rightButton.gameObject.SetActive(false);
+    }
+
+    public void BackToShelf()
+    {
+        _cameraAnimator.SetTrigger("MoveCamera");
+        _onTableProject.ReturnToPoint();
+        
+        foreach (var namePlate in _namePlates)
+        {
+            namePlate.setInteractive(true);
+        }
+
+        _mainMenuButton.SetActive(true);
+        _backToShelfButton.SetActive(false);
+
+        _leftButton.gameObject.SetActive(true);
+        _rightButton.gameObject.SetActive(true);
+    }
+
     private void InitializeGallery()
     {
         _loadingScreen.SetActive(true);
@@ -73,19 +116,19 @@ public class GalleryController : MonoBehaviour
 
     private void DownloadSubmissions()
     {
-        int startEntry = _currentPage * _entriesPerPage;
+        int startEntry = _currentPage * _spawnPoints.Count;
 
         foreach (var spawn in _spawnPoints)
         {
             spawn.gameObject.SetActive(false);
         }
 
-        for (int i = 0; i + startEntry < _projectList.Count && i < _entriesPerPage; i++)
+        for (int i = 0; i + startEntry < _projectList.Count && i < _spawnPoints.Count; i++)
         {
             _spawnPoints[i].gameObject.SetActive(true);
             var project = _projectList[i + startEntry];
             _downloadProjects[i].Init(project.ProjectID);
-            _labels[i].text = project.Name + "\nBy: " + project.OwnerName;
+            _namePlates[i].Init(project, i);
         }
     }
 
