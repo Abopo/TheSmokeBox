@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd23c650a2fa528499746b4e53e72430, type: 3}
-  m_Name: Cylinder
+  m_Name: Sphere-S
   m_EditorClassIdentifier: 
-  itemName: Cylinder
+  itemName: Sphere (s)
   price: 1
-  mesh: {fileID: 2534964839176971238, guid: 107745fa49803794f94c4a88e1581fd4, type: 3}
-  rotation: {x: -90, y: 0, z: 0}
+  mesh: {fileID: 4711208715938537054, guid: e8a195f2fdb1f904eb775969493f4e7a, type: 3}
+  rotation: {x: 0, y: 0, z: 0}

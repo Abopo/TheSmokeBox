@@ -20,6 +20,8 @@ public class ShopArrow : MonoBehaviour {
     }
 
     private void OnMouseDown() {
-        StartCoroutine(_woodShop.ChangePage());
+        if (!_woodShop.turningPage) {
+            StartCoroutine(_woodShop.ChangePage());
+        }
     }
 }

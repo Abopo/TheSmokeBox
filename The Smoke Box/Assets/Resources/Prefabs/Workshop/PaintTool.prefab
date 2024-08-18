@@ -266,7 +266,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e3a14e0c6c41d6b4894e0e4e2f9030fb, type: 2}
+  - {fileID: 2100000, guid: ae43b63160ecbfc45be15f6a5e86a9cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8815687098688620355
 Transform:
   m_ObjectHideFlags: 0
@@ -338,3 +338,4 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _paintMaterial: {fileID: 0}

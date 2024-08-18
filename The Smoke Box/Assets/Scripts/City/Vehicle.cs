@@ -6,6 +6,9 @@ public class Vehicle : MonoBehaviour {
 
     public float moveSpeed;
 
+    public float lifetime;
+    float _lifeTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +19,10 @@ public class Vehicle : MonoBehaviour {
     void Update()
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+        _lifeTimer += Time.deltaTime;
+        if(_lifeTimer >= lifetime) {
+            Destroy(gameObject);
+        }
     }
 }
