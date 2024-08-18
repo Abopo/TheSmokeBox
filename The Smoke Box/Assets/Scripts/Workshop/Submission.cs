@@ -21,6 +21,7 @@ public class Submission : MonoBehaviour {
     public List<PAINTCOLOR> colorsUsed = new List<PAINTCOLOR>();
     public List<string> pieceNames = new List<string>();
     // List of meshes used?
+    private List<GameObject> pieces = new List<GameObject>();
 
     SubmissionDataManager _submissionDataManager = new SubmissionDataManager();
 
@@ -79,6 +80,13 @@ public class Submission : MonoBehaviour {
 
     private void LoadFromSubmissionDataManager()
     {
+        // clear old pieces
+        foreach (var piece in pieces)
+        {
+            Destroy(piece.gameObject);
+        }
+        pieces.Clear();
+
         // Spawn wood pieces based on the loaded data
         WoodData[] woodData = _submissionDataManager.submissionData.woodDatas;
         UnityEngine.Object woodPieceObj = Resources.Load("Prefabs/Workshop/WoodPiece");
@@ -89,6 +97,7 @@ public class Submission : MonoBehaviour {
             tempPiece = Instantiate(woodPieceObj, transform) as GameObject;
             tempPiece.transform.localPosition = woodData[i].pos;
             tempPiece.transform.localRotation = Quaternion.Euler(woodData[i].rot);
+            pieces.Add(tempPiece);
 
             // Set the mesh
             Mesh mesh = new Mesh();

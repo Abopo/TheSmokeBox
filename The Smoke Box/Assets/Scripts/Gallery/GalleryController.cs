@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GalleryController : MonoBehaviour
 {
     [SerializeField] private GameObject _loadingScreen;
+
+    [SerializeField] private Button _leftButton;
+    [SerializeField] private Button _rightButton;
 
     [SerializeField] private GameObject _downloadingPrefab;
 
@@ -30,6 +34,26 @@ public class GalleryController : MonoBehaviour
     public void BackToTitleScreen()
     {
         GameManager.Instance.LoadScene("TitleScreen");
+    }
+
+    public void BackOnePage()
+    {
+        if (_currentPage > 0)
+        {
+            _currentPage--;
+            DownloadSubmissions();
+        }
+        SetLeftRightButtonInteractable();
+    }
+
+    public void ForwardOnePage()
+    {
+        if (_currentPage < _totalPages - 1)
+        {
+            _currentPage++;
+            DownloadSubmissions();
+        }
+        SetLeftRightButtonInteractable();
     }
 
     private void InitializeGallery()
@@ -70,13 +94,14 @@ public class GalleryController : MonoBehaviour
         if (projects.Count > 0)
         {
             ShuffleProjects(ref projects);
-            int pages = projects.Count / 8;
+            _totalPages = (projects.Count / 8 + 1);
             _currentPage = 0;
         }
 
         _projectList = projects;
 
         DownloadSubmissions();
+        SetLeftRightButtonInteractable();
 
         _loadingScreen.SetActive(false);
     }
@@ -96,6 +121,22 @@ public class GalleryController : MonoBehaviour
             Project value = projects[k];
             projects[k] = projects[n];
             projects[n] = value;
+        }
+    }
+
+    private void SetLeftRightButtonInteractable()
+    {
+        _leftButton.interactable = true;
+        _rightButton.interactable = true;
+
+        if (_currentPage == 0)
+        {
+            _leftButton.interactable = false;
+        }
+
+        if (_currentPage == _totalPages - 1)
+        {
+            _rightButton.interactable = false;
         }
     }
 }
