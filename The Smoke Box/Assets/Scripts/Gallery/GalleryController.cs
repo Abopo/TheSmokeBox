@@ -9,6 +9,9 @@ public class GalleryController : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenuButton;
     [SerializeField] private GameObject _backToShelfButton;
+    [SerializeField] private GameObject _guideText;
+
+    [SerializeField] private GalleryViewer _galleryViewer;
 
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private Animator _cameraAnimator;
@@ -29,6 +32,9 @@ public class GalleryController : MonoBehaviour
     private int _currentPage = 0;
     private int _totalPages = 0;
 
+    private float _guideTextTimer = 0f;
+    private float _guideTextTimeLimit = 5f;
+
     private DownloadedProject _onTableProject;
 
     // Start is called before the first frame update
@@ -36,6 +42,18 @@ public class GalleryController : MonoBehaviour
     {
         InitializeGallery();
         SpawnSubmissions();
+    }
+
+    private void Update()
+    {
+        if (_guideText.activeSelf == true)
+        {
+            _guideTextTimer += Time.deltaTime;
+            if (_guideTextTimer >= _guideTextTimeLimit)
+            {
+                _guideText.SetActive(false);
+            }
+        }
     }
 
     public void BackToTitleScreen()
@@ -68,12 +86,15 @@ public class GalleryController : MonoBehaviour
         _cameraAnimator.SetTrigger("MoveCamera");
         _onTableProject = _downloadProjects[shelfID];
         _onTableProject.MoveToPoint(_tablePosition.position);
+        _galleryViewer.SetSubmission(_onTableProject.GetComponent<Submission>());
 
         // UI stuff
         foreach (var namePlate in _namePlates)
         {
             namePlate.setInteractive(false);
         }
+
+        _guideText.SetActive(false);
 
         _mainMenuButton.SetActive(false);
         _backToShelfButton.SetActive(true);
@@ -86,6 +107,7 @@ public class GalleryController : MonoBehaviour
     {
         _cameraAnimator.SetTrigger("MoveCamera");
         _onTableProject.ReturnToPoint();
+        _galleryViewer.ClearSubmission();
         
         foreach (var namePlate in _namePlates)
         {
