@@ -12,6 +12,8 @@ public class DownloadedProject : MonoBehaviour
     private Vector3 targetPos;
     private bool isMoving = false;
 
+    public int _projectID; // literally just for checking DSD
+
     private void Awake()
     {
         _submission = GetComponent<Submission>();
@@ -33,7 +35,13 @@ public class DownloadedProject : MonoBehaviour
 
     public void Init(int projectID)
     {
+        _projectID = projectID;
         WebServiceProjectManager.Instance.GetProjectFile(projectID, HandleDownloadSuccess, HandleDownloadFailure);
+    }
+
+    public void DeletePieces()
+    {
+        _submission.DeletePieces();
     }
 
     public void MoveToPoint(Vector3 point)

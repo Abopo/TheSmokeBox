@@ -78,7 +78,7 @@ public class Submission : MonoBehaviour {
         LoadFromSubmissionDataManager();
     }
 
-    private void LoadFromSubmissionDataManager()
+    public void DeletePieces()
     {
         // clear old pieces
         foreach (var piece in pieces)
@@ -86,6 +86,11 @@ public class Submission : MonoBehaviour {
             Destroy(piece.gameObject);
         }
         pieces.Clear();
+    }
+
+    private void LoadFromSubmissionDataManager()
+    {
+        DeletePieces();
 
         // Spawn wood pieces based on the loaded data
         WoodData[] woodData = _submissionDataManager.submissionData.woodDatas;

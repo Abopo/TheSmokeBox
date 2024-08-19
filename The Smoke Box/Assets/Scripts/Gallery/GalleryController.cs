@@ -26,6 +26,11 @@ public class GalleryController : MonoBehaviour
 
     [SerializeField] private List<GalleryNamePlate> _namePlates;
 
+    [SerializeField] private Material _defaultCloth;
+    [SerializeField] private Material _DSDCloth;
+
+    [SerializeField] private AudioSource _BGM;
+
     private List<DownloadedProject> _downloadProjects = new List<DownloadedProject>();
 
     private List<Project> _projectList;
@@ -73,6 +78,11 @@ public class GalleryController : MonoBehaviour
         _onTableProject.MoveToPoint(_tablePosition.position);
         _galleryViewer.SetSubmission(_onTableProject.GetComponent<Submission>());
 
+        if (_onTableProject._projectID == -1)
+        {
+            _BGM.Pause();
+        }
+
         // UI stuff
         foreach (var namePlate in _namePlates)
         {
@@ -93,7 +103,13 @@ public class GalleryController : MonoBehaviour
         _cameraAnimator.SetTrigger("MoveCamera");
         _onTableProject.ReturnToPoint();
         _galleryViewer.ClearSubmission();
-        
+
+
+        if (_onTableProject._projectID == -1)
+        {
+            _BGM.Play();
+        }
+
         foreach (var namePlate in _namePlates)
         {
             namePlate.setInteractive(true);
@@ -134,21 +150,57 @@ public class GalleryController : MonoBehaviour
 
         for (int i = 0; i + startEntry < _projectList.Count && i < _spawnPoints.Count; i++)
         {
+            _downloadProjects[i].DeletePieces();
             _spawnPoints[i].gameObject.SetActive(true);
             var project = _projectList[i + startEntry];
-            _downloadProjects[i].Init(project.ProjectID);
+            if (project.ProjectID == -1)
+            {
+                // DSD
+                _downloadProjects[i]._projectID = -1;
+                _spawnPoints[i].GetComponentInChildren<MeshRenderer>().material = _DSDCloth;
+            }
+            else
+            {
+                // normal
+                _downloadProjects[i].Init(project.ProjectID);
+                _spawnPoints[i].GetComponentInChildren<MeshRenderer>().material = _defaultCloth;
+            }
             _namePlates[i].Init(project, i);
         }
     }
 
     private void OnProjectsRecieved(List<Project> projects)
     {
+        Project DSDProject = new Project();
+        DSDProject.ProjectID = -1;
+        DSDProject.OwnerName = "????";
+        DSDProject.Name = "";
+
         if (projects.Count > 0)
         {
             StreamSafeCheck(ref projects);
             ShuffleProjects(ref projects);
             _totalPages = (projects.Count / 8 + 1);
             _currentPage = 0;
+        }
+
+        if (_totalPages > 1)
+        {
+            // put DSD in second page
+            int displayPerPage = _spawnPoints.Count;
+            int spawnOffset = Random.Range(0, displayPerPage);
+            if (displayPerPage + spawnOffset > projects.Count)
+            {
+                projects.Add(DSDProject);
+            }
+            else
+            {
+                projects.Insert(displayPerPage + spawnOffset, DSDProject);
+            }
+        }
+        else
+        {
+            projects.Add(DSDProject);
         }
 
         _projectList = projects;
