@@ -32,9 +32,6 @@ public class GalleryController : MonoBehaviour
     private int _currentPage = 0;
     private int _totalPages = 0;
 
-    private float _guideTextTimer = 0f;
-    private float _guideTextTimeLimit = 5f;
-
     private DownloadedProject _onTableProject;
 
     // Start is called before the first frame update
@@ -42,18 +39,6 @@ public class GalleryController : MonoBehaviour
     {
         InitializeGallery();
         SpawnSubmissions();
-    }
-
-    private void Update()
-    {
-        if (_guideText.activeSelf == true)
-        {
-            _guideTextTimer += Time.deltaTime;
-            if (_guideTextTimer >= _guideTextTimeLimit)
-            {
-                _guideText.SetActive(false);
-            }
-        }
     }
 
     public void BackToTitleScreen()
@@ -113,6 +98,8 @@ public class GalleryController : MonoBehaviour
         {
             namePlate.setInteractive(true);
         }
+
+        _guideText.SetActive(true);
 
         _mainMenuButton.SetActive(true);
         _backToShelfButton.SetActive(false);
