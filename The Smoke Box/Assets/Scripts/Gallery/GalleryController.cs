@@ -158,6 +158,7 @@ public class GalleryController : MonoBehaviour
     {
         if (projects.Count > 0)
         {
+            StreamSafeCheck(ref projects);
             ShuffleProjects(ref projects);
             _totalPages = (projects.Count / 8 + 1);
             _currentPage = 0;
@@ -174,6 +175,22 @@ public class GalleryController : MonoBehaviour
     private void OnGetProjectsFailed(string message)
     {
         Debug.Log(message);
+    }
+
+    private void StreamSafeCheck(ref List<Project> projects)
+    {
+        if (PlayerPrefs.GetInt("StreamSafe") == 1)
+        {
+            List<Project> safeProjects = new List<Project>();
+            foreach (var project in projects)
+            {
+                if (project.IsStreamSafe)
+                {
+                    safeProjects.Add(project);
+                }
+            }
+            projects = safeProjects;
+        }
     }
 
     private void ShuffleProjects(ref List<Project> projects)
