@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class GalleryController : MonoBehaviour
 {
+    [Header("Debug")]
+    public bool _displayInOrder = false;
+
+    [Header("Other")]
     [SerializeField] private GameObject _mainMenuButton;
     [SerializeField] private GameObject _backToShelfButton;
     [SerializeField] private GameObject _guideText;
@@ -171,23 +175,27 @@ public class GalleryController : MonoBehaviour
 
     private void OnProjectsRecieved(List<Project> projects)
     {
+        int displayPerPage = _spawnPoints.Count;
+
+        if (projects.Count > 0)
+        {
+            StreamSafeCheck(ref projects);
+            if (!_displayInOrder)
+            {
+                ShuffleProjects(ref projects);
+            }
+            _totalPages = (projects.Count + displayPerPage) / displayPerPage;
+            _currentPage = 0;
+        }
+        
         Project DSDProject = new Project();
         DSDProject.ProjectID = -1;
         DSDProject.OwnerName = "????";
         DSDProject.Name = "";
 
-        if (projects.Count > 0)
-        {
-            StreamSafeCheck(ref projects);
-            ShuffleProjects(ref projects);
-            _totalPages = (projects.Count / 8 + 1);
-            _currentPage = 0;
-        }
-
         if (_totalPages > 1)
         {
             // put DSD in second page
-            int displayPerPage = _spawnPoints.Count;
             int spawnOffset = Random.Range(0, displayPerPage);
             if (displayPerPage + spawnOffset > projects.Count)
             {
