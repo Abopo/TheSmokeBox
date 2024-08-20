@@ -180,10 +180,14 @@ public class GalleryController : MonoBehaviour
         if (projects.Count > 0)
         {
             StreamSafeCheck(ref projects);
+#if UNITY_EDITOR
             if (!_displayInOrder)
             {
                 ShuffleProjects(ref projects);
             }
+#else
+            ShuffleProjects(ref projects);
+#endif
             _totalPages = (projects.Count + displayPerPage) / displayPerPage;
             _currentPage = 0;
         }
