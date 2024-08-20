@@ -94,8 +94,6 @@ public class SawTool : Tool {
     public override void UseTool() {
         base.UseTool();
 
-        _isSlicing = true;
-
         _errorMessage.SetActive(false);
 
         // Full disable all edit controls
@@ -104,17 +102,26 @@ public class SawTool : Tool {
         // Set the intersection material to the piece's current material
         intersectionMaterial = _editManager.curPiece.GetComponent<MeshRenderer>().material;
 
-        // Start the animation
-        _sawObject.PlayAnimation();
-
         // Slice the piece in two
         _success = SlicePiece(_editManager.curPiece);
 
-        // Hide the confirmation UI
-        _toolUI.SetActive(false);
+        if (_success) {
+            _isSlicing = true;
+            
+            // Start the animation
+            _sawObject.PlayAnimation();
 
-        // Hide the saw vizualizer
-        slicePlane.GetChild(0).gameObject.SetActive(false);
+            // Hide the confirmation UI
+            _toolUI.SetActive(false);
+
+            // Hide the saw vizualizer
+            slicePlane.GetChild(0).gameObject.SetActive(false);
+        } else {
+            _errorMessage.SetActive(true);
+            _editManager.EnableRotation();
+            _toolUI.SetActive(true);
+            slicePlane.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     public bool SlicePiece(WoodPiece wPiece) {
@@ -225,11 +232,6 @@ public class SawTool : Tool {
 
             // Show the post cut UI
             _postCutCanvas.Activate();
-        } else {
-            _editManager.EnableRotation();
-            _toolUI.SetActive(true);
-            slicePlane.GetChild(0).gameObject.SetActive(true);
-            _errorMessage.SetActive(true);
         }
     }
 

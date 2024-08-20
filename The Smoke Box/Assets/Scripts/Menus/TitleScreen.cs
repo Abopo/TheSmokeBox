@@ -9,6 +9,9 @@ public class TitleScreen : MonoBehaviour
     [SerializeField]
     Submission[] _submissions;
 
+    [SerializeField]
+    GameObject _galleryStuff;
+
     [SerializeField] GameObject _userNameEntry;
     [SerializeField] TMPro.TMP_InputField _nameInput;
 
@@ -19,6 +22,10 @@ public class TitleScreen : MonoBehaviour
         WebServiceProjectManager.Instance.GetProjects(null, null);
 
         LoadSubmissions();
+
+        if(PlayerPrefs.GetInt("FinishedGame") == 0) {
+            _galleryStuff.SetActive(false);
+        }
     }
 
     void LoadSubmissions() {

@@ -17,15 +17,15 @@ MonoBehaviour:
     speaker: 2
   - dialogueLine: Me too! I want a hot blunk today.
     speaker: 3
-  - dialogueLine: You always get the hot blunk, man.
+  - dialogueLine: Cora, you always get the hot blunk.
     speaker: 1
   - dialogueLine: Hahaha!
     speaker: 2
-  - dialogueLine: MC, you good? What do you want?
+  - dialogueLine: Percy, you good? What do you want?
     speaker: 1
   - dialogueLine: Huh?! Oh, yeah. I guess I'll have some BBQ Chips.
     speaker: 0
-  - dialogueLine: You seem kinda spaced out today, MC.
+  - dialogueLine: You seem kinda spaced out today, Percy.
     speaker: 3
   - dialogueLine: Yeah, I'm thinking about what I'm going to make this week.
     speaker: 0

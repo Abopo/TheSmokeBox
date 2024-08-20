@@ -17,7 +17,7 @@ MonoBehaviour:
     speaker: 0
   - dialogueLine: Yeah, man. You're actually kinda amazing!
     speaker: 1
-  - dialogueLine: Thanks for getting me that saw, F2.
+  - dialogueLine: Thanks for getting me that saw, Raf.
     speaker: 0
   - dialogueLine: I don't think I would've made it without it.
     speaker: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     speaker: 2
   - dialogueLine: Worth it.
     speaker: 0
-  - dialogueLine: So, what are you gonna do this week, MC?
+  - dialogueLine: So, what are you gonna do this week, Percy?
     speaker: 3
   - dialogueLine: Everything that Franky guy has made is incredible.
     speaker: 3
@@ -43,7 +43,7 @@ MonoBehaviour:
     speaker: 1
   - dialogueLine: Pelvis paints?! Their paints are the most hip!
     speaker: 0
-  - dialogueLine: You'd really give me your winning ticket?
+  - dialogueLine: You'd really give me your winning ticket, Camile?
     speaker: 0
   - dialogueLine: Of course, man! You gotta win this thing!
     speaker: 1

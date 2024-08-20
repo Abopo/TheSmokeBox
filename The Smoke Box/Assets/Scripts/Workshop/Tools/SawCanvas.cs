@@ -33,7 +33,7 @@ public class SawCanvas : MonoBehaviour {
     }
 
     public void Activate() {
-        _undoButton.SetActive(true);
+        //_undoButton.SetActive(true);
         // Both keep buttons are active by default
         _leftKeepButton.SetActive(true);
         _rightKeepButton.SetActive(true);
@@ -48,7 +48,7 @@ public class SawCanvas : MonoBehaviour {
     }
 
     public void SwapButtons(bool keptLeft) {
-        _undoButton.SetActive(false);
+        //_undoButton.SetActive(false);
         // Hide the keep buttons
         _leftKeepButton.SetActive(false);
         _rightKeepButton.SetActive(false);

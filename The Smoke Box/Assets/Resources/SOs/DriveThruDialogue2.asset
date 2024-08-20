@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DriveThruDialogue2
   m_EditorClassIdentifier: 
   dialogueList:
-  - dialogueLine: MC, your sculpture was so cool!
+  - dialogueLine: Percy, your sculpture was so cool!
     speaker: 3
   - dialogueLine: Yeah man, it was very you.
     speaker: 1
@@ -31,7 +31,8 @@ MonoBehaviour:
     speaker: 0
   - dialogueLine: Okay, lemme text him...
     speaker: 2
-  - dialogueLine: I've been meaning to ask MC, why do you like woodworking so much?
+  - dialogueLine: I've been meaning to ask Percy, why do you like woodworking so
+      much?
     speaker: 3
   - dialogueLine: Oh, uhhh. There's something about the permanence of it I guess.
     speaker: 0
@@ -50,7 +51,7 @@ MonoBehaviour:
     speaker: 3
   - dialogueLine: I'll get Smokey Pig Sticks today.
     speaker: 0
-  - dialogueLine: BF1?
+  - dialogueLine: Raf?
     speaker: 1
   - dialogueLine: Hmmm...Pulled Pork Tacos!
     speaker: 2

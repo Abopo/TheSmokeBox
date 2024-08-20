@@ -23,7 +23,7 @@ public class Judge : MonoBehaviour {
     JudgingManager _judgingManager;
 
     private void Awake() {
-        _dialogueBubble = GetComponentInChildren<DialogueBubble>();
+        _dialogueBubble = GetComponentInChildren<DialogueBubble>(true);
         _judgingManager = FindObjectOfType<JudgingManager>();
     }
     // Start is called before the first frame update

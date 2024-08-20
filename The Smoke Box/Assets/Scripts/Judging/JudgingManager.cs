@@ -55,6 +55,7 @@ public class JudgingManager : MonoBehaviour {
         if (GameManager.Instance.stage <= 3) {
             GameManager.Instance.LoadScene("Shop" + GameManager.Instance.stage.ToString());
         } else {
+            PlayerPrefs.SetInt("FinishedGame", 1);
             GameManager.Instance.LoadScene("Epilogue");
         }
     }

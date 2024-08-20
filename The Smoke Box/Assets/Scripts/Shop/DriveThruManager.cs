@@ -92,24 +92,36 @@ public class DriveThruManager : MonoBehaviour {
             // Show the dialogue canvas
             _dialogueCanvas.SetActive(true);
 
-            // Set the line of dialogue
-            _dialogueText.text = _dtDialogueSO.dialogueList[_dialogueIndex].dialogueLine;
-
             // Move the speaker arrow to the right spot
             switch (_dtDialogueSO.dialogueList[_dialogueIndex].speaker) {
                 case FRIENDS.MC:
                     _dialogueArrow.anchoredPosition = new Vector2(-610f, _dialogueArrow.anchoredPosition.y);
+                    // Mid pitch for Percy
+                    _dialogueText.maxPitch = 1.2f;
+                    _dialogueText.minPitch = 0.9f;
                     break;
                 case FRIENDS.DF:
-                    _dialogueArrow.anchoredPosition = new Vector2(735f, _dialogueArrow.anchoredPosition.y);
+                    _dialogueArrow.anchoredPosition = new Vector2(610f, _dialogueArrow.anchoredPosition.y);
+                    // Mid pitch for Camile
+                    _dialogueText.maxPitch = 1.2f;
+                    _dialogueText.minPitch = 0.9f;
                     break;
                 case FRIENDS.BF1:
                     _dialogueArrow.anchoredPosition = new Vector2(-210f, _dialogueArrow.anchoredPosition.y);
+                    // Lower pitch for Raf
+                    _dialogueText.maxPitch = 0.8f;
+                    _dialogueText.minPitch = 0.5f;
                     break;
                 case FRIENDS.BF2:
                     _dialogueArrow.anchoredPosition = new Vector2(210f, _dialogueArrow.anchoredPosition.y);
+                    // Higher pitch for Cora
+                    _dialogueText.maxPitch = 2f;
+                    _dialogueText.minPitch = 1.7f;
                     break;
             }
+
+            // Set the line of dialogue
+            _dialogueText.text = _dtDialogueSO.dialogueList[_dialogueIndex].dialogueLine;
 
             _dialogueIndex++;
             _lineFinished = false;

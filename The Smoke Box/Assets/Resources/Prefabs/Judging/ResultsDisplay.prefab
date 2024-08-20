@@ -713,7 +713,7 @@ MonoBehaviour:
   showEventFoldout: 0
   showBetaFoldout: 0
   info:
-  - pos: {x: -86.0625, y: 26, z: 0}
+  - pos: {x: -88.3125, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -750,14 +750,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 0
-    chMaxX: 39
+    chMinX: 4
+    chMaxX: 43
     chMinY: -1
     chMaxY: 47
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -71.4375, y: 26, z: 0}
+  - pos: {x: -71.0625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -794,14 +794,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 3
-    chMaxX: 33
-    chMinY: -1
-    chMaxY: 47
+    chMinX: 1
+    chMaxX: 34
+    chMinY: -2
+    chMaxY: 35
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -57.9375, y: 26, z: 0}
+  - pos: {x: -57.5625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -44.4375, y: 26, z: 0}
+  - pos: {x: -44.0625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -882,14 +882,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 1
+    chMinX: 3
+    chMaxX: 24
     chMinY: -1
-    chMaxY: 1
+    chMaxY: 35
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -37.6875, y: 26, z: 0}
+  - pos: {x: -36.1875, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -926,14 +926,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 1
-    chMaxX: 41
+    chMinX: 0
+    chMaxX: 19
     chMinY: -2
-    chMaxY: 48
+    chMaxY: 46
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -21.5625, y: 26, z: 0}
+  - pos: {x: -29.4375, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -970,14 +970,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 3
-    chMaxX: 51
+    chMinX: -1
+    chMaxX: 47
     chMinY: -1
     chMaxY: 35
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -1.6875, y: 26, z: 0}
+  - pos: {x: -12.1875, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 11.8125, y: 26, z: 0}
+  - pos: {x: 1.3125, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1058,14 +1058,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 3
-    chMaxX: 33
-    chMinY: -1
-    chMaxY: 47
+    chMinX: 1
+    chMaxX: 35
+    chMinY: -2
+    chMaxY: 35
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 23.8125, y: 26, z: 0}
+  - pos: {x: 14.8125, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1103,13 +1103,13 @@ MonoBehaviour:
     IdxIdentifier: 0
     InfoInUse: 0
     chMinX: 1
-    chMaxX: 34
+    chMaxX: 32
     chMinY: -2
-    chMaxY: 35
+    chMaxY: 47
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 37.3125, y: 26, z: 0}
+  - pos: {x: 28.3125, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1153,7 +1153,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 44.0625, y: 26, z: 0}
+  - pos: {x: 35.0625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1190,14 +1190,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: 3
-    chMaxX: 41
+    chMinX: 0
+    chMaxX: 34
     chMinY: -1
     chMaxY: 47
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 60.1875, y: 26, z: 0}
+  - pos: {x: 48.5625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1235,13 +1235,13 @@ MonoBehaviour:
     IdxIdentifier: 0
     InfoInUse: 0
     chMinX: 1
-    chMaxX: 35
+    chMaxX: 34
     chMinY: -2
-    chMaxY: 35
+    chMaxY: 47
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 73.6875, y: 26, z: 0}
+  - pos: {x: 62.0625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1278,14 +1278,14 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chMinX: -1
-    chMaxX: 33
+    chMinX: 0
+    chMaxX: 34
     chMinY: -1
-    chMaxY: 35
+    chMaxY: 47
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 85.6875, y: 26, z: 0}
+  - pos: {x: 75.5625, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 0
@@ -1323,13 +1323,13 @@ MonoBehaviour:
     IdxIdentifier: 0
     InfoInUse: 0
     chMinX: -1
-    chMaxX: 1
+    chMaxX: 34
     chMinY: -1
-    chMaxY: 1
+    chMaxY: 47
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 38.4375, y: 26, z: 0}
+  - pos: {x: 37.3125, y: 26, z: 0}
     offset: {x: 0, y: 0, z: 0}
     lineSpacing: 1
     isEndOfParagraph: 1
@@ -3138,9 +3138,21 @@ MonoBehaviour:
   - 24
   - 24
   - 24
-  _text: "The Smoke Box \nWoodworking Competition\nRound 4 Results:"
-  drawText: "The Smoke Box \nWoodworking Competition\nRound 4 Results:"
-  hyphenedText: "The Smoke Box \nWoodworking Competition\nRound 4 Results:"
+  _text: 'Heartwood 2024
+
+    Woodworking Competition
+
+    Round 4 Results:'
+  drawText: 'Heartwood 2024
+
+    Woodworking Competition
+
+    Round 4 Results:'
+  hyphenedText: 'Heartwood 2024
+
+    Woodworking Competition
+
+    Round 4 Results:'
   font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   _color32:
     serializedVersion: 2
@@ -3245,7 +3257,11 @@ MonoBehaviour:
   bestFit: 0
   latestNumber: 54
   currentUnReadTime: 0
-  preParsedText: "The Smoke Box \nWoodworking Competition\nRound 4 Results:"
+  preParsedText: 'Heartwood 2024
+
+    Woodworking Competition
+
+    Round 4 Results:'
 --- !u!222 &1752359434042986794
 CanvasRenderer:
   m_ObjectHideFlags: 0

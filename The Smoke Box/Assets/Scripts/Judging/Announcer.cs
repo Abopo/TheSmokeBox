@@ -39,7 +39,7 @@ public class Announcer : MonoBehaviour {
         _dialogues.Add("Our first entrant is Jims!");
         _dialogues.Add("Let's hear what he has to say about his submission.");
         _dialogues.Add("Alright! Let's see what the judges have to say!");
-        _dialogues.Add("Our next entrant is Alexandria!");
+        _dialogues.Add("Our next entrant is Belle!");
         _dialogues.Add("What would you like the judges to know about your submission?");
         _dialogues.Add("Okay! Over to the judges!");
         _dialogues.Add("Next up is our reigning champion, Franky!");
@@ -53,7 +53,7 @@ public class Announcer : MonoBehaviour {
     void LoadStage2Dialogues() {
         _dialogues.Add("Welcome back to the 16th annual Heartwood Woodworking competition!");
         _dialogues.Add("We're down to the Top 3 competitors!");
-        _dialogues.Add("Back again is Alex. What's your piece this time?");
+        _dialogues.Add("Back again is Belle. What's your piece this time?");
         _dialogues.Add("Uhhh okay...judges?");
         _dialogues.Add("Moving on, let's see what Franky's got today!");
         _dialogues.Add("I'm feeling it! But what about our judges?");
