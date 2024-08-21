@@ -92,7 +92,7 @@ public class WoodPiece : MonoBehaviour {
     }
 
     void PickUp() {
-        if (!isLocked && EditManager.Instance.Active) {
+        if (!isLocked && EditManager.Instance != null && EditManager.Instance.Active) {
             // Disable our physics in case we were still moving
             DisablePhysics();
             // Tell the editor manager to pick us up

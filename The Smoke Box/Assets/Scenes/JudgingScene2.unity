@@ -8543,6 +8543,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937210684885267705, guid: 91c3a9deb212e444992cf3006147503c, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937210684885267705, guid: 91c3a9deb212e444992cf3006147503c, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937210684885267705, guid: 91c3a9deb212e444992cf3006147503c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9f16a65342e4314cb0b05eb33d17524, type: 3}
+    - target: {fileID: 6937210684885267705, guid: 91c3a9deb212e444992cf3006147503c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937210684885267706, guid: 91c3a9deb212e444992cf3006147503c, type: 3}
       propertyPath: m_Name
       value: BGM
