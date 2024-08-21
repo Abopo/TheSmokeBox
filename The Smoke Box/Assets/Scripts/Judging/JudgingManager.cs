@@ -26,16 +26,18 @@ public class JudgingManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        // Debugging TODO: remove
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-            ForceEnd();
-        }
-
         // Once the fanfare is done
         if (!_BGM.isPlaying) {
             // Play the music
             PlayMusic();
         }
+
+#if UNITY_EDITOR
+        // Debugging
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
+            ForceEnd();
+        }
+#endif
     }
 
     public void PlayFanfare() {
@@ -49,7 +51,7 @@ public class JudgingManager : MonoBehaviour {
     }
 
     public void EndJudgingScene() {
-        // TODO: move to next stage and drive thru scene
+        // Move to next stage and drive thru scene
         GameManager.Instance.IncreaseStage();
 
         if (GameManager.Instance.stage <= 3) {

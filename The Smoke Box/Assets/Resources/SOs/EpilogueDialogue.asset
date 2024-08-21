@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EpilogueDialogue
   m_EditorClassIdentifier: 
   dialogueList:
-  - dialogueLine: It's too bad you didn't win the competition, MC.
+  - dialogueLine: It's too bad you didn't win the competition, Percy.
     speaker: 3
   - dialogueLine: Yeah, your final piece was so cool!
     speaker: 2
@@ -26,9 +26,9 @@ MonoBehaviour:
     speaker: 1
   - dialogueLine: Hahaha for sure.
     speaker: 0
-  - dialogueLine: I'm inspired! Can you teach me woodworking sometime, MC?
+  - dialogueLine: I'm inspired! Can you teach me woodworking sometime, Percy?
     speaker: 3
-  - dialogueLine: Really? Of course!
+  - dialogueLine: Really?! Of course!
     speaker: 0
   - dialogueLine: Yay!
     speaker: 3
@@ -38,7 +38,7 @@ MonoBehaviour:
     speaker: 2
   - dialogueLine: Ooooh good idea! I also want a Hot Blunk, though.
     speaker: 3
-  - dialogueLine: That sounds good. I think I'll get a Colonial Pretzel too.
+  - dialogueLine: That sounds good. I think I'll get a Colonial Pretzel, too.
     speaker: 0
   - dialogueLine: It honestly looked really good.
     speaker: 0

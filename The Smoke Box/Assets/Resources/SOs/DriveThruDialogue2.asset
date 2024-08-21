@@ -34,7 +34,7 @@ MonoBehaviour:
   - dialogueLine: I've been meaning to ask Percy, why do you like woodworking so
       much?
     speaker: 3
-  - dialogueLine: Oh, uhhh. There's something about the permanence of it I guess.
+  - dialogueLine: Oh, uhhh... There's something about the permanence of it, I guess.
     speaker: 0
   - dialogueLine: Like when you make a cut or join pieces together there's not just
       some undo button to fix it.
@@ -45,7 +45,7 @@ MonoBehaviour:
     speaker: 0
   - dialogueLine: And not stress out so much about everything being perfect.
     speaker: 0
-  - dialogueLine: We're almost at the thing . What do y'all want?
+  - dialogueLine: We're almost at the thingy. What do y'all want?
     speaker: 1
   - dialogueLine: The hot blunk please!
     speaker: 3

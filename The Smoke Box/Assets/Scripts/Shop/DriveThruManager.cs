@@ -81,10 +81,12 @@ public class DriveThruManager : MonoBehaviour {
             }
         }
 
-        // Debugging TODO: remove
+#if UNITY_EDITOR
+        // Debugging
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
             StartCoroutine(ForceEnd());
         }
+#endif
     }
 
     void ShowNextDialogue() {
