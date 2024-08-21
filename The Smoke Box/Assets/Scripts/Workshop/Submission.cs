@@ -15,6 +15,8 @@ public class Submission : MonoBehaviour {
     public UnityEvent OnAddedPiece = new UnityEvent();
     public static UnityEvent OnChanged = new UnityEvent();
 
+    public string pathLoaded = "";
+
     // Stats
     public int numPiecesUsed;
     public int numCutsUsed;
@@ -67,6 +69,8 @@ public class Submission : MonoBehaviour {
     }
 
     public void LoadData(string path = "") {
+        pathLoaded = path;
+
         // Load the data
         _submissionDataManager.LoadSubmissionData(path);
         LoadFromSubmissionDataManager();
