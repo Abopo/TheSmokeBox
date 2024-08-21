@@ -45,7 +45,7 @@ public class Announcer : MonoBehaviour {
         _dialogues.Add("Next up is our reigning champion, Franky!");
         _dialogues.Add("Let's see what he's cooked up this year!");
         _dialogues.Add("Wow! I bet the judges'll like this one!");
-        _dialogues.Add("Finally, our last entrant is Kaden!");
+        _dialogues.Add("Finally, our last entrant is Percy!");
         _dialogues.Add("Whatchya got there bud?");
         _dialogues.Add("Cool! Judges?");
         _dialogues.Add("Alright! Let's take a look at the results!");
@@ -57,7 +57,7 @@ public class Announcer : MonoBehaviour {
         _dialogues.Add("Uhhh okay...judges?");
         _dialogues.Add("Moving on, let's see what Franky's got today!");
         _dialogues.Add("I'm feeling it! But what about our judges?");
-        _dialogues.Add("Last up, the rookie who's been flexing his creativity: Kaden!");
+        _dialogues.Add("Last up, the rookie who's been flexing his creativity: Percy!");
         _dialogues.Add("Alright! Let's toss it over to the judges!");
         _dialogues.Add("Let's take a look at the results!");
     }
@@ -67,7 +67,7 @@ public class Announcer : MonoBehaviour {
         _dialogues.Add("Oh my! What has Franky cooked up this time for his final piece?!");
         _dialogues.Add("Deeelectable! Do the judges agree?");
         _dialogues.Add("That's gonna be hard to follow up!");
-        _dialogues.Add("What has Kaden got in store for us today?");
+        _dialogues.Add("What has Percy got in store for us today?");
         _dialogues.Add("I'm speechless! I hope the judges have more to say then me!");
         _dialogues.Add("This is it folks! Let's see the final results!");
     }

@@ -35,7 +35,7 @@ MonoBehaviour:
     speaker: 0
   - dialogueLine: 'Yo, round 5?! That''s great! '
     speaker: 2
-  - dialogueLine: That puts you in the top 4 right?
+  - dialogueLine: That puts you in the top 4, right?
     speaker: 2
   - dialogueLine: Yeah...
     speaker: 0
