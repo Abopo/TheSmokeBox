@@ -46,8 +46,8 @@ public class GalleryController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitializeGallery();
         SpawnSubmissions();
+        InitializeGallery();
     }
 
     public void BackToTitleScreen()
