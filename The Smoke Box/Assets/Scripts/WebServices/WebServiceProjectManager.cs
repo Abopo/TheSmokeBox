@@ -4,6 +4,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -85,17 +87,37 @@ public class WebServiceProjectManager : MonoBehaviour
         {
             string path = "GalleryFiles/" + project.OwnerName + "-" + project.Name;
             path = path.Replace("?", "_");
-            TextAsset file = Resources.Load<TextAsset>(path);
-            if (file != null)
-            {
-                var submissionData = JsonConvert.DeserializeObject<SubmissionData>(file.text);
-                handleSuccess(submissionData);
-                return;
-            }
+
+            StartCoroutine(HandleLoadRequest(path, handleSuccess, handleFailure));
+            return;
         }
 
-        handleFailure("file not found");
+        handleFailure("File not found");
 
         //StartCoroutine(WebRequestUtil.GetRequest<SubmissionData>(url, handleSuccess, handleFailure));
+    }
+
+    private IEnumerator HandleLoadRequest(string path, Action<SubmissionData> handleSuccess, Action<string> handleFailure)
+    {
+        ResourceRequest request = Resources.LoadAsync<TextAsset>(path);
+        while (!request.isDone)
+        {
+            yield return null;
+        }
+        if (request.asset == null)
+        {
+            handleFailure("File not found");
+        }
+        TextAsset file = request.asset as TextAsset;
+
+        if (file == null)
+        {
+            handleFailure("File not found");
+        }
+
+        var submissionData = JsonConvert.DeserializeObject<SubmissionData>(file.text);
+        handleSuccess(submissionData);
+
+        yield return request;
     }
 }
