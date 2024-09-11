@@ -11,6 +11,8 @@ public class JointNode : MonoBehaviour {
 
     public bool isActive = false;
 
+    public bool isBaseNode;
+
     Camera _mainCamera;
 
     RaycastHit _raycastHit;
@@ -55,12 +57,27 @@ public class JointNode : MonoBehaviour {
         // Basically just going to go to the closest point to the mouse that's still on the face of the mesh of the piece
 
         if (HitPieceCheck()) {
-            // place self on the hit point
-            transform.position = _raycastHit.point;
-            // Also, align with the normal of the face we hit
-            transform.rotation = Quaternion.LookRotation(_raycastHit.normal);
-            // Set this as our curPiece
-            curPiece = _raycastHit.collider.GetComponent<WoodPiece>();
+            WoodPiece hitPiece = _raycastHit.collider.GetComponent<WoodPiece>();
+
+            if (isBaseNode) {
+                // Make sure to not try and connect to the currently held piece
+                if (hitPiece != null && hitPiece != EditManager.Instance.holdPiece) {
+                    // Set this as our curPiece
+                    curPiece = hitPiece;
+                    // place self on the hit point
+                    transform.position = _raycastHit.point;
+                    // Also, align with the normal of the face we hit
+                    transform.rotation = Quaternion.LookRotation(_raycastHit.normal);
+                }
+            } else {
+                // Set this as our curPiece
+                curPiece = hitPiece;
+
+                // place self on the hit point
+                transform.position = _raycastHit.point;
+                // Also, align with the normal of the face we hit
+                transform.rotation = Quaternion.LookRotation(_raycastHit.normal);
+            }
         }
 
         //TODO: Still follow the mouse when it's not hitting anything somehow
@@ -68,8 +85,15 @@ public class JointNode : MonoBehaviour {
 
     void ConfirmPlacement() {
         // Make sure we clicked on our piece
-        if (HitPieceCheck()) {
-            GetComponentInParent<JointTool>().ApplyJoint();
+        if (HitPieceCheck() && curPiece != null) {
+            WoodPiece hitPiece = _raycastHit.collider.GetComponent<WoodPiece>();
+            if (isBaseNode) {
+                if (hitPiece != null && hitPiece != EditManager.Instance.holdPiece) {
+                    GetComponentInParent<JointTool>().ApplyJoint();
+                }
+            } else {
+                GetComponentInParent<JointTool>().ApplyJoint();
+            }
         }
     }
 

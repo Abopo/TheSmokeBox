@@ -27,7 +27,7 @@ public class Credits : MonoBehaviour {
     {
         if(_rolling) {
             _creditsObj.Translate(Vector3.up * _rollSpeed * Time.deltaTime, Space.World);
-            if(_creditsObj.position.y >= 36) {
+            if(_creditsObj.position.y >= 40) {
                 ShowGalleryButton();
                 _rolling = false;
             }

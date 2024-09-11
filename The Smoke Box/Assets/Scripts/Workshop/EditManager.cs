@@ -12,7 +12,7 @@ public class EditManager : MonoBehaviour {
     Tool _curTool;
 
     public WoodPiece curPiece;
-    WoodPiece _holdPiece;
+    public WoodPiece holdPiece;
     [SerializeField]
     float _rotSpeed;
 
@@ -131,7 +131,7 @@ public class EditManager : MonoBehaviour {
         if (_view != VIEW.SUBMISSION) {
             _cameraLerp.LerpRotation(Quaternion.identity, 0.5f);
             // Save the piece we're working with
-            _holdPiece = curPiece;
+            holdPiece = curPiece;
             // Set curPiece to the submission base so we can rotate it
             curPiece = _submission.baseTransform.GetComponent<WoodPiece>();
 
@@ -151,7 +151,7 @@ public class EditManager : MonoBehaviour {
             _cameraLerp.LerpRotation(Quaternion.Euler(50f, 0f, 0f), 0.5f);
             // Set the curPiece back to the hold piece
             // TODO: unless we've just jointed it to the submission?
-            curPiece = _holdPiece;
+            curPiece = holdPiece;
 
             _view = VIEW.TABLE;
 
@@ -172,7 +172,7 @@ public class EditManager : MonoBehaviour {
         LookAtSubmission();
 
         // Lose reference to piece
-        _holdPiece = null;
+        holdPiece = null;
 
         FindObjectOfType<ToolsWindow>().hasBase = true;
     }
@@ -283,6 +283,6 @@ public class EditManager : MonoBehaviour {
     }
 
     public void ClearHoldPiece() {
-        _holdPiece = null;
+        holdPiece = null;
     }
 }

@@ -18,14 +18,14 @@ public class TitleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // wake up server hopefully
-        WebServiceProjectManager.Instance.GetProjects(null, null);
-
         LoadSubmissions();
 
         if(PlayerPrefs.GetInt("FinishedGame") == 0) {
             _galleryStuff.SetActive(false);
         }
+
+        // wake up server hopefully
+        //WebServiceProjectManager.Instance.GetProjects(null, null);
     }
 
     void LoadSubmissions() {

@@ -54,6 +54,24 @@ public class Submission : MonoBehaviour {
     }
 
     public void AddPieceAsBase(WoodPiece wPiece) {
+        // Can't add the base as a base
+        if(wPiece.transform == baseTransform) {
+            return;
+        }
+
+        if(hasBase && baseTransform.childCount > 0) {
+            // Drop the current base
+            WoodPiece oldBasePiece = baseTransform.GetChild(0).GetComponent<WoodPiece>();
+            if (oldBasePiece != null) {
+                oldBasePiece.transform.parent = null;
+                oldBasePiece.isLocked = false;
+                oldBasePiece.Drop();
+             
+                // Keep the num pieces count accurate
+                numPiecesUsed--;
+            }
+        }
+
         wPiece.transform.parent = baseTransform;
         wPiece.GoTo(transform.position);
         wPiece.isLocked = true;

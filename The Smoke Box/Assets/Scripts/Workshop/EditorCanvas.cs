@@ -52,7 +52,7 @@ public class EditorCanvas : MonoBehaviour
     }
 
     void OnAddedPiece() {
-        if (_submission.hasBase) {
+        if (_submission.numPiecesUsed > 1) {
             _useAsBaseButton.SetActive(false);
         }
         _holdUI.SetActive(false);
@@ -60,7 +60,7 @@ public class EditorCanvas : MonoBehaviour
     }
 
     public void ShowBaseUI() {
-        if (!_submission.hasBase) {
+        if (_submission.numPiecesUsed < 2) {
             _useAsBaseButton.SetActive(true);
         }
 
