@@ -7,8 +7,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(LerpTo))]
 public class WoodPiece : MonoBehaviour {
 
-    public Vector3 startPos;
-    public bool isOnTable = true;
+    public bool isOnTable;
     public bool isLocked;
 
     public LerpTo lerp;
@@ -25,7 +24,6 @@ public class WoodPiece : MonoBehaviour {
     WoodSFX _woodSFX;
 
     private void Awake() {
-        startPos = transform.position;
         lerp = GetComponent<LerpTo>();
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<MeshCollider>();

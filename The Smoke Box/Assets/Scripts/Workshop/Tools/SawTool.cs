@@ -125,6 +125,57 @@ public class SawTool : Tool {
     }
 
     public bool SlicePiece(WoodPiece wPiece) {
+        return SliceNew(wPiece);
+    }
+
+    bool SliceNew(WoodPiece wPiece) {
+        _originalPiece = wPiece.gameObject;
+        var sliceObj = wPiece.GetComponent<Slice>();
+
+        Transform[] fragments = sliceObj.ComputeSlice(slicePlane.up, slicePlane.position);
+
+        // The fragments are generated under a parent object that we don't need
+        GameObject fragParent = fragments[0].gameObject;
+        fragments[1].parent = null;
+        fragments[2].parent = null;
+        Destroy(fragParent);
+
+        fragments[1].position += topMoveDistance;
+        fragments[2].position += bottomMoveDistance;
+        _rightPiece = fragments[1].gameObject.AddComponent<WoodPiece>();
+        _leftPiece = fragments[2].gameObject.AddComponent<WoodPiece>();
+
+        // Copy over the data from the original piece
+        _rightPiece.numCuts = wPiece.numCuts + 1;
+        _leftPiece.numCuts = wPiece.numCuts + 1;
+
+        _rightPiece.transform.rotation = _originalPiece.transform.rotation;
+        _leftPiece.transform.rotation = _originalPiece.transform.rotation;
+
+        _rightPiece.GetComponent<Rigidbody>().isKinematic = true;
+        _leftPiece.GetComponent<Rigidbody>().isKinematic = true;
+
+        // Update colliders
+        _rightPiece.GetComponent<MeshCollider>().sharedMesh = null;
+        _rightPiece.GetComponent<MeshCollider>().sharedMesh = _rightPiece.GetComponent<MeshFilter>().sharedMesh;
+        _leftPiece.GetComponent<MeshCollider>().sharedMesh = null;
+        _leftPiece.GetComponent<MeshCollider>().sharedMesh = _leftPiece.GetComponent<MeshFilter>().sharedMesh;
+
+        // Move the mesh pivot point to the center of the object
+        StartCoroutine(AdjustMeshPivotPoints(_rightPiece.gameObject));
+        StartCoroutine(AdjustMeshPivotPoints(_leftPiece.gameObject));
+
+        // Ignore collision between pieces so stuff doesn't get annoying later
+        Physics.IgnoreCollision(_rightPiece.GetComponent<Collider>(), _leftPiece.GetComponent<Collider>());
+
+        // Hide the new pieces until the saw animation is finished
+        _leftPiece.GetComponent<MeshRenderer>().enabled = false;
+        _rightPiece.GetComponent<MeshRenderer>().enabled = false;
+
+        return true;
+    }
+
+    bool SliceOld(WoodPiece wPiece) {
         _originalPiece = wPiece.gameObject;
         Plane plane = new Plane(slicePlane.up, slicePlane.position);
         Slicer.SliceReturnValue sliceReturnValue;
@@ -146,9 +197,7 @@ public class SawTool : Tool {
         _leftPiece = sliceReturnValue.bottomGameObject.GetComponent<WoodPiece>();
 
         // Copy over the data from the original piece
-        _rightPiece.startPos = wPiece.startPos;
         _rightPiece.numCuts = wPiece.numCuts + 1;
-        _leftPiece.startPos = wPiece.startPos;
         _leftPiece.numCuts = wPiece.numCuts + 1;
 
         // Update colliders

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3075791961995917702}
   - component: {fileID: 4525071344134946403}
   - component: {fileID: 67551069480006319}
+  - component: {fileID: 73371994898755562}
   m_Layer: 6
   m_Name: WoodPiece
   m_TagString: Untagged
@@ -136,7 +137,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &4525071344134946403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -249,3 +250,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &73371994898755562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332228795223628048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df494f3f2c7f764b9477ead956f9887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliceOptions:
+    enableReslicing: 1
+    maxResliceCount: 100
+    detectFloatingFragments: 0
+    insideMaterial: {fileID: 2100000, guid: ae43b63160ecbfc45be15f6a5e86a9cb, type: 2}
+    textureScale: {x: 1, y: 1}
+    textureOffset: {x: 0, y: 0}
+    invokeCallbacks: 0
+  callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
+    onCompleted:
+      m_PersistentCalls:
+        m_Calls: []
