@@ -12,7 +12,7 @@ public class RequirementTracker : MonoBehaviour {
     public bool allRequirementsClear;
 
     private void Awake() {
-        _submission = FindObjectOfType<Submission>();
+        _submission = FindFirstObjectByType<Submission>();
     }
     // Start is called before the first frame update
     void Start() {

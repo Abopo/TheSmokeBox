@@ -66,7 +66,7 @@ public class EditManager : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        _submission = FindObjectOfType<Submission>();
+        _submission = FindFirstObjectByType<Submission>();
         _mouse = Mouse.current;
         _keyboard = Keyboard.current;
         _cameraLerp = Camera.main.GetComponent<LerpTo>();
@@ -174,7 +174,7 @@ public class EditManager : MonoBehaviour {
         // Lose reference to piece
         holdPiece = null;
 
-        FindObjectOfType<ToolsWindow>().hasBase = true;
+        FindFirstObjectByType<ToolsWindow>().hasBase = true;
     }
 
     void RotatePieceMouse() {

@@ -24,7 +24,7 @@ public class Judge : MonoBehaviour {
 
     private void Awake() {
         _dialogueBubble = GetComponentInChildren<DialogueBubble>(true);
-        _judgingManager = FindObjectOfType<JudgingManager>();
+        _judgingManager = FindFirstObjectByType<JudgingManager>();
     }
     // Start is called before the first frame update
     void Start() {

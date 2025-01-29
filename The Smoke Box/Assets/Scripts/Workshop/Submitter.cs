@@ -33,8 +33,8 @@ public class Submitter : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        _submission = FindObjectOfType<Submission>();
-        _requirementTracker = FindObjectOfType<RequirementTracker>();
+        _submission = FindFirstObjectByType<Submission>();
+        _requirementTracker = FindFirstObjectByType<RequirementTracker>();
 
         Submission.OnChanged.AddListener(OnSubmissionChanged);
         EditManager.OnLookUp.AddListener(OnLookUp);

@@ -27,7 +27,7 @@ public class WoodPiece : MonoBehaviour {
         lerp = GetComponent<LerpTo>();
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<MeshCollider>();
-        _woodSFX = FindObjectOfType<WoodSFX>();
+        _woodSFX = FindFirstObjectByType<WoodSFX>();
     }
     // Start is called before the first frame update
     void Start() {

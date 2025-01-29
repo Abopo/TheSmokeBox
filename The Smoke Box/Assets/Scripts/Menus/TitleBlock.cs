@@ -9,7 +9,7 @@ public class TitleBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _woodSFX = FindObjectOfType<WoodSFX>();
+        _woodSFX = FindFirstObjectByType<WoodSFX>();
     }
 
     // Update is called once per frame

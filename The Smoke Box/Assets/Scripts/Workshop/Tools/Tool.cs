@@ -14,7 +14,7 @@ public class Tool : MonoBehaviour {
     protected EditManager _editManager;
 
     protected virtual void Awake() {
-        _editManager = FindObjectOfType<EditManager>();
+        _editManager = FindFirstObjectByType<EditManager>();
     }
     // Start is called before the first frame update
     void Start() {

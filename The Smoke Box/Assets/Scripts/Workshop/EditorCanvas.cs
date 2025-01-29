@@ -19,7 +19,7 @@ public class EditorCanvas : MonoBehaviour
     Submission _submission;
 
     private void Awake() {
-        _submission = FindObjectOfType<Submission>();
+        _submission = FindFirstObjectByType<Submission>();
     }
     // Start is called before the first frame update
     void Start() {

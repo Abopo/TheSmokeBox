@@ -16,7 +16,7 @@ public class WoodShop : MonoBehaviour {
 
     private void Awake() {
         _slots = GetComponentsInChildren<WoodSlot>();
-        _receiptWindow = FindObjectOfType<ReceiptWindow>();
+        _receiptWindow = FindFirstObjectByType<ReceiptWindow>();
     }
     // Start is called before the first frame update
     void Start() {
