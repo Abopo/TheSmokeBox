@@ -36,7 +36,7 @@ public class WoodPiece : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if(_rigidbody != null && !_rigidbody.isKinematic && isOnTable) {
-            if(_rigidbody.velocity.magnitude < 0.1f) {
+            if(_rigidbody.linearVelocity.magnitude < 0.1f) {
                 _restTimer += Time.deltaTime;
                 if (_restTimer > 1f) {
                     DisablePhysics();
