@@ -27,6 +27,8 @@ public class Submission : MonoBehaviour {
 
     SubmissionDataManager _submissionDataManager = new SubmissionDataManager();
 
+    public WoodPiece[] WoodPieces { get => GetComponentsInChildren<WoodPiece>(); }
+
     // Start is called before the first frame update
     void Start() {
         GetStats();
