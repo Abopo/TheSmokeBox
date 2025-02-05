@@ -148,9 +148,10 @@ public class SawTool : Tool {
         // Copy over the data from the original piece
         _rightPiece.numCuts = wPiece.numCuts + 1;
         _leftPiece.numCuts = wPiece.numCuts + 1;
-
         _rightPiece.transform.rotation = _originalPiece.transform.rotation;
         _leftPiece.transform.rotation = _originalPiece.transform.rotation;
+        _rightPiece.gameObject.layer = _originalPiece.layer;
+        _leftPiece.gameObject.layer = _originalPiece.layer;
 
         _rightPiece.GetComponent<Rigidbody>().isKinematic = true;
         _leftPiece.GetComponent<Rigidbody>().isKinematic = true;

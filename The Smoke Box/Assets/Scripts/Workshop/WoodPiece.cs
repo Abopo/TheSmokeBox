@@ -16,12 +16,16 @@ public class WoodPiece : MonoBehaviour {
 
     float _restTimer = 0f;
 
+    public ShopItemData _data;
+
     // stats
     public int numCuts; // How many times this piece has been cut
     public PAINTCOLOR paintColor = PAINTCOLOR.WHITE;
     public string pieceName;
 
     WoodSFX _woodSFX;
+
+    public ShopItemData Data { get => _data; set => SetData(value); }
 
     private void Awake() {
         lerp = GetComponent<LerpTo>();
@@ -75,6 +79,8 @@ public class WoodPiece : MonoBehaviour {
     }
 
     public void SetData(ShopItemData wData) {
+        _data = wData;
+
         SetMesh(wData.mesh);
 
         pieceName = wData.itemName;

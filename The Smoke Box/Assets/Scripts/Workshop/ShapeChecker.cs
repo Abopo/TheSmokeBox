@@ -22,7 +22,9 @@ public class ShapeChecker : MonoBehaviour {
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        StartCoroutine(CheckSubmissionContainment());
+        if (_testSubmission != null) {
+            StartCoroutine(CheckSubmissionContainment());
+        }
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class ShapeChecker : MonoBehaviour {
             }
 
             // Before the next collider, remove all the inside verts from the allVerts list since they are accounted for
+            // TODO: This was causing a bug. I still think it's a good idea, so figure out what's wrong
             //foreach (var vert in _insideVerts) {
             //    allVertsWorld.Remove(vert);
             //}
