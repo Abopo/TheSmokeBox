@@ -135,13 +135,22 @@ public class JointTool : Tool {
 
     void InitializeGhostNode() {
         _ghostJointNode = Instantiate(_newJointNode.gameObject, transform).GetComponent<JointNode>();
+        // Change the piece's layer so it doesn't mess with the node tracking
+        _ghostJointNode.curPiece.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
         // Change the material of the child piece to be transparent
         string mat = _ghostJointNode.curPiece.GetComponent<MeshRenderer>().sharedMaterial.name;
         // Get rid of the " (Instance)" part of the string that shows up in material names sometimes
         mat = mat.Replace(" (Instance)", "");
         _ghostJointNode.curPiece.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Wood/" + mat + "_Trans");
-        // Also change the piece's layer so it doesn't mess with the node tracking
-        _ghostJointNode.curPiece.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+        // Make a Material Property Block with the same color but transparent and apply it to the ghost piece
+        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+        _newJointNode.curPiece.GetComponent<MeshRenderer>().GetPropertyBlock(mpb);
+        Color pieceColor = mpb.GetColor("_Color");
+        pieceColor.a = 0.5f;
+        mpb.SetColor("_Color", pieceColor);
+        _ghostJointNode.curPiece.GetComponent<MeshRenderer>().SetPropertyBlock(mpb);
     }
 
     void GhostNodeFollow() {

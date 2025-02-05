@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum PIECE_CATEGORY { BASIC, ANIMAL, COOL, NUM_CATS };
+public enum WOOD_TYPE { NUM_TYPES };
 
 [CreateAssetMenu(fileName = "ShopItemData", menuName = "ScriptableObjects/ShopItemData", order = 1)]
 public class ShopItemData : ScriptableObject {

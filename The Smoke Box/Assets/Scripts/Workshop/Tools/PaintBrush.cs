@@ -32,8 +32,8 @@ public class PaintBrush : MonoBehaviour {
     public void Activate() {
     }
 
-    public void SetPaint(Material paintMat) {
-        _renderer.material = paintMat;
+    public void SetPaint(MaterialPropertyBlock paintMPB) {
+        _renderer.SetPropertyBlock(paintMPB);
     }
 
     public void Paint(Vector3 pos) {
