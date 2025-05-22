@@ -27,6 +27,13 @@ public class WoodPiece : MonoBehaviour {
 
     public ShopItemData Data { get => _data; set => SetData(value); }
 
+    public Material Material {
+        get {
+            return GetComponent<MeshRenderer>().material;
+        }
+    }
+
+
     private void Awake() {
         lerp = GetComponent<LerpTo>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -145,5 +152,16 @@ public class WoodPiece : MonoBehaviour {
         DisablePhysics();
 
         lerp.LerpToPos(pos, 0.5f);
+    }
+
+    // Take in a wood piece and copy all it's data
+    public void CopyWoodData(WoodPiece originalPiece) {
+        gameObject.layer = originalPiece.gameObject.layer;
+        gameObject.layer = originalPiece.gameObject.layer;
+
+        _data = originalPiece.Data;
+        numCuts = originalPiece.numCuts;
+        paintColor = originalPiece.paintColor;
+        pieceName = originalPiece.pieceName;
     }
 }

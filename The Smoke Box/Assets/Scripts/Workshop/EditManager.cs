@@ -14,6 +14,8 @@ public class EditManager : MonoBehaviour {
     public WoodPiece curPiece;
     public WoodPiece holdPiece;
     [SerializeField]
+    float _tranSpeed;
+    [SerializeField]
     float _rotSpeed;
 
     [SerializeField]
@@ -30,7 +32,7 @@ public class EditManager : MonoBehaviour {
     float _fovMax;
 
     bool _active = true;
-    bool _canRotate = true;
+    bool _canMovePiece = true;
 
     Mouse _mouse;
     Keyboard _keyboard;
@@ -80,7 +82,7 @@ public class EditManager : MonoBehaviour {
             CheckInput();
         }
 
-        if (_canRotate) {
+        if (_canMovePiece) {
             if (_mouse.scroll.magnitude != 0) {
                 Camera.main.fieldOfView -= _mouse.scroll.up.value * _zoomSensitivity;
                 if (Camera.main.fieldOfView < _fovMin) {
@@ -91,23 +93,43 @@ public class EditManager : MonoBehaviour {
                     Camera.main.fieldOfView = _fovMax;
                 }
             }
+            if(_mouse.leftButton.isPressed) {
+                //TranslatePieceMouse();
+            }
+            if (_keyboard.wKey.isPressed) {
+                // Translate piece up
+                TranslatePieceY(1);
+            }
+            if (_keyboard.sKey.isPressed) {
+                // Translate piece down
+                TranslatePieceY(-1);
+            }
+            if (_keyboard.aKey.isPressed) {
+                // Translate piece left
+                TranslatePieceX(-1);
+            }
+            if (_keyboard.dKey.isPressed) {
+                // Translate piece right
+                TranslatePieceX(1);
+            }
+
             if (_mouse.rightButton.isPressed) {
                 RotatePieceMouse();
             }
-            if (_keyboard.dKey.isPressed) {
+            if (_keyboard.eKey.isPressed) {
                 RotatePieceZ(-1);
             }
-            if (_keyboard.aKey.isPressed) {
+            if (_keyboard.qKey.isPressed) {
                 RotatePieceZ(1);
             }
         }
     }
 
     void CheckInput() {
-        if (_keyboard.wKey.wasPressedThisFrame) {
+        if (_keyboard.spaceKey.wasPressedThisFrame) {
             LookAtSubmission();
         }
-        if (_keyboard.sKey.wasPressedThisFrame) {
+        if (_keyboard.shiftKey.wasPressedThisFrame) {
             LookAtTable();
         }
 
@@ -177,6 +199,33 @@ public class EditManager : MonoBehaviour {
         FindFirstObjectByType<ToolsWindow>().hasBase = true;
     }
 
+    void TranslatePieceMouse() {
+        if (curPiece != null) {
+            float h = _tranSpeed * _mouse.delta.x.ReadValue();
+            float v = _tranSpeed * _mouse.delta.y.ReadValue();
+
+            curPiece.transform.Translate(h, 0f, 0f, Space.World);
+            curPiece.transform.Translate(v, 0f, 0f, Space.World);
+        }
+    }
+
+    void TranslatePieceX(int dir) {
+        if (curPiece != null) {
+            if(dir == 1 && curPiece.transform.position.x < 2.5f ||
+                dir == -1 && curPiece.transform.position.x > -2.5f) {
+                curPiece.transform.Translate(_tranSpeed * dir * Time.deltaTime, 0f, 0f, Space.World);
+            }
+        }
+    }
+    void TranslatePieceY(int dir) {
+        if (curPiece != null) {
+            if (dir == 1 && curPiece.transform.position.y < 6f ||
+                dir == -1 && curPiece.transform.position.y > 4.2f) { 
+                curPiece.transform.Translate(Camera.main.transform.up * _tranSpeed * dir * Time.deltaTime, Space.World);
+                }
+        }
+    }
+
     void RotatePieceMouse() {
         if (curPiece != null) {
             float h = _rotSpeed * _mouse.delta.x.ReadValue();
@@ -242,7 +291,7 @@ public class EditManager : MonoBehaviour {
 
     public void Activate() {
         _active = true;
-        _canRotate = true;
+        _canMovePiece = true;
 
         // If we are being activated, we shouldn't have a curTool
         _curTool = null;
@@ -263,7 +312,7 @@ public class EditManager : MonoBehaviour {
         _active = false;
 
         if (full) {
-            _canRotate = false;
+            _canMovePiece = false;
         }
 
         _lookUpUI.SetActive(false);
@@ -275,11 +324,11 @@ public class EditManager : MonoBehaviour {
     }
 
     public void DisableRotation() {
-        _canRotate = false;
+        _canMovePiece = false;
     }
 
     public void EnableRotation() {
-        _canRotate = true;
+        _canMovePiece = true;
     }
 
     public void ClearHoldPiece() {

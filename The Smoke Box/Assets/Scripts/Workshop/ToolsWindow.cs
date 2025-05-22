@@ -15,12 +15,7 @@ public class ToolsWindow : MonoBehaviour {
     void Start()
     {
         // Disable all buttons by default
-        for (int i = 0; i < _toolButtons.Length; i++) {
-            _toolButtons[i].DisableButton();
-            if (GameManager.Instance.stage <= i) {
-                _toolButtons[i].gameObject.SetActive(false);
-            }
-        }
+        //HideAllButtons();
 
         EditManager.OnPickedUpPiece.AddListener(OnPickedUpPiece);
         EditManager.OnDroppedPiece.AddListener(OnDroppedPiece);
@@ -31,6 +26,15 @@ public class ToolsWindow : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
+    }
+
+    void HideAllButtons() {
+        for (int i = 0; i < _toolButtons.Length; i++) {
+            _toolButtons[i].DisableButton();
+            if (GameManager.Instance.stage <= i) {
+                _toolButtons[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     void EnableButtons() {

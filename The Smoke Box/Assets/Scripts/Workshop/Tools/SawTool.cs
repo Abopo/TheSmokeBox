@@ -41,16 +41,6 @@ public class SawTool : Tool {
     void Start() {
     }
 
-    void CreatePlane() {
-        var filter = GetComponent<MeshFilter>();
-        Vector3 normal = Vector3.zero;
-
-        if (filter && filter.mesh.normals.Length > 0)
-            normal = filter.transform.TransformDirection(filter.mesh.normals[0]);
-
-        //_plane = new Plane(normal, transform.position);
-    }
-
     // Update is called once per frame
     void Update() {
         if (!_isSlicing) {
