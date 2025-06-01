@@ -12,8 +12,12 @@ public class WoodSlot : MonoBehaviour {
     TextMeshPro _nameText;
     [SerializeField]
     TextMeshPro _priceText;
+
     [SerializeField]
+    GameObject _model;
+    MeshRenderer _renderer;
     MeshFilter _filter;
+
     [SerializeField]
     GameObject _backer;
 
@@ -63,6 +67,9 @@ public class WoodSlot : MonoBehaviour {
         _data = ScriptableObject.CreateInstance("ShopItemData") as ShopItemData;
         _animator = GetComponent<Animator>();
 
+        _renderer = _model.GetComponent<MeshRenderer>();
+        _filter = _model.GetComponent<MeshFilter>();
+
         _audioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
@@ -111,10 +118,33 @@ public class WoodSlot : MonoBehaviour {
     }
 
     public void SetData(ShopItemData inData) {
+        _data = inData;
         ItemName = inData.itemName;
         Price = inData.price;
         Mesh = inData.mesh;
         _filter.transform.localRotation = Quaternion.Euler(inData.rotation);
+
+        // Set wood material
+        switch (_data.type) {
+            case WOOD_TYPE.ACACIA:
+                _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Acacia");
+                break;
+            case WOOD_TYPE.ASH:
+                _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Ash");
+                break;
+            case WOOD_TYPE.BEECH:
+                _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Beech");
+                break;
+            case WOOD_TYPE.OAK:
+                _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Oak");
+                break;
+            case WOOD_TYPE.SPRUCE:
+                _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Spruce");
+                break;
+            case WOOD_TYPE.WALNUT:
+                _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Walnut");
+                break;
+        }
     }
 
     public void SwapModel() {

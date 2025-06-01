@@ -119,10 +119,8 @@ public class RequestInfo {
     }
 
     void DeterminePieceWoodDetails() {
-        // Choose a random wood type
-
-        // Only 1 wood type right now
-        _requestDetails = "Oak";
+        // Select wood type randomly for now
+        _requestDetails = ((WOOD_TYPE)Random.Range(0, (int)WOOD_TYPE.NUM_TYPES)).ToString();
     }
 
     void DetermineTimeDetails() {
@@ -134,7 +132,7 @@ public class RequestInfo {
 
     void DetermineToolDetails() {
         // Choose a random, available tool
-        _requestDetails = "saw";
+        _requestDetails = ((TOOLS)Random.Range(0, (int)TOOLS.NUM_TOOLS)).ToString();
     }
 
     void DetermineSizeDetails() {

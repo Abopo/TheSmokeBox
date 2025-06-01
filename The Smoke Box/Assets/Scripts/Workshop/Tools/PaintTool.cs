@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public enum PAINTCOLOR { WHITE = 0, RED, GREEN, BLUE, YELLOW, PINK, PURPLE, ORANGE, CYAN, BLACK };
 
@@ -16,6 +17,7 @@ public class PaintTool : Tool {
     MaterialPropertyBlock _paintPropertyBlock;
 
     PaintBrush _paintBrush;
+    public UnityEvent PaintToolUsed = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -118,6 +120,7 @@ public class PaintTool : Tool {
         wPiece.paintColor = _paintColor;
 
         Submission.OnChanged.Invoke();
+        PaintToolUsed.Invoke();
 
         _paintBrush.Paint(paintPos);
     }

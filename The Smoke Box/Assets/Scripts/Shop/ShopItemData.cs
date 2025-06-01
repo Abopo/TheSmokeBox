@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum PIECE_CATEGORY { BASIC, ANIMAL, COOL, NUM_CATS };
-public enum WOOD_TYPE { NUM_TYPES };
+public enum WOOD_TYPE { ACACIA, ASH, BEECH, OAK, SPRUCE, WALNUT, NUM_TYPES };
 
 [CreateAssetMenu(fileName = "ShopItemData", menuName = "ScriptableObjects/ShopItemData", order = 1)]
 public class ShopItemData : ScriptableObject {
@@ -13,5 +13,5 @@ public class ShopItemData : ScriptableObject {
     public Mesh mesh;
     public Vector3 rotation;
     public PIECE_CATEGORY category;
-
+    public WOOD_TYPE type;
 }

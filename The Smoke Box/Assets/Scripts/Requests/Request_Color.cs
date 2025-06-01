@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Request_Color : Request
 {
-
+    PAINTCOLOR _requestedColor;
     float _correctColorPercent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start() {
         base.Start();
         _text.text = "Use a lot of " + _requestInfo.RequestDetails + " paint: 0%";
+
+        System.Enum.TryParse(_requestInfo.RequestDetails, out _requestedColor);
     }
     // Update is called once per frame
     void Update()
@@ -23,7 +25,7 @@ public class Request_Color : Request
 
         int numPiecesColored = 0;
         foreach(var wPiece in _submission.WoodPieces) {
-            if (wPiece.GetComponent<MeshRenderer>().material.name.Contains(_requestInfo.RequestDetails)) {
+            if (wPiece.paintColor == _requestedColor) {
                 numPiecesColored++;
             }
         }

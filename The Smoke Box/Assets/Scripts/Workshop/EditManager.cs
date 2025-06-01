@@ -17,6 +17,8 @@ public class EditManager : MonoBehaviour {
     float _tranSpeed;
     [SerializeField]
     float _rotSpeed;
+    [SerializeField]
+    float _orbitSpeed;
 
     [SerializeField]
     float _zoomSensitivity = 0.1f;
@@ -74,13 +76,13 @@ public class EditManager : MonoBehaviour {
         _cameraLerp = Camera.main.GetComponent<LerpTo>();
         _canvas = GetComponentInChildren<EditorCanvas>();
         editAudio = GetComponentInChildren<EditAudio>();
+
+        LookAtSubmission();
     }
 
     // Update is called once per frame
     void Update() {
-        if (_active) {
-            CheckInput();
-        }
+        CheckInput();
 
         if (_canMovePiece) {
             if (_mouse.scroll.magnitude != 0) {
@@ -93,9 +95,24 @@ public class EditManager : MonoBehaviour {
                     Camera.main.fieldOfView = _fovMax;
                 }
             }
-            if(_mouse.leftButton.isPressed) {
-                //TranslatePieceMouse();
+        }
+    }
+
+    void CheckInput() {
+        if (_active) {
+            if (_keyboard.spaceKey.wasPressedThisFrame) {
+                if (_view == VIEW.SUBMISSION) {
+                    LookAtTable();
+                } else if (_view == VIEW.TABLE) {
+                    LookAtSubmission();
+                }
             }
+            if (_keyboard.shiftKey.wasPressedThisFrame) {
+                LookAtTable();
+            }
+        }
+
+        if(_canMovePiece) {
             if (_keyboard.wKey.isPressed) {
                 // Translate piece up
                 TranslatePieceY(1);
@@ -123,28 +140,10 @@ public class EditManager : MonoBehaviour {
                 RotatePieceZ(1);
             }
         }
-    }
 
-    void CheckInput() {
-        if (_keyboard.spaceKey.wasPressedThisFrame) {
-            LookAtSubmission();
-        }
-        if (_keyboard.shiftKey.wasPressedThisFrame) {
-            LookAtTable();
-        }
-
-        if (curPiece != null) {
-            if (_keyboard.rightArrowKey.IsPressed()) {
-                curPiece.transform.Rotate(new Vector3(0, -_rotSpeed * 50 * Time.deltaTime, 0), Space.World);
-            }
-            if (_keyboard.leftArrowKey.IsPressed()) {
-                curPiece.transform.Rotate(new Vector3(0, _rotSpeed * 50 * Time.deltaTime, 0), Space.World);
-            }
-            if (_keyboard.upArrowKey.IsPressed()) {
-                curPiece.transform.Rotate(new Vector3(_rotSpeed * 50 * Time.deltaTime, 0, 0), Space.World);
-            }
-            if (_keyboard.downArrowKey.IsPressed()) {
-                curPiece.transform.Rotate(new Vector3(-_rotSpeed * 50 * Time.deltaTime, 0, 0), Space.World);
+        if (_view == VIEW.SUBMISSION) {
+            if (_mouse.middleButton.isPressed) {
+                SubmissionOrbitMouse();
             }
         }
     }
@@ -170,6 +169,7 @@ public class EditManager : MonoBehaviour {
 
     public void LookAtTable() {
         if (_view != VIEW.TABLE) {
+            _cameraLerp.LerpToOrigin(0.5f);
             _cameraLerp.LerpRotation(Quaternion.Euler(50f, 0f, 0f), 0.5f);
             // Set the curPiece back to the hold piece
             // TODO: unless we've just jointed it to the submission?
@@ -211,18 +211,59 @@ public class EditManager : MonoBehaviour {
 
     void TranslatePieceX(int dir) {
         if (curPiece != null) {
-            if(dir == 1 && curPiece.transform.position.x < 2.5f ||
-                dir == -1 && curPiece.transform.position.x > -2.5f) {
-                curPiece.transform.Translate(_tranSpeed * dir * Time.deltaTime, 0f, 0f, Space.World);
+            if (_view == VIEW.TABLE) {
+                if (dir == 1 && curPiece.transform.position.x < 2.5f ||
+                    dir == -1 && curPiece.transform.position.x > -2.5f) {
+                    curPiece.transform.Translate(Camera.main.transform.right * _tranSpeed * dir * Time.deltaTime, Space.World);
+                }
+            } else if(_view == VIEW.SUBMISSION) {
+                Vector3 difference = curPiece.transform.position - _submission.transform.position;
+                Vector3 direction = Camera.main.transform.right;
+
+                float distAlongVector = Vector3.Dot(difference, direction);
+                float distFromSubmission = Vector3.Distance(curPiece.transform.position, _submission.transform.position);
+
+                // curPiece is to the right of the submission based on the camera
+                if (distAlongVector >= 0f) {
+                    if(dir == 1 && distFromSubmission < 3f || dir == -1) {
+                        curPiece.transform.Translate(Camera.main.transform.right * _tranSpeed * dir * Time.deltaTime, Space.World);
+                    }
+                    // curPiece is to the left of the submission based on the camera
+                } else if (distAlongVector <= 0f) {
+                    if (dir == -1 && distFromSubmission < 3f || dir == 1) {
+                        curPiece.transform.Translate(Camera.main.transform.right * _tranSpeed * dir * Time.deltaTime, Space.World);
+                    }
+                }
             }
         }
     }
+
     void TranslatePieceY(int dir) {
         if (curPiece != null) {
-            if (dir == 1 && curPiece.transform.position.y < 6f ||
-                dir == -1 && curPiece.transform.position.y > 4.2f) { 
-                curPiece.transform.Translate(Camera.main.transform.up * _tranSpeed * dir * Time.deltaTime, Space.World);
+            if (_view == VIEW.TABLE) {
+                if (dir == 1 && curPiece.transform.position.y < 6f ||
+                    dir == -1 && curPiece.transform.position.y > 4.2f) {
+                    curPiece.transform.Translate(Camera.main.transform.up * _tranSpeed * dir * Time.deltaTime, Space.World);
                 }
+            } else if(_view == VIEW.SUBMISSION) {
+                Vector3 difference = curPiece.transform.position - _submission.transform.position;
+                Vector3 direction = Camera.main.transform.up;
+
+                float distAlongVector = Vector3.Dot(difference, direction);
+                float distFromSubmission = Vector3.Distance(curPiece.transform.position, _submission.transform.position);
+
+                // curPiece is to the right of the submission based on the camera
+                if (distAlongVector >= 0f) {
+                    if (dir == 1 && distFromSubmission < 3f || dir == -1) {
+                        curPiece.transform.Translate(Camera.main.transform.up * _tranSpeed * dir * Time.deltaTime, Space.World);
+                    }
+                    // curPiece is to the left of the submission based on the camera
+                } else if (distAlongVector <= 0f) {
+                    if (dir == -1 && distFromSubmission < 3f || dir == 1) {
+                        curPiece.transform.Translate(Camera.main.transform.up * _tranSpeed * dir * Time.deltaTime, Space.World);
+                    }
+                }
+            }
         }
     }
 
@@ -243,6 +284,14 @@ public class EditManager : MonoBehaviour {
             curPiece.transform.Rotate(Camera.main.transform.forward, 50f * dir * Time.deltaTime, Space.World);
             //curPiece.transform.Rotate(0f, 0f, 50f * dir * Time.deltaTime, Space.World);
         }
+    }
+
+    void SubmissionOrbitMouse() {
+        float h = _orbitSpeed * _mouse.delta.x.ReadValue();
+        float v = _orbitSpeed * _mouse.delta.y.ReadValue();
+
+        _cameraLerp.transform.RotateAround(_submission.transform.position, new Vector3(0f, 1f, 0f), h);
+        _cameraLerp.transform.RotateAround(_submission.transform.position, _cameraLerp.transform.right, -v);
     }
 
     public void PickUpPiece(WoodPiece wPiece) {

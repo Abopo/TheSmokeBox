@@ -16,20 +16,24 @@ public class WoodPiece : MonoBehaviour {
 
     float _restTimer = 0f;
 
-    public ShopItemData _data;
+    public ShopItemData _shopData;
 
     // stats
     public int numCuts; // How many times this piece has been cut
     public PAINTCOLOR paintColor = PAINTCOLOR.WHITE;
+    public List<WoodPiece> attachedPieces = new List<WoodPiece>(); // How many other pieces are attached to this piece
     public string pieceName;
 
     WoodSFX _woodSFX;
 
-    public ShopItemData Data { get => _data; set => SetData(value); }
+    public ShopItemData Data { get => _shopData; set => SetData(value); }
 
     public Material Material {
         get {
             return GetComponent<MeshRenderer>().material;
+        }
+        set {
+            GetComponent<MeshRenderer>().material = value;
         }
     }
 
@@ -42,6 +46,48 @@ public class WoodPiece : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
+        if(_shopData == null) {
+            _shopData = new ShopItemData();
+        }
+
+        MakeDebugData();
+
+        Initialize();
+    }
+
+    void MakeDebugData() {
+        if (_shopData != null) {
+            _shopData.price = Random.Range(1, 20);
+            _shopData.category = (PIECE_CATEGORY)Random.Range(0, (int)PIECE_CATEGORY.NUM_CATS);
+            _shopData.type = (WOOD_TYPE)Random.Range(0, (int)WOOD_TYPE.NUM_TYPES);
+        }
+    }
+
+    void Initialize() {
+        // If the material has Trans in it, it's already been set (probably by the joint tool)
+        if (!Material.name.Contains("Trans")) {
+            // Set material to the wood type
+            switch (_shopData.type) {
+                case WOOD_TYPE.ACACIA:
+                    Material = Resources.Load<Material>("Materials/Wood/Wood_Acacia");
+                    break;
+                case WOOD_TYPE.ASH:
+                    Material = Resources.Load<Material>("Materials/Wood/Wood_Ash");
+                    break;
+                case WOOD_TYPE.BEECH:
+                    Material = Resources.Load<Material>("Materials/Wood/Wood_Beech");
+                    break;
+                case WOOD_TYPE.OAK:
+                    Material = Resources.Load<Material>("Materials/Wood/Wood_Oak");
+                    break;
+                case WOOD_TYPE.SPRUCE:
+                    Material = Resources.Load<Material>("Materials/Wood/Wood_Spruce");
+                    break;
+                case WOOD_TYPE.WALNUT:
+                    Material = Resources.Load<Material>("Materials/Wood/Wood_Walnut");
+                    break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -86,7 +132,7 @@ public class WoodPiece : MonoBehaviour {
     }
 
     public void SetData(ShopItemData wData) {
-        _data = wData;
+        _shopData = wData;
 
         SetMesh(wData.mesh);
 
@@ -159,7 +205,7 @@ public class WoodPiece : MonoBehaviour {
         gameObject.layer = originalPiece.gameObject.layer;
         gameObject.layer = originalPiece.gameObject.layer;
 
-        _data = originalPiece.Data;
+        _shopData = originalPiece.Data;
         numCuts = originalPiece.numCuts;
         paintColor = originalPiece.paintColor;
         pieceName = originalPiece.pieceName;

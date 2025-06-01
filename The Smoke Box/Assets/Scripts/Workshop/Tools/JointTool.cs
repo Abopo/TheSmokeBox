@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class JointTool : Tool {
 
@@ -24,6 +25,8 @@ public class JointTool : Tool {
     bool _confirming;
 
     AudioSource _audioSource;
+
+    public UnityEvent JointToolUsed = new UnityEvent();
 
     protected override void Awake() {
         base.Awake();
@@ -145,12 +148,14 @@ public class JointTool : Tool {
         _ghostJointNode.curPiece.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Wood/" + mat + "_Trans");
 
         // Make a Material Property Block with the same color but transparent and apply it to the ghost piece
+        /*
         MaterialPropertyBlock mpb = new MaterialPropertyBlock();
         _newJointNode.curPiece.GetComponent<MeshRenderer>().GetPropertyBlock(mpb);
         Color pieceColor = mpb.GetColor("_Color");
         pieceColor.a = 0.5f;
         mpb.SetColor("_Color", pieceColor);
         _ghostJointNode.curPiece.GetComponent<MeshRenderer>().SetPropertyBlock(mpb);
+        */
     }
 
     void GhostNodeFollow() {
@@ -230,6 +235,10 @@ public class JointTool : Tool {
         _newJointNode.curPiece.transform.parent = _baseJointNode.curPiece.transform.parent;
         _newJointNode.curPiece.isLocked = true;
 
+        // Update attachments for both pieces
+        _newJointNode.curPiece.attachedPieces.Add(_baseJointNode.curPiece);
+        _baseJointNode.curPiece.attachedPieces.Add(_newJointNode.curPiece);
+
         EditManager.Instance.editAudio.PlayJointClip();
 
         // Re-enable the edit manager
@@ -240,5 +249,6 @@ public class JointTool : Tool {
         DeactivateTool();
 
         Submission.OnChanged.Invoke();
+        JointToolUsed.Invoke();
     }
 }

@@ -6,5 +6,14 @@ using UnityEngine;
 public class ShopInventory : ScriptableObject {
 
     public ShopItemData[] inventory;
-    
+    int _size;
+
+    public void Initialize(int size) {
+        _size = size;
+        inventory = new ShopItemData[_size];
+    }
+
+    public void ClearInventory() {
+        inventory = new ShopItemData[_size];
+    }
 }

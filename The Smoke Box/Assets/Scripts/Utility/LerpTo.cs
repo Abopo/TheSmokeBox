@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class LerpTo : MonoBehaviour {
 
+    Vector3 _origin;
     // Lerping
     protected bool _lerping;
     Vector3 _startPos;
@@ -22,7 +23,7 @@ public class LerpTo : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        
+        _origin = transform.position;
     }
 
     // Update is called once per frame
@@ -72,6 +73,10 @@ public class LerpTo : MonoBehaviour {
         _lerpTime = lerpTime;
         _startTime = Time.time;
         _interpolation = 0f;
+    }
+
+    public void LerpToOrigin(float lerpTime) {
+        LerpToPos(_origin, lerpTime);
     }
 
     public void LerpRotation(Quaternion endRot, float lerpTime) {

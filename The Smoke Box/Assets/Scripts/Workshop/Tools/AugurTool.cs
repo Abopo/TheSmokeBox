@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Parabox.CSG;
 
 public class AugurTool : Tool {
@@ -19,6 +20,8 @@ public class AugurTool : Tool {
     GameObject _composite;
     WoodPiece _originalPiece;
 
+    public UnityEvent AugerToolUsed = new UnityEvent();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         
@@ -32,19 +35,11 @@ public class AugurTool : Tool {
     public override void ActivateTool() {
         base.ActivateTool();
 
-        _toolUI.SetActive(true);
-
         _originalPiece = _editManager.curPiece;
 
         _bitVisualizer.SetActive(true);
         // Make sure the augur bit has the same material as the piece
         _bitObject.GetComponent<MeshRenderer>().material = _originalPiece.Material;
-    }
-
-    public override void DeactivateTool() {
-        base.DeactivateTool();
-
-        _toolUI.SetActive(false);
     }
 
     public void ChangeBit(int bitIndex) {
@@ -160,6 +155,8 @@ public class AugurTool : Tool {
 
     public void ConfirmDrill() {
         DeactivateTool();
+
+        AugerToolUsed.Invoke();
 
         _postCutCanvas.gameObject.SetActive(false);
         _editManager.Activate();

@@ -20,7 +20,13 @@ public class WoodShop : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        FillSlotsWithInventory();
+        if (_inventory != null) {
+            FillSlotsWithInventory();
+        } else {
+            _inventory = new ShopInventory();
+            _inventory.Initialize(_slots.Length);
+            FillSlotsRandomly();
+        }
     }
 
     void FillSlotsWithInventory() {
@@ -38,6 +44,33 @@ public class WoodShop : MonoBehaviour {
         }
     }
 
+    void FillSlotsRandomly() {
+        CreateRandomInventory();
+
+        for (int i = 0; i < _slots.Length; ++i) {
+            _slots[i].SetData(_inventory.inventory[i]);
+        }
+    }
+
+    void CreateRandomInventory() {
+        ShopItemData tempItemData;
+
+        ShopItemData[] allItems = Resources.LoadAll<ShopItemData>("SOs/WoodPieces");
+        int rand;
+
+        _inventory.ClearInventory();
+        
+        for (int i = 0; i < _inventory.inventory.Length; ++i) {
+            rand = Random.Range(0, allItems.Length);
+            tempItemData = allItems[rand];
+
+            tempItemData.type = (WOOD_TYPE)Random.Range(0, (int)WOOD_TYPE.NUM_TYPES);
+            // TODO: Adjust price based on wood type
+
+            _inventory.inventory[i] = tempItemData;
+        }
+    }
+
     public void PurchaseFromSlot(WoodSlot slot) {
         _receiptWindow.AddItemToWindow(slot);
     }
@@ -45,6 +78,25 @@ public class WoodShop : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
+    }
+
+    public void RerollShop() {
+        // TODO: make this cost money
+
+        CreateRandomInventory();
+        StartCoroutine(ChangePage(_inventory.inventory));
+    }
+
+    public IEnumerator ChangePage(ShopItemData[] newItems) {
+        turningPage = true;
+
+        for (int i = 0; i < _slots.Length; ++i) {
+            _slots[i].ChangeItem(newItems[i]);
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        turningPage = false;
     }
 
     public IEnumerator ChangePage() {

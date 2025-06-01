@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using Hanzzz.MeshSlicerFree;
 
 public class SawTool : Tool {
@@ -27,6 +28,8 @@ public class SawTool : Tool {
     GameObject _errorMessage;
 
     SawObject _sawObject;
+
+    public UnityEvent SawToolUsed = new UnityEvent();
 
     protected override void Awake() {
         base.Awake();
@@ -332,6 +335,8 @@ public class SawTool : Tool {
 
     void EndSlice() {
         DeactivateTool();
+
+        SawToolUsed.Invoke();
 
         _postCutCanvas.Deactivate();
         _editManager.Activate();
