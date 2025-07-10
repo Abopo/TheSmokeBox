@@ -15,3 +15,6 @@ MonoBehaviour:
   itemName: Torus
   price: 1
   mesh: {fileID: -8803937527578110353, guid: 0d1cc872c5748a64980f81a9d742d9d3, type: 3}
+  rotation: {x: 0, y: 0, z: 0}
+  category: 0
+  type: 3

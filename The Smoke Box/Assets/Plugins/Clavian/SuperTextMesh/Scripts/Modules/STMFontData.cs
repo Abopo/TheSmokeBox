@@ -6,10 +6,7 @@ using UnityEditor;
 #endif
 
 [CreateAssetMenu(fileName = "New Font Data", menuName = "Super Text Mesh/Font Data", order = 1)]
-public class STMFontData : ScriptableObject{
-	#if UNITY_EDITOR
-	public bool showFoldout = true;
-	#endif
+public class STMFontData : STMBaseData{
 	//public string name;
 	public Font font;
 	[Tooltip("if new quality level should be used, or to use mesh default. Automatically disabled for non-dynamic fonts.")]
@@ -25,12 +22,9 @@ public class STMFontData : ScriptableObject{
 	}
 
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Font Data");
-		var serializedData = new SerializedObject(this);
-		serializedData.Update();
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm,data);
 	//the rest:
 		EditorGUILayout.PropertyField(serializedData.FindProperty("font"));
 		if(this.font != null){
@@ -50,8 +44,6 @@ public class STMFontData : ScriptableObject{
 			EditorGUILayout.PropertyField(serializedData.FindProperty("filterMode"));
 			EditorGUI.EndDisabledGroup();
 		}
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

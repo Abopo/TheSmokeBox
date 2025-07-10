@@ -1,12 +1,8 @@
 ﻿Shader "Super Text Mesh/Surface/Emission" 
 {
-	
 	//Temporary shader!!
 	//pixel snap not yet supported
 	//uses full emission, but can be changed at the end of this code.
-
-
-	
 	Properties 
 	{
 		_MainTex ("Font Texture", 2D) = "white" {}

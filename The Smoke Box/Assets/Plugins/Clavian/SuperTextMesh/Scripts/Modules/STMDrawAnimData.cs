@@ -6,10 +6,7 @@ using UnityEditor;
 #endif
 
 [CreateAssetMenu(fileName = "New Draw Animation", menuName = "Super Text Mesh/Draw Animation Data", order = 1)]
-public class STMDrawAnimData : ScriptableObject{
-	#if UNITY_EDITOR
-	public bool showFoldout = true;
-	#endif
+public class STMDrawAnimData : STMBaseData{
 	//public string name;
 	[Tooltip("How long the Draw Animation will last.")]
 	public float animTime = 0f; //time it will take to animate
@@ -25,10 +22,17 @@ public class STMDrawAnimData : ScriptableObject{
 	//add curves for this stuff!
 
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Draw Animation Data");
-		var serializedData = new SerializedObject(this);
-		serializedData.Update();
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
+#if UNITY_2017_1_OR_NEWER
+		if(GUILayout.Button("Toggle Preview"))
+		{
+			data.TogglePreview("<drawAnim=" + this.name + "><readDelay=0.1>Hello, World!", this);
+		}
+		if(data.previewData == this)
+		{
+			STMCustomInspectorTools.DrawRenderPreview(data, data.previewTextMesh.totalReadTime + 0.2f);
+		}
+#endif
 	//gather parts for this data:
 		SerializedProperty animTime = serializedData.FindProperty("animTime");
 		//SerializedProperty animCurve = serializedData.FindProperty("animCurve");
@@ -38,7 +42,7 @@ public class STMDrawAnimData : ScriptableObject{
 		//SerializedProperty fadeCurve = serializedData.FindProperty("fadeCurve");
 		SerializedProperty startColor = serializedData.FindProperty("startColor");
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm,data);
 	//the rest:
 		EditorGUILayout.PropertyField(animTime);
 		if(animTime.floatValue > 0f){
@@ -53,9 +57,6 @@ public class STMDrawAnimData : ScriptableObject{
 			fadeCurve = EditorGUILayout.CurveField("Fade Curve", fadeCurve);
 		}
 		EditorGUILayout.PropertyField(startColor);
-		
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

@@ -102,6 +102,11 @@ public class STMTextInfo
 
 	public bool submeshChange = false;
 	public bool invoked = false;
+
+	public bool monospace = false; //if true, chAdvance won't be overwritten...!
+
+	public float monospaceValue = 0f;
+
 	//public FontStyle chStyle;
 
 	//values grabbed from UICharInfo. Jeez
@@ -118,7 +123,7 @@ public class STMTextInfo
             chMaxX = ch.maxX;
             chMinY = ch.minY;
             chMaxY = ch.maxY;
-			chAdvance = ch.advance;
+            chAdvance = ch.advance;
 			chSize = ch.size;
 			chUvBottomLeft = ch.uvBottomLeft;
 			chUvBottomRight = ch.uvBottomRight;
@@ -143,28 +148,55 @@ public class STMTextInfo
 			return System.Convert.ToChar(chGlyphIndex);
 		}
 	}
+
+	public bool isUVRotated
+	{
+		get
+		{
+			if(isQuad) return false;
+			return !Mathf.Approximately(chUvBottomLeft.x, chUvTopLeft.x);
+		}
+	}
 	public float uvHeight
     {
         get
         {
-            if(chUvBottomLeft.x != chUvTopLeft.x)
-            {
-                //this thing is rotated!!!
-                return chUvTopLeft.y - chUvTopRight.y;
-            }
-            return chUvBottomLeft.y - chUvTopLeft.y;
+	        if(isQuad)
+	        {
+		        //quads are never rotated so...
+		        return quadData.uvSize.y;
+	        }
+	        else
+	        {
+		        // if(isUVRotated)
+          //       {
+          //           //this thing is rotated!!!
+          //           return chUvTopLeft.y - chUvTopRight.y;
+          //       }
+                return chUvBottomLeft.y - chUvTopLeft.y;
+	        }
+            
         }
     }
     public float uvWidth
     {
         get
         {
-            if(chUvBottomRight.y != chUvBottomLeft.y)
-            {
-                //this thing is rotated!!!
-                return chUvTopLeft.x - chUvBottomLeft.x;
-            }
-            return chUvBottomRight.x - chUvBottomLeft.x;
+	        if(isQuad)
+	        {
+		        //quads are never rotated so...
+		        return quadData.uvSize.x;
+	        }
+	        else
+	        {
+		        // ==if(isUVRotated)
+		        // {
+			       //  //this thing is rotated!!!
+			       //  return chUvTopLeft.x - chUvBottomLeft.x;
+		        // }
+
+		        return chUvBottomRight.x - chUvBottomLeft.x;
+	        }
         }
     }
 	private Vector2 uvMidReturn = Vector2.zero;
@@ -172,7 +204,7 @@ public class STMTextInfo
 	{
 		get
 		{
-			if (chUvTopLeft.x!=chUvBottomLeft.x){
+			if (!Mathf.Approximately(chUvTopLeft.x, chUvBottomLeft.x)){
 				uvMidReturn.x = (chUvTopLeft.x + chUvBottomLeft.x) * 0.5f;
 				uvMidReturn.y = (chUvTopLeft.y + chUvTopRight.y) * 0.5f;
 			}
@@ -192,16 +224,9 @@ public class STMTextInfo
 		{
 			Vector2 ratioSize = Vector2.zero;
 
-			if(isQuad)
-			{ //use quad's ratio
-				ratioSize.x = quadData.size.x;
-				ratioSize.y = quadData.size.y;
-			}
-			else
-			{ //use letter
-				ratioSize.x = uvWidth;
-				ratioSize.y = uvHeight;
-			}
+			ratioSize.x = uvWidth;
+			ratioSize.y = uvHeight;
+			
 			return ratioSize;
 
 		}
@@ -394,7 +419,13 @@ public class STMTextInfo
 	public Vector3 Advance(float extraSpacing, float myQuality)
     { 
         //for getting letter position and autowrap data
-		if(quadData != null)
+        if(monospace)
+        {
+	        Advance_ReturnVal.x = monospaceValue;
+	        Advance_ReturnVal.y = 0f;
+	        Advance_ReturnVal.z = 0f;
+        }
+		else if(quadData != null)
         {
             Advance_ReturnVal.x = ((quadData.size.x + quadData.advance) * size.x) + (extraSpacing * size.x / myQuality);
             Advance_ReturnVal.y = 0f;
@@ -441,6 +472,8 @@ public class STMTextInfo
 
 		this.submeshChange = false;
 		this.invoked = false;
+		this.monospace = false;
+		this.monospaceValue = 0f;
 	}
 	public STMTextInfo(SuperTextMesh stm){ //for setting "defaults"
 		SetValues(stm);
@@ -451,13 +484,13 @@ public class STMTextInfo
 		this.isEndOfParagraph = false;
 		this.ch.style = stm.style;
 //reset these ones too because of caching changes:
-		this.gradientData = null;
-		this.colorData = null;
-		this.textureData = null;
+		this.gradientData = stm.defaultGradientData;
+		this.colorData = stm.defaultColorData;
+		this.textureData = stm.defaultTextureData;
 
 		this.delayData = null;
-		this.waveData = null;
-		this.jitterData = null;
+		this.waveData = stm.defaultWaveData;
+		this.jitterData = stm.defaultJitterData;
 		this.audioClipData = null;
 		this.fontData = null;
 		this.quadData = null;
@@ -523,8 +556,11 @@ public class STMTextInfo
 
 		this.submeshChange = false;
 		this.invoked = false;
-		
+		this.monospace = false;
+		this.monospaceValue = 0f;
+
 		this.chSize = stm.quality;
+		
 	}
 
 	public STMTextInfo(STMTextInfo clone, CharacterInfo ch) : this(clone){ //clone everything but character. used for auto hyphens
@@ -599,7 +635,9 @@ public class STMTextInfo
 
 		this.submeshChange = clone.submeshChange;
 		this.invoked = false;
-		
+		this.monospace = clone.monospace;
+		this.monospaceValue = clone.monospaceValue;
+
 		this.chSize = clone.chSize;
 	}
 }

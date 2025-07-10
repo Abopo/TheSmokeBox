@@ -1,0 +1,11 @@
+﻿fileFormatVersion: 2
+guid: b06fe93fb1aea4f408fbda286d30dcf8
+timeCreated: 1701806452
+AssetOrigin:
+  serializedVersion: 1
+  productId: 57995
+  packageName: Super Text Mesh
+  packageVersion: 1.14.2
+  assetPath: Assets/Plugins/Clavian/SuperTextMesh/Shaders/Universal/STM Universal
+    Outline.shader
+  uploadId: 754524

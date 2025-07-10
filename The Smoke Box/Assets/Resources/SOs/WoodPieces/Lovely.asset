@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Lovely
   m_EditorClassIdentifier: 
   itemName: Lovely
-  price: 3
+  price: 4
   mesh: {fileID: -6549010850040202938, guid: 9281cd21664bc1241b494ece99fdf757, type: 3}
   rotation: {x: -90, y: 0, z: 0}
   category: 1
+  type: 5

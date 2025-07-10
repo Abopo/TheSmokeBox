@@ -1,4 +1,4 @@
-﻿//Copyright (c) 2016-2018 Kai Clavier [kaiclavier.com] Do Not Distribute
+﻿//Copyright (c) 2016-2025 Kai Clavier [kaiclavier.com] Do Not Distribute
 using UnityEngine;
 using System.Collections;
 #if UNITY_EDITOR
@@ -6,13 +6,26 @@ using UnityEditor;
 #endif
 
 [CreateAssetMenu(fileName = "New Quad Data", menuName = "Super Text Mesh/Quad Data", order = 1)]
-public class STMQuadData : ScriptableObject{
-	#if UNITY_EDITOR
-	public bool showFoldout = true;
-	#endif
+public class STMQuadData : STMBaseData{
 	public Texture texture; //materials should automatically join if texture matches
-	[Tooltip("If a quad is a silhouette, it won't use the color from its texture, just the alpha. If it's a silhouette, it can be effected by text color.")]
-	public bool silhouette = false;
+	//[Tooltip("If a quad is a silhouette, it won't use the color from its texture, just the alpha. If it's a silhouette, it can be effected by text color.")]
+	//public bool silhouette = false;
+
+	public enum ColorMode
+	{
+		Normal,
+		Always,
+		Silhouette,
+		Multiply,
+		Blend
+	}
+	[Tooltip("Normal: This quad will render with its texture color, but still inherit alpha from other effects. " +
+	         "Always: This quad will render with its texture color unmodified. " +
+	         "Silhouette: This quad will use the alpha from its texture, but the colour (including texture) from text. " +
+	         "Multiply: This quad will render with its texture colors, but this can be multiplied by text color. Textures can not render on this." + 
+	         "Blend: This quad will render with its texture color, but inherit colors from other effects.")]
+	public ColorMode colorMode = ColorMode.Normal;
+	
 	public bool overrideFilterMode = false;
 	public FilterMode filterMode = FilterMode.Bilinear; //default
 	//[Range(1,64)]
@@ -82,8 +95,9 @@ public class STMQuadData : ScriptableObject{
 	{
 		return (uvSize * 0.5f) + UvOffset(myTime, myIconIndex);
 	}
-	private Vector2 uvSize {
-		get{
+	public Vector2 uvSize {
+		get
+		{
 			return new Vector2(1f / (float)columns, 1f / (float)rows);
 		}
 	}
@@ -94,7 +108,7 @@ public class STMQuadData : ScriptableObject{
 			return new Vector2(uvSize.x * texture.width, uvSize.y * texture.height);
 		}
 	}
-	private Vector2 UvOffset(float myTime, int myIconIndex){
+	public Vector2 UvOffset(float myTime, int myIconIndex){
 		FixColumnCount();
 		/*
 		XNXX N would be at position "13"
@@ -125,16 +139,24 @@ public class STMQuadData : ScriptableObject{
 		if(rows < 1)rows = 1;
 	}
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Quad Data");
-		var serializedData = new SerializedObject(this);
-		serializedData.Update();
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
+#if UNITY_2017_1_OR_NEWER
+		if(GUILayout.Button("Toggle Preview"))
+		{
+			data.TogglePreview("<q=" + this.name + ">Hello, World!<q=" + this.name + ">", this);
+		}
+		if(data.previewData == this)
+		{
+			STMCustomInspectorTools.DrawRenderPreview(data, -1f);
+		}
+#endif
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm,data);
 	//the rest:
+		EditorGUI.BeginChangeCheck();
 		EditorGUILayout.PropertyField(serializedData.FindProperty("texture"));
 		if(this.texture != null){
-			EditorGUILayout.PropertyField(serializedData.FindProperty("silhouette"));
+			EditorGUILayout.PropertyField(serializedData.FindProperty("colorMode"));
 			EditorGUILayout.PropertyField(serializedData.FindProperty("overrideFilterMode"));
 			EditorGUI.BeginDisabledGroup(!this.overrideFilterMode);
 			EditorGUILayout.PropertyField(serializedData.FindProperty("filterMode"));
@@ -157,9 +179,12 @@ public class STMQuadData : ScriptableObject{
 		EditorGUILayout.PropertyField(serializedData.FindProperty("size"));
 		EditorGUILayout.PropertyField(serializedData.FindProperty("offset"));
 		EditorGUILayout.PropertyField(serializedData.FindProperty("advance"));
-		EditorGUILayout.Space(); //////////////////SPACE
-		//FixColumnCount();
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
+		if(EditorGUI.EndChangeCheck())
+		{
+#if UNITY_2017_1_OR_NEWER
+			data.forceRebuild = true;
+#endif
+		}
 	}
 	#endif
 

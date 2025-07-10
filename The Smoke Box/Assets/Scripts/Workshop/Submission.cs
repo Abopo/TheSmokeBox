@@ -87,6 +87,10 @@ public class Submission : MonoBehaviour {
         // Save the data
         _submissionDataManager.SaveSubmissionData(this, OnSaveCompleted, OnSaveFailed);
     }
+    public void SaveData() {
+        // Save the data
+        _submissionDataManager.SaveSubmissionData(this);
+    }
 
     public void LoadData(string path = "") {
         pathLoaded = path;

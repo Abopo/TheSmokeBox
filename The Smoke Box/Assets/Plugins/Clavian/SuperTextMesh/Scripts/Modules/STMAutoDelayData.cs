@@ -7,7 +7,6 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "New AutoDelay Data", menuName = "Super Text Mesh/AutoDelay Data", order = 0)]
 public class STMAutoDelayData : STMDelayData
 {
-
 	public Type type = Type.Character;
 	//public string name;
 	//eventually make this able to detect a set of characters?
@@ -33,11 +32,8 @@ public class STMAutoDelayData : STMDelayData
 	public Ruleset ruleset;
 	
 	#if UNITY_EDITOR
-	public override void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Delay Data");
-		var serializedData = new SerializedObject(this);
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
 		var goalObject = serializedData.targetObject as STMAutoClipData;
-		serializedData.Update();
 		//gather parts for this data:
 		SerializedProperty type = serializedData.FindProperty("type");
 		SerializedProperty character = serializedData.FindProperty("character");
@@ -46,7 +42,7 @@ public class STMAutoDelayData : STMDelayData
 		SerializedProperty count = serializedData.FindProperty("count");
 		SerializedProperty ruleset = serializedData.FindProperty("ruleset");
 		//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm, data);
 		//the rest:
 		
 		EditorGUILayout.PropertyField(count);
@@ -80,11 +76,6 @@ public class STMAutoDelayData : STMDelayData
 			EditorGUILayout.PropertyField(quadName);
 		}
 		//EditorGUILayout.PropertyField(caseSensitive);
-		
-		
-		
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

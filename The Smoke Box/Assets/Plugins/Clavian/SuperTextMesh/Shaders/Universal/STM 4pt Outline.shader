@@ -27,6 +27,8 @@
 		_ColorMask ("Color Mask", Float) = 15
 		
 		[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip ("Use Alpha Clip", Float) = 0
+		[MaterialToggle] _CastShadows ("Cast Shadows", Float) = 0
+		[Toggle(UI_MODE)] _UIMode ("UI Mode", Float) = 0 //for use with OLD versions of unity...
 	}
 	SubShader {
 		Tags { 
@@ -63,6 +65,8 @@
 			#include "../STMoutline.cginc"
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile_local __ UNITY_UI_CLIP_RECT
+			#pragma multi_compile __ UI_MODE
 			#pragma shader_feature SDF_MODE
 			#pragma shader_feature SQUARE_OUTLINE
 			#pragma shader_feature PIXELSNAP_ON
@@ -77,6 +81,8 @@
 			#include "../STMoutline.cginc"
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile_local __ UNITY_UI_CLIP_RECT
+			#pragma multi_compile __ UI_MODE
 			#pragma shader_feature SDF_MODE
 			#pragma shader_feature SQUARE_OUTLINE
 			#pragma shader_feature PIXELSNAP_ON
@@ -91,6 +97,8 @@
 			#include "../STMoutline.cginc"
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile_local __ UNITY_UI_CLIP_RECT
+			#pragma multi_compile __ UI_MODE
 			#pragma shader_feature SDF_MODE
 			#pragma shader_feature SQUARE_OUTLINE
 			#pragma shader_feature PIXELSNAP_ON
@@ -105,6 +113,8 @@
 			#include "../STMoutline.cginc"
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile_local __ UNITY_UI_CLIP_RECT
+			#pragma multi_compile __ UI_MODE
 			#pragma shader_feature SDF_MODE
 			#pragma shader_feature SQUARE_OUTLINE
 			#pragma shader_feature PIXELSNAP_ON
@@ -117,11 +127,14 @@
 			#include "../STM.cginc"
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile_local __ UNITY_UI_CLIP_RECT
+			#pragma multi_compile __ UI_MODE
 			#pragma shader_feature SDF_MODE
 			#pragma shader_feature PIXELSNAP_ON
 			ENDCG
 		}
-		ZWrite On
+
+		ZWrite [_CastShadows]
 		Pass
 		{
 			Tags {"LightMode"="ShadowCaster"}
@@ -134,6 +147,7 @@
 			#pragma shader_feature SDF_MODE
 			ENDCG
 		}
+
 	}
 	FallBack "GUI/Text Shader"
 }

@@ -46,19 +46,7 @@ public class SawTool : Tool {
 
     // Update is called once per frame
     void Update() {
-        if (!_isSlicing) {
-            // Scoot the slicing plane left/right
-            if (Keyboard.current.qKey.isPressed) {
-                if (slicePlane.transform.localPosition.x > -1.01f) {
-                    slicePlane.transform.Translate(-0.25f * Time.deltaTime, 0f, 0f, Space.World);
-                }
-            }
-            if (Keyboard.current.eKey.isPressed) {
-                if (slicePlane.transform.localPosition.x < 1.01f) {
-                    slicePlane.transform.Translate(0.25f * Time.deltaTime, 0f, 0f, Space.World);
-                }
-            }
-        }
+
     }
 
     public override void ActivateTool() {
@@ -139,12 +127,13 @@ public class SawTool : Tool {
         _leftPiece = fragments[2].gameObject.AddComponent<WoodPiece>();
 
         // Copy over the data from the original piece
-        _rightPiece.numCuts = wPiece.numCuts + 1;
-        _leftPiece.numCuts = wPiece.numCuts + 1;
+        _rightPiece.CopyWoodData(_originalPiece.GetComponent<WoodPiece>());
+        _leftPiece.CopyWoodData(_originalPiece.GetComponent<WoodPiece>());
+
+        _rightPiece.numCuts += 1;
+        _leftPiece.numCuts += 1;
         _rightPiece.transform.rotation = _originalPiece.transform.rotation;
         _leftPiece.transform.rotation = _originalPiece.transform.rotation;
-        _rightPiece.gameObject.layer = _originalPiece.layer;
-        _leftPiece.gameObject.layer = _originalPiece.layer;
 
         _rightPiece.GetComponent<Rigidbody>().isKinematic = true;
         _leftPiece.GetComponent<Rigidbody>().isKinematic = true;

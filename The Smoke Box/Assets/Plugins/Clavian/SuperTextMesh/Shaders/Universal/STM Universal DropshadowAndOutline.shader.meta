@@ -1,0 +1,11 @@
+﻿fileFormatVersion: 2
+guid: 0d6062947bd3d4947ba8a7c090325b8d
+timeCreated: 1701806462
+AssetOrigin:
+  serializedVersion: 1
+  productId: 57995
+  packageName: Super Text Mesh
+  packageVersion: 1.14.2
+  assetPath: Assets/Plugins/Clavian/SuperTextMesh/Shaders/Universal/STM Universal
+    DropshadowAndOutline.shader
+  uploadId: 754524

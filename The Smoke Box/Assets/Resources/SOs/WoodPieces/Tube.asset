@@ -16,3 +16,5 @@ MonoBehaviour:
   price: 1
   mesh: {fileID: 2534964839176971238, guid: 00dc68dc36576ec4ca1fdcf6601a140a, type: 3}
   rotation: {x: 0, y: 0, z: 0}
+  category: 0
+  type: 3

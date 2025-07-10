@@ -20,3 +20,10 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 57995
+  packageName: Super Text Mesh
+  packageVersion: 1.14.2
+  assetPath: Assets/Plugins/Clavian/SuperTextMesh/Resources/STMAudioClips/Vinyl5.wav
+  uploadId: 754524

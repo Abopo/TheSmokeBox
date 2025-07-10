@@ -1,13 +1,88 @@
-﻿//Copyright (c) 2016-2018 Kai Clavier [kaiclavier.com] Do Not Distribute
+﻿//Copyright (c) 2016-2025 Kai Clavier [kaiclavier.com] Do Not Distribute
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq; //converting arrays to dictionaries
-using System.IO; //for getting folders
+using System.IO;
+using UnityEngine.Serialization; //for getting folders
+#if UNITY_EDITOR && UNITY_2017_1_OR_NEWER
+using UnityEditor;
+using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
+#endif
 
 [CreateAssetMenu(fileName = "New Text Data", menuName = "Super Text Mesh/Super Text Mesh Data", order = 0)]
-public class SuperTextMeshData : ScriptableObject { //the actual textdata manager file
+public class SuperTextMeshData : ScriptableObject  //the actual textdata manager file
+{
+#if UNITY_EDITOR && UNITY_2017_1_OR_NEWER
+	public PreviewRenderUtility prevRenderer;
+	public STMBaseData previewData;
+	private Scene previewScene;
+	public SuperTextMesh previewTextMesh;
+	public float previewStartTime;
+	public bool forceRebuild;
+	public Font previewFont;
+	public FilterMode previewFilterMode = FilterMode.Bilinear;
+
+	public void TogglePreview(string n, STMBaseData data)
+	{
+		//opening new
+		if(previewData == null)
+		{
+			OpenPreview(n,data);
+		}
+		//opening another
+		else if(previewData != data)
+		{
+			OpenPreview(n,data);
+		}
+		//closing
+		else
+		{
+			ClosePreview();
+		}
+	}
+
+	private void OpenPreview(string text, STMBaseData data)
+	{
+		previewScene = EditorSceneManager.NewPreviewScene();
+
+		var newGo = EditorUtility.CreateGameObjectWithHideFlags("Preview Text", HideFlags.DontSave);
+		SceneManager.MoveGameObjectToScene(newGo,previewScene);
+		previewTextMesh = newGo.AddComponent<SuperTextMesh>();
+
+		previewTextMesh.alignment = SuperTextMesh.Alignment.Center;
+		previewTextMesh.anchor = TextAnchor.MiddleCenter;
+		previewTextMesh.autoWrap = 0f;
+		previewTextMesh.font = previewFont;
+		previewTextMesh.filterMode = previewFilterMode;
+		previewTextMesh.text = text;
+
+		previewStartTime = Time.realtimeSinceStartup - previewTextMesh.totalReadTime;
+		
+		if (prevRenderer == null || prevRenderer.camera == null)
+			prevRenderer = new PreviewRenderUtility();
+
+		prevRenderer.camera.transform.position = new Vector3(0f,0f,-10f);
+		prevRenderer.camera.transform.LookAt(Vector3.zero, Vector3.up);
+		prevRenderer.camera.farClipPlane = 30;
+
+		previewData = data;
+	}
+	public void ClosePreview()
+	{
+		if(previewTextMesh != null)
+		{
+			DestroyImmediate(previewTextMesh.gameObject);
+		}
+		EditorSceneManager.ClosePreviewScene(previewScene);
+		if(prevRenderer != null)
+			prevRenderer.Cleanup();
+		
+		previewData = null;
+	}
 	
+#endif
 	//[HideInInspector] public bool textDataEditMode = false; //whether this will show on objects or not
 	
 	[HideInInspector] public bool showEffectsFoldout = false;
@@ -57,7 +132,7 @@ public class SuperTextMeshData : ScriptableObject { //the actual textdata manage
     public Dictionary<string,STMAutoDelayData> autoDelays = new Dictionary<string,STMAutoDelayData>();
 
 
-    [HideInInspector] public bool showMasterFoldout = true;
+    [HideInInspector] public bool showSettingsFoldout = true;
 
 	[Tooltip("This disables waves and jitters from effecting text position, which might be hard for some users to read.")]
     public bool disableAnimatedText = false;
@@ -69,6 +144,7 @@ public class SuperTextMeshData : ScriptableObject { //the actual textdata manage
 	public float superscriptSize = 0.5f;
 	public float subscriptOffset = -0.2f;
 	public float subscriptSize = 0.5f;
+	public bool multiplyMultipleColorTags = false;
 	public Font inspectorFont;
 
 

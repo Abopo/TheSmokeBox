@@ -137,10 +137,7 @@ public class STMWaveScaleControl{
 	#endif
 }
 [CreateAssetMenu(fileName = "New Wave Data", menuName = "Super Text Mesh/Wave Data", order = 1)]
-public class STMWaveData : ScriptableObject{
-	#if UNITY_EDITOR
-	public bool showFoldout = false;
-	#endif
+public class STMWaveData : STMBaseData{
 	//public string name;
 	public bool animateFromTimeDrawn = false;
 
@@ -163,10 +160,19 @@ public class STMWaveData : ScriptableObject{
 	
 
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Wave Data");
-		var serializedData = new SerializedObject(this);
-		serializedData.Update();
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
+#if UNITY_2017_1_OR_NEWER
+		if(GUILayout.Button("Toggle Preview"))
+		{
+			data.TogglePreview("<w=" + this.name + ">Hello, World!", this);
+		}
+
+		if(data.previewData == this)
+		{
+			//for now, just loop if animating from time drawn no matter what.
+			STMCustomInspectorTools.DrawRenderPreview(data, this.animateFromTimeDrawn ? 2f : -1f);
+		}
+#endif
 	//gather parts for this data:
 		SerializedProperty animateFromTimeDrawn = serializedData.FindProperty("animateFromTimeDrawn");
 		//SerializedProperty position = serializedData.FindProperty("position");
@@ -181,7 +187,7 @@ public class STMWaveData : ScriptableObject{
 		//SerializedProperty bottomLeft = serializedData.FindProperty("bottomLeft");
 		//SerializedProperty bottomRight = serializedData.FindProperty("bottomRight");
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm,data);
 	//the rest:
 		EditorGUILayout.PropertyField(animateFromTimeDrawn);
 		EditorGUILayout.PropertyField(positionControl);
@@ -207,8 +213,6 @@ public class STMWaveData : ScriptableObject{
 			bottomLeft.DrawInspector("Bottom Left");
 			bottomRight.DrawInspector("Bottom Right");
 		}
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

@@ -24,7 +24,7 @@ public class Request_Category : Request
 
         _numCatPieces = CountCategoryPieces();
         _catPercent = (float)_numCatPieces / (float)(_submission.WoodPieces.Length-1);
-        _text.text = "Use a lot of " + _requestInfo.RequestDetails + " pieces: " + (int)(_catPercent * 100) + "%";
+        _text.text = GetRequestText();
     }
 
     int CountCategoryPieces() {
@@ -44,5 +44,9 @@ public class Request_Category : Request
 
         // Just do the straight percentage for now
         _score = (int)(100 * _catPercent);
+    }
+
+    public override string GetRequestText() {
+        return "Use a lot of " + _requestInfo.RequestDetails + " pieces: " + (int)(_catPercent * 100) + "%";
     }
 }

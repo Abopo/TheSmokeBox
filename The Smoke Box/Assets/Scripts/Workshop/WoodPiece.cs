@@ -47,17 +47,15 @@ public class WoodPiece : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         if(_shopData == null) {
-            _shopData = new ShopItemData();
+            _shopData = ScriptableObject.CreateInstance<ShopItemData>();
         }
-
-        MakeDebugData();
 
         Initialize();
     }
 
-    void MakeDebugData() {
+    public void MakeDebugData() {
         if (_shopData != null) {
-            _shopData.price = Random.Range(1, 20);
+            _shopData.price = Random.Range(1, 5);
             _shopData.category = (PIECE_CATEGORY)Random.Range(0, (int)PIECE_CATEGORY.NUM_CATS);
             _shopData.type = (WOOD_TYPE)Random.Range(0, (int)WOOD_TYPE.NUM_TYPES);
         }
@@ -87,6 +85,10 @@ public class WoodPiece : MonoBehaviour {
                     Material = Resources.Load<Material>("Materials/Wood/Wood_Walnut");
                     break;
             }
+        }
+
+        if (GetComponent<Slice>() != null) {
+            GetComponent<Slice>().sliceOptions.insideMaterial = Material;
         }
     }
 

@@ -29,7 +29,7 @@ public class Request_Wood : Request
 
         _numTypePieces = CountWoodPieces();
         _typePercent = (float)_numTypePieces / (float)(_submission.WoodPieces.Length - 1);
-        _text.text = "Make it out of " + _requestInfo.RequestDetails + " wood: " + (int)(_typePercent * 100) + "%";
+        _text.text = GetRequestText();
     }
 
     int CountWoodPieces() {
@@ -51,4 +51,7 @@ public class Request_Wood : Request
         _score = (int)(100 * _typePercent);
     }
 
+    public override string GetRequestText() {
+        return "Make it out of " + _requestInfo.RequestDetails + " wood: " + (int)(_typePercent * 100) + "%";
+    }
 }

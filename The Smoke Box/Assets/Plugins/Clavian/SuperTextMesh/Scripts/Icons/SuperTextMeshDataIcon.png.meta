@@ -55,3 +55,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 57995
+  packageName: Super Text Mesh
+  packageVersion: 1.14.2
+  assetPath: Assets/Plugins/Clavian/SuperTextMesh/Scripts/Icons/SuperTextMeshDataIcon.png
+  uploadId: 754524

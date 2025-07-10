@@ -6,12 +6,28 @@ public class Stage : MonoBehaviour {
     string stageName;
     List<RequestInfo> _requests = new List<RequestInfo>();
 
-    public List<RequestInfo> Requests { get => _requests; }
+    public REQUESTTYPE[] testRequests;
+
+    public List<RequestInfo> Requests { get => _requests; set => _requests = value; }
+
+    [SerializeField]
+    RequestTracker _requestTracker;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        GenerateRandomRequests(5);
-        FindFirstObjectByType<RequestTracker>().GenerateRequestItems(_requests);
+    }
+
+    public void Initialize() {
+        if (_requests.Count == 0) {
+            GenerateRandomRequests(5);
+        }
+
+        if (_requestTracker == null) {
+            _requestTracker = FindFirstObjectByType<RequestTracker>();
+        }
+        if (_requestTracker != null) {
+            _requestTracker.GenerateRequestItems(_requests);
+        }
     }
 
     // Update is called once per frame
@@ -32,10 +48,17 @@ public class Stage : MonoBehaviour {
         _requests.Clear ();
 
         RequestInfo tempRequest;
+        int i = 0;
         while (_requests.Count < count || availableTypes.Count == 0) {
-            tempRequest = GenerateRandomRequest(availableTypes);
+            if (testRequests.Length > i && testRequests[i] != REQUESTTYPE.NUM_REQUESTS) {
+                tempRequest = GenerateRandomRequest(testRequests[i]);
+            } else {
+                tempRequest = GenerateRandomRequest(availableTypes);
+            }
             _requests.Add(tempRequest);
             availableTypes.Remove(tempRequest.RequestType);
+
+            i++;
         }
     }
 
@@ -56,4 +79,12 @@ public class Stage : MonoBehaviour {
 
         return newRequest;
     }
+    RequestInfo GenerateRandomRequest(REQUESTTYPE type) {
+        // Make a new request with the chosen type
+        RequestInfo newRequest = new RequestInfo();
+        newRequest.SetRequestType(type);
+
+        return newRequest;
+    }
+
 }

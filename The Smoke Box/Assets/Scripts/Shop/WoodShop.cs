@@ -33,9 +33,6 @@ public class WoodShop : MonoBehaviour {
         for (int i = 0; i < _slots.Length; i++) {
             if(i < _inventory.inventory.Length) {
                 _slots[i].SetData(_inventory.inventory[i]);
-                //_slots[i].ItemName = _inventory.inventory[i].itemName;
-                //_slots[i].Price = _inventory.inventory[i].price;
-                //_slots[i].Mesh = _inventory.inventory[i].mesh;
 
                 _slots[i].EnableSlot();
             } else {
@@ -65,7 +62,6 @@ public class WoodShop : MonoBehaviour {
             tempItemData = allItems[rand];
 
             tempItemData.type = (WOOD_TYPE)Random.Range(0, (int)WOOD_TYPE.NUM_TYPES);
-            // TODO: Adjust price based on wood type
 
             _inventory.inventory[i] = tempItemData;
         }
@@ -81,7 +77,8 @@ public class WoodShop : MonoBehaviour {
     }
 
     public void RerollShop() {
-        // TODO: make this cost money
+        // Cost money
+        GameManager.Instance.IncurCost(5);
 
         CreateRandomInventory();
         StartCoroutine(ChangePage(_inventory.inventory));
@@ -126,5 +123,17 @@ public class WoodShop : MonoBehaviour {
         }
 
         turningPage = false;
+    }
+
+    public void DisableMenu() {
+        for (int i = 0; i < _slots.Length; ++i) {
+            _slots[i].isActive = false;
+        }
+    }
+
+    public void EnableMenu() {
+        for (int i = 0; i < _slots.Length; ++i) {
+            _slots[i].isActive = true;
+        }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 // Handles the process of submitting the submission
@@ -31,6 +32,8 @@ public class Submitter : MonoBehaviour {
 
     RequirementTracker _requirementTracker;
 
+    public static UnityEvent OnSubmit = new UnityEvent();
+
     // Start is called before the first frame update
     void Start() {
         _submission = FindFirstObjectByType<Submission>();
@@ -47,7 +50,7 @@ public class Submitter : MonoBehaviour {
     }
 
     void OnSubmissionChanged() {
-        CheckRequirementStatus();
+        //CheckRequirementStatus();
     }
 
     void CheckRequirementStatus() {
@@ -59,7 +62,9 @@ public class Submitter : MonoBehaviour {
     }
 
     void OnLookUp() {
-        CheckRequirementStatus();
+        //CheckRequirementStatus();
+
+        _submitButton.SetActive(true);
     }
 
     void OnLookDown() {
@@ -68,15 +73,13 @@ public class Submitter : MonoBehaviour {
 
     public void BeginSubmissionProcess() {
         _submitButton.SetActive(false);
+        // Ask player to select proper rotation
         _confirmStuff.SetActive(true);
 
         // Drop any pieces held by the edit manager
         //EditManager.Instance.DropPiece();
         // Deactivate the edit manager
         EditManager.Instance.Deactivate(false);
-
-        // Ask player to select proper rotation
-
     }
 
     public void ShowTitleSubmission() {
@@ -122,6 +125,8 @@ public class Submitter : MonoBehaviour {
         _titleStuff.SetActive(false);
 
         SaveSubmission();
+        
+        OnSubmit.Invoke();
     }
 
     public void ContinueWithoutUploading()
@@ -136,14 +141,20 @@ public class Submitter : MonoBehaviour {
     }
 
     void SaveSubmission() {
-        _uploadingSpinner.SetActive(true);
+        //_uploadingSpinner.SetActive(true);
         // Run the save function of the submission
-        _submission.SaveData(OnSaveCompleted, OnSaveFailed);
+        //_submission.SaveData(OnSaveCompleted, OnSaveFailed);
+        _submission.SaveData();
+        FindFirstObjectByType<ResultsScreen>().OpenResults();
     }
 
     private void OnSaveCompleted(Project project)
     {
-        GameManager.Instance.LoadScene("JudgingScene" + GameManager.Instance.stage.ToString());
+        //GameManager.Instance.LoadScene("JudgingScene" + GameManager.Instance.stage.ToString());
+        _uploadingSpinner.SetActive(false);
+
+        // Open the results window
+        FindFirstObjectByType<ResultsScreen>().OpenResults();
     }
 
     private void OnSaveFailed(string message)

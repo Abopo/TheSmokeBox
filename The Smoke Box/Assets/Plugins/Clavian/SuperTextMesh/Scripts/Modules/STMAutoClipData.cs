@@ -5,12 +5,8 @@ using System.Collections;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "New Auto Clip Data", menuName = "Super Text Mesh/Audo Clip Data", order = 1)]
-public class STMAutoClipData : ScriptableObject{ //for auto-clips. replacing text sounds on specific characters
-	#if UNITY_EDITOR
-	public bool showFoldout = true;
-	#endif
-	
+[CreateAssetMenu(fileName = "New Auto Clip Data", menuName = "Super Text Mesh/Auto Clip Data", order = 1)]
+public class STMAutoClipData : STMBaseData{ //for auto-clips. replacing text sounds on specific characters
 	public Type type = Type.Character;
 	//[TextArea(2,3)]
 	//public string character;
@@ -27,11 +23,8 @@ public class STMAutoClipData : ScriptableObject{ //for auto-clips. replacing tex
 	}
 	
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Auto Clip Data");
-		var serializedData = new SerializedObject(this);
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
 		var goalObject = serializedData.targetObject as STMAutoClipData;
-		serializedData.Update();
 	//gather parts for this data:
 		SerializedProperty type = serializedData.FindProperty("type");
 		SerializedProperty character = serializedData.FindProperty("character");
@@ -39,7 +32,7 @@ public class STMAutoClipData : ScriptableObject{ //for auto-clips. replacing tex
 		SerializedProperty clip = serializedData.FindProperty("clip");
 		//SerializedProperty ignoreCase = serializedData.FindProperty("ignoreCase");
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm, data);
 	//the rest:
 		EditorGUILayout.PropertyField(character);
 		//EditorGUILayout.PropertyField(caseSensitive);
@@ -74,8 +67,6 @@ public class STMAutoClipData : ScriptableObject{ //for auto-clips. replacing tex
 		//EditorGUILayout.PropertyField(caseSensitive);
 		
 		//EditorGUILayout.PropertyField(ignoreCase);
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

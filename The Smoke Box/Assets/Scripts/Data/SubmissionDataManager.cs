@@ -44,6 +44,14 @@ public class SubmissionDataManager {
         WebServiceProjectManager.Instance.UploadProjectFile(playerName, submission.title, path, OnSaveCompleted, OnSaveFailed);
     }
 
+    public void SaveSubmissionData(Submission submission) {
+        PopulateSubmissionData(submission);
+
+        string wood = JsonUtility.ToJson(submissionData);
+        var path = Application.persistentDataPath + "/PlayerSubmissionData" + GameManager.Instance.stage + ".json";
+        System.IO.File.WriteAllText(path, wood);
+    }
+
     void PopulateSubmissionData(Submission submission) {
         // Go through all the submissions wood pieces and save them in the data
         WoodPiece[] woodPieces = submission.GetComponentsInChildren<WoodPiece>();

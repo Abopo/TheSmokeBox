@@ -73,34 +73,34 @@ public class RequestInfo {
 
         switch(randColor) {
             case 0:
-                _requestDetails = "White";
+                _requestDetails = "WHITE";
                 break;
             case 1:
-                _requestDetails = "Red";
+                _requestDetails = "RED";
                 break;
             case 2:
-                _requestDetails = "Green";
+                _requestDetails = "GREEN";
                 break;
             case 3:
-                _requestDetails = "Blue";
+                _requestDetails = "BLUE";
                 break;
             case 4:
-                _requestDetails = "Yellow";
+                _requestDetails = "YELLOW";
                 break;
             case 5:
-                _requestDetails = "Pink";
+                _requestDetails = "PNK";
                 break;
             case 6:
-                _requestDetails = "Purple";
+                _requestDetails = "PURPLE";
                 break;
             case 7:
-                _requestDetails = "Orange";
+                _requestDetails = "ORANGE";
                 break;
             case 8:
-                _requestDetails = "Cyan";
+                _requestDetails = "CYAN";
                 break;
             case 9:
-                _requestDetails = "Black";
+                _requestDetails = "BLACK";
                 break;
         }
     }

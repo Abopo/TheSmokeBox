@@ -49,6 +49,7 @@ public class EditManager : MonoBehaviour {
 
     public static EditManager Instance;
 
+    public static UnityEvent OnWorkshopStart = new UnityEvent();
     public static UnityEvent OnPickedUpPiece = new UnityEvent();
     public static UnityEvent OnDroppedPiece = new UnityEvent();
     public static UnityEvent OnLookUp = new UnityEvent();
@@ -78,6 +79,8 @@ public class EditManager : MonoBehaviour {
         editAudio = GetComponentInChildren<EditAudio>();
 
         LookAtSubmission();
+
+        OnWorkshopStart.Invoke();
     }
 
     // Update is called once per frame
@@ -138,6 +141,11 @@ public class EditManager : MonoBehaviour {
             }
             if (_keyboard.qKey.isPressed) {
                 RotatePieceZ(1);
+            }
+
+            if (_keyboard.wKey.wasReleasedThisFrame || _keyboard.aKey.wasReleasedThisFrame || _keyboard.sKey.wasReleasedThisFrame || _keyboard.dKey.wasReleasedThisFrame ||
+                _keyboard.eKey.wasReleasedThisFrame || _keyboard.qKey.wasReleasedThisFrame || _mouse.rightButton.wasReleasedThisFrame) {
+                Submission.OnChanged.Invoke();
             }
         }
 
@@ -234,8 +242,11 @@ public class EditManager : MonoBehaviour {
                         curPiece.transform.Translate(Camera.main.transform.right * _tranSpeed * dir * Time.deltaTime, Space.World);
                     }
                 }
+
+                //Submission.OnChanged.Invoke();
             }
         }
+
     }
 
     void TranslatePieceY(int dir) {
@@ -263,6 +274,8 @@ public class EditManager : MonoBehaviour {
                         curPiece.transform.Translate(Camera.main.transform.up * _tranSpeed * dir * Time.deltaTime, Space.World);
                     }
                 }
+
+                //Submission.OnChanged.Invoke();
             }
         }
     }
@@ -275,6 +288,8 @@ public class EditManager : MonoBehaviour {
             curPiece.transform.Rotate(Camera.main.transform.up, -h, Space.World);
             curPiece.transform.Rotate(Camera.main.transform.right, v, Space.World);
 
+            //Submission.OnChanged.Invoke();
+
             //curPiece.transform.Rotate(new Vector3(v, -h, 0), Space.World);
         }
     }
@@ -283,6 +298,8 @@ public class EditManager : MonoBehaviour {
         if(curPiece != null) {
             curPiece.transform.Rotate(Camera.main.transform.forward, 50f * dir * Time.deltaTime, Space.World);
             //curPiece.transform.Rotate(0f, 0f, 50f * dir * Time.deltaTime, Space.World);
+            
+            //Submission.OnChanged.Invoke();
         }
     }
 

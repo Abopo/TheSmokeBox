@@ -4,6 +4,7 @@ public class Request_Tool : Request
 {
     TOOLS _tool;
     int _requestCount;
+    int _useCount = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start() {
@@ -16,19 +17,34 @@ public class Request_Tool : Request
 
         switch (_tool) {
             case TOOLS.JOINT:
-                FindFirstObjectByType<JointTool>(FindObjectsInactive.Include).JointToolUsed.AddListener(OnToolUsed);
+                JointTool jointTool = FindFirstObjectByType<JointTool>(FindObjectsInactive.Include);
+                if (jointTool != null) {
+                    jointTool.JointToolUsed.AddListener(OnToolUsed);
+                }
                 break;
             case TOOLS.SAW:
-                FindFirstObjectByType<SawTool>(FindObjectsInactive.Include).SawToolUsed.AddListener(OnToolUsed);
+                SawTool sawTool = FindFirstObjectByType<SawTool>(FindObjectsInactive.Include);
+                if (sawTool != null) {
+                    sawTool.SawToolUsed.AddListener(OnToolUsed);
+                }
                 break;
             case TOOLS.PAINT:
-                FindFirstObjectByType<PaintTool>(FindObjectsInactive.Include).PaintToolUsed.AddListener(OnToolUsed);
+                PaintTool paintTool = FindFirstObjectByType<PaintTool>(FindObjectsInactive.Include);
+                if (paintTool != null) {
+                    paintTool.PaintToolUsed.AddListener(OnToolUsed);
+                }
                 break;
             case TOOLS.AUGER:
-                FindFirstObjectByType<AugurTool>(FindObjectsInactive.Include).AugerToolUsed.AddListener(OnToolUsed);
+                AugurTool augurTool = FindFirstObjectByType<AugurTool>(FindObjectsInactive.Include);
+                if (augurTool != null) {
+                    augurTool.AugerToolUsed.AddListener(OnToolUsed);
+                }
                 break;
             case TOOLS.WEDGE:
-                FindFirstObjectByType<WedgeTool>(FindObjectsInactive.Include).WedgeToolUsed.AddListener(OnToolUsed);
+                WedgeTool wedgeTool = FindFirstObjectByType<WedgeTool>(FindObjectsInactive.Include);
+                if (wedgeTool != null) {
+                    wedgeTool.WedgeToolUsed.AddListener(OnToolUsed);
+                }
                 break;
         }
     }
@@ -39,7 +55,19 @@ public class Request_Tool : Request
     }
 
     void OnToolUsed() {
-        _score++;
-        _text.text = "Use the " + _requestInfo.RequestDetails + " tool a lot: " + _score.ToString() + "/" + _requestCount.ToString();
+        _useCount++;
+        _text.text = GetRequestText();
+    }
+
+    protected override void DetermineScore() {
+        base.DetermineScore();
+
+        _score = 100;
+        _score -= Mathf.Abs(_requestCount - _useCount) * 20;
+        if (_score < 0) _score = 0;
+    }
+
+    public override string GetRequestText() {
+        return "Use the " + _requestInfo.RequestDetails + " tool a lot: " + _useCount.ToString() + "/" + _requestCount.ToString();
     }
 }

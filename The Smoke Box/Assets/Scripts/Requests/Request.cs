@@ -6,14 +6,25 @@ public class Request : MonoBehaviour
     protected SuperTextMesh _text;
     protected Submission _submission;
     protected int _score = 0;
+    protected bool _isActive = true;
+
+    public int Score { 
+        get { 
+            DetermineScore();
+            return _score; 
+        }
+    }
 
     protected virtual void Awake() {
         _text = GetComponent<SuperTextMesh>();
         _submission = FindFirstObjectByType<Submission>();
+
+        EditManager.OnWorkshopStart.AddListener(OnWorkshopStart);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start() {
         Submission.OnChanged.AddListener(CheckRequestStatus);
+        Submitter.OnSubmit.AddListener(OnSubmit);
     }
 
     public virtual void Initialize(RequestInfo rInfo) {
@@ -53,7 +64,11 @@ public class Request : MonoBehaviour
         }
 
         // Delete self (only 1 request component is needed)
-        Destroy(this);
+        DestroyImmediate(this);
+    }
+
+    void OnWorkshopStart() {
+        _isActive = true;
     }
 
     // Update is called once per frame
@@ -67,6 +82,14 @@ public class Request : MonoBehaviour
     }
 
     protected virtual void DetermineScore() {
+        _score = 0;
+    }
 
+    public virtual string GetRequestText() {
+        return "";
+    }
+
+    protected virtual void OnSubmit() {
+        _isActive = false;
     }
 }

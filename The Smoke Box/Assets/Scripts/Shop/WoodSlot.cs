@@ -11,6 +11,10 @@ public class WoodSlot : MonoBehaviour {
     [SerializeField]
     TextMeshPro _nameText;
     [SerializeField]
+    TextMeshPro _woodText;
+    [SerializeField]
+    TextMeshPro _catText;
+    [SerializeField]
     TextMeshPro _priceText;
 
     [SerializeField]
@@ -28,14 +32,16 @@ public class WoodSlot : MonoBehaviour {
     AudioSource _audioSource;
 
     ShopItemData _data;
-
     ShopItemData _nextData;
+    int _price;
 
     BoxCollider _boxCollider;
 
     Animator _animator;
 
     WoodShop _shop;
+
+    public bool isActive = true;
 
     public string ItemName {
         get => _data.itemName;
@@ -45,12 +51,13 @@ public class WoodSlot : MonoBehaviour {
         }
     }
     public int Price {
-        get => _data.price;
+        get => _price;
         set {
-            _data.price = value;
-            _priceText.text = _data.price.ToString();
+            _price = value;
+            _priceText.text = _price.ToString();
         }
     }
+
     public Mesh Mesh {
         get => _data.mesh;
         set {
@@ -84,6 +91,10 @@ public class WoodSlot : MonoBehaviour {
     }
 
     private void OnMouseEnter() {
+        if(!isActive) {
+            return;
+        }
+
         _backer.SetActive(true);
 
         _audioSource.clip = _hoverClip;
@@ -91,10 +102,18 @@ public class WoodSlot : MonoBehaviour {
     }
 
     private void OnMouseExit() {
+        if (!isActive) {
+            return;
+        }
+        
         _backer.SetActive(false);
     }
 
     private void OnMouseDown() {
+        if (!isActive) {
+            return;
+        }
+        
         _shop.PurchaseFromSlot(this);
 
         _audioSource.clip = _selectClip;
@@ -124,25 +143,37 @@ public class WoodSlot : MonoBehaviour {
         Mesh = inData.mesh;
         _filter.transform.localRotation = Quaternion.Euler(inData.rotation);
 
+        _catText.text = inData.category.ToString();
+
         // Set wood material
         switch (_data.type) {
             case WOOD_TYPE.ACACIA:
+                _woodText.text = "ACACIA";
                 _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Acacia");
+                Price += 1;
                 break;
             case WOOD_TYPE.ASH:
+                _woodText.text = "ASH";
                 _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Ash");
                 break;
             case WOOD_TYPE.BEECH:
+                _woodText.text = "BEECH";
                 _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Beech");
+                Price += 1;
                 break;
             case WOOD_TYPE.OAK:
+                _woodText.text = "OAK";
                 _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Oak");
                 break;
             case WOOD_TYPE.SPRUCE:
+                _woodText.text = "SPRUCE";
                 _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Spruce");
+                Price += 2;
                 break;
             case WOOD_TYPE.WALNUT:
+                _woodText.text = "WALNUT";
                 _renderer.material = Resources.Load<Material>("Materials/Wood/Wood_Walnut");
+                Price += 2;
                 break;
         }
     }

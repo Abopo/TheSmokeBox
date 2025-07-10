@@ -35,10 +35,10 @@ public class ReceiptWindow : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        _playerMoney = 5 + GameManager.Instance.stage * 5;
+        _playerMoney = GameManager.Instance.playerMoney;
         _totalPrice = 0;
         _totalText.text = _playerMoney.ToString();
-        CheckCount();
+        //CheckCount();
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class ReceiptWindow : MonoBehaviour {
             _receiptItems.Add(newItem);
 
             IncreaseTotal(item.Price);
-            CheckCount();
+            //CheckCount();
 
             // Force scroll view to follow down
             Canvas.ForceUpdateCanvases();
@@ -72,13 +72,18 @@ public class ReceiptWindow : MonoBehaviour {
         _receiptItems.Remove(item);
 
         IncreaseTotal(-item.price);
-        CheckCount();
+        //CheckCount();
 
         Destroy(item.gameObject);
     }
 
     void IncreaseTotal(int price) {
         _totalPrice += price;
+        UpdateMoneyText();
+    }
+
+    public void UpdateMoneyText() {
+        _playerMoney = GameManager.Instance.playerMoney;
         _totalText.text = (_playerMoney - _totalPrice).ToString();
     }
 
@@ -110,8 +115,11 @@ public class ReceiptWindow : MonoBehaviour {
     public void Checkout() {
         SaveItems();
 
-        // Load next scene
-        GameManager.Instance.LoadScene("Workshop");
+        // Remove cost from player money
+        GameManager.Instance.playerMoney -= _totalPrice;
+
+        // Open stage select
+        FindFirstObjectByType<StageSelect>().OpenStageSelect();
     }
 
     void SaveItems() {

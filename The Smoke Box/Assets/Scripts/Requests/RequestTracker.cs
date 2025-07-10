@@ -5,17 +5,20 @@ using UnityEngine;
 public class RequestTracker : MonoBehaviour {
 
     [SerializeField]
-    List<SuperTextMesh> requirementTexts = new List<SuperTextMesh>();
+    List<Request> _allRequests = new List<Request>();
 
     Submission _submission;
 
     Transform _requestsWindow;
 
+    public List<Request> AllRequests {
+        get { return _allRequests; }
+    }
+
     public bool allRequirementsClear;
 
     private void Awake() {
         _submission = FindFirstObjectByType<Submission>();
-        _requestsWindow = transform.GetChild(0);
     }
     // Start is called before the first frame update
     void Start() {
@@ -24,16 +27,17 @@ public class RequestTracker : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
     }
 
     public void GenerateRequestItems(List<RequestInfo> requestInfos) {
+        _requestsWindow = transform.GetChild(0);
         Object requestObj = Resources.Load("Prefabs/Requests/RequestItem");
 
         GameObject tempRequest;
         foreach (RequestInfo rInfo in requestInfos) {
             tempRequest = Instantiate(requestObj, _requestsWindow) as GameObject;
             tempRequest.GetComponent<Request>().Initialize(rInfo);
+            _allRequests.Add(tempRequest.GetComponent<Request>());
         }
     }
 

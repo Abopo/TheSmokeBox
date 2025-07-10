@@ -6,29 +6,21 @@ using UnityEditor;
 #endif
 
 [CreateAssetMenu(fileName = "New Material Data", menuName = "Super Text Mesh/Material Data", order = 1)]
-public class STMMaterialData : ScriptableObject{
-	#if UNITY_EDITOR
-	public bool showFoldout = true;
-	#endif
+public class STMMaterialData : STMBaseData{
 	//public string name;
 	public Material material;
 
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Material Data");
-		var serializedData = new SerializedObject(this);
-		serializedData.Update();
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
 	//gather parts for this data:
 		SerializedProperty material = serializedData.FindProperty("material");
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this,stm);
+		STMCustomInspectorTools.DrawTitleBar(this,stm, data);
 	//the rest:
 		EditorGUILayout.PropertyField(material);
 		if(this.material != null){
 			STMCustomInspectorTools.DrawMaterialEditor(this.material, stm);
 		}
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

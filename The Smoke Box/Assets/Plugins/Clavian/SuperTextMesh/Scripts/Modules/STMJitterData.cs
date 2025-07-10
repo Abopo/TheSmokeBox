@@ -6,10 +6,7 @@ using UnityEditor;
 #endif
 
 [CreateAssetMenu(fileName = "New Jitter Data", menuName = "Super Text Mesh/Jitter Data", order = 1)]
-public class STMJitterData : ScriptableObject{
-	#if UNITY_EDITOR
-	public bool showFoldout = true;
-	#endif
+public class STMJitterData : STMBaseData{
 	//public string name;
 	public float amount;
 	public bool perlin = false;
@@ -20,10 +17,22 @@ public class STMJitterData : ScriptableObject{
 	public float distanceOverTimeMulti = 1f;
 
 	#if UNITY_EDITOR
-	public void DrawCustomInspector(SuperTextMesh stm){
-		Undo.RecordObject(this, "Edited STM Jitter Data");
-		var serializedData = new SerializedObject(this);
-		serializedData.Update();
+	public override void DrawCustomInspector(SuperTextMesh stm, SerializedObject serializedData, SuperTextMeshData data){
+#if UNITY_2017_1_OR_NEWER
+		if(GUILayout.Button("Toggle Preview"))
+		{
+			data.TogglePreview("<j=" + this.name + ">Hello, World!", this);
+		}
+
+		if(data.previewData == this)
+		{
+			var clamped = (distanceOverTime.postWrapMode == WrapMode.Clamp ||
+			               distanceOverTime.postWrapMode == WrapMode.Once ||
+			               distanceOverTime.postWrapMode == WrapMode.ClampForever);
+			var loop = clamped ? distanceOverTime.keys[distanceOverTime.length - 1].time : -1f;
+			STMCustomInspectorTools.DrawRenderPreview(data, 1f);
+		}
+#endif
 	//gather parts for this data:
 		SerializedProperty amount = serializedData.FindProperty("amount");
 		SerializedProperty perlin = serializedData.FindProperty("perlin");
@@ -32,7 +41,7 @@ public class STMJitterData : ScriptableObject{
 		//SerializedProperty distanceOverTime = serializedData.FindProperty("distanceOverTime");
 		SerializedProperty distanceOverTimeMulti = serializedData.FindProperty("distanceOverTimeMulti");
 	//Title bar:
-		STMCustomInspectorTools.DrawTitleBar(this, stm);
+		STMCustomInspectorTools.DrawTitleBar(this, stm,data);
 	//the rest:
 		EditorGUILayout.PropertyField(amount);
 		EditorGUILayout.PropertyField(perlin);
@@ -45,8 +54,6 @@ public class STMJitterData : ScriptableObject{
 		distanceOverTime = EditorGUILayout.CurveField("Distance Over Time", distanceOverTime);
 		
 		EditorGUILayout.PropertyField(distanceOverTimeMulti);
-		EditorGUILayout.Space(); //////////////////SPACE
-		if(this != null)serializedData.ApplyModifiedProperties(); //since break; cant be called
 	}
 	#endif
 }

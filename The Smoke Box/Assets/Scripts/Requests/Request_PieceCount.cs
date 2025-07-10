@@ -20,7 +20,7 @@ public class Request_PieceCount : Request
         base.CheckRequestStatus();
 
 
-        _text.text = "Use around " + _requestInfo.RequestDetails + " pieces: " + (_submission.WoodPieces.Length-1) + "/" + _requestInfo.RequestDetails;
+        _text.text = GetRequestText();
     }
 
     protected override void DetermineScore() {
@@ -34,5 +34,9 @@ public class Request_PieceCount : Request
         // So, 0 should be maximum points, and should fall off as it get's larger
         // idk what a good number for max reward is, but let's just set it at 100 for now
         _score = (int)(100 - (dif * 1.5) * 10);
+    }
+
+    public override string GetRequestText() {
+        return "Use around " + _requestInfo.RequestDetails + " pieces: " + (_submission.WoodPieces.Length - 1) + "/" + _requestInfo.RequestDetails;
     }
 }

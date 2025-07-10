@@ -42,6 +42,7 @@ public class WoodSpawner : MonoBehaviour {
 
             tempPiece = Instantiate(_woodPieceObj);
             tempPiece.GetComponent<WoodPiece>().SetData(piece);
+            tempPiece.GetComponent<WoodPiece>().MakeDebugData();
 
             _spawnList.Add(tempPiece);
 

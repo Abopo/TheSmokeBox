@@ -45,16 +45,17 @@ public class JointTool : Tool {
             StartCoroutine(JoinPieces());
         }
 
+        // This means we are currently placing the ghost onto the submission
         if (_ghostJointNode != null) {
             GhostNodeFollow();
-            if (_confirming) { 
-                // Allow rotation of the ghost node
-                if(Keyboard.current.qKey.isPressed) {
-                    _ghostJointNode.transform.Rotate(new Vector3(0f, 0f, 20f * Time.deltaTime));
-                }
-                if(Keyboard.current.eKey.isPressed) {
-                    _ghostJointNode.transform.Rotate(new Vector3(0f, 0f, -20f * Time.deltaTime));
-                }
+            // Allow rotation of the ghost node
+            if (Keyboard.current.qKey.isPressed) {
+                //_ghostJointNode.curPiece.transform.Rotate(new Vector3(0f, 40f * Time.deltaTime, 0f));
+                _ghostJointNode.curPiece.transform.RotateAround(_ghostJointNode.transform.position, _ghostJointNode.transform.forward, 40f * Time.deltaTime);
+            }
+            if (Keyboard.current.eKey.isPressed) {
+                //_ghostJointNode.curPiece.transform.Rotate(new Vector3(0f, -40f * Time.deltaTime, 0f));
+                _ghostJointNode.curPiece.transform.RotateAround(_ghostJointNode.transform.position, _ghostJointNode.transform.forward, -40f * Time.deltaTime);
             }
         }
     }
@@ -72,6 +73,7 @@ public class JointTool : Tool {
 
         _glueBottle.gameObject.SetActive(true);
         _glueBottle.GetComponent<MouseFollow>().enabled = true;
+
     }
 
     public override void DeactivateTool() {
@@ -90,9 +92,12 @@ public class JointTool : Tool {
         _confimation.SetActive(false);
 
         _editManager.Activate();
+        EditManager.Instance.EnableRotation();
     }
 
     public void ApplyJoint() {
+        EditManager.Instance.DisableRotation();
+
         if (_newJointNode.isActive) {
             // Play the glue animation before activating the next joint
             _glueBottle.ApplyGlue(_newJointNode.transform.position);
@@ -186,6 +191,7 @@ public class JointTool : Tool {
         }
 
         _cancelButton.SetActive(false);
+        EditManager.Instance.EnableRotation();
     }
 
     public void CancelJoin() {
@@ -197,6 +203,7 @@ public class JointTool : Tool {
 
         _confimation.SetActive(false);
         _cancelButton.SetActive(true);
+        EditManager.Instance.EnableRotation();
     }
 
     public IEnumerator JoinPieces() {
@@ -204,16 +211,17 @@ public class JointTool : Tool {
         // Fully kill the edit manager while joining
         EditManager.Instance.enabled = false;
 
-        // Parent the piece to the joint node
-
         // Rotate the new joint node to face the base joint node
-        Quaternion startRot = _newJointNode.transform.rotation;
-        Quaternion endRot = Quaternion.LookRotation(_ghostJointNode.transform.forward);
+        //Quaternion startRot = _newJointNode.transform.rotation;
+        //Quaternion endRot = Quaternion.LookRotation(_ghostJointNode.transform.forward);
         // We need to further adjust the rotation in case the player rotated the ghost node
-        endRot.eulerAngles = new Vector3(endRot.eulerAngles.x, endRot.eulerAngles.y, _ghostJointNode.transform.rotation.eulerAngles.z);
+        //endRot.eulerAngles = new Vector3(endRot.eulerAngles.x, endRot.eulerAngles.y, _ghostJointNode.transform.rotation.eulerAngles.z);
 
-        Vector3 startPos = _newJointNode.transform.position;
-        Vector3 endPos = _ghostJointNode.transform.position;
+        Quaternion startRot = _newJointNode.curPiece.transform.rotation;
+        Quaternion endRot = _ghostJointNode.curPiece.transform.rotation;
+
+        Vector3 startPos = _newJointNode.curPiece.transform.position;
+        Vector3 endPos = _ghostJointNode.curPiece.transform.position;
         float interpolation = 0;
         float lerpTime = 1;
         float startTime = Time.time;
@@ -224,9 +232,9 @@ public class JointTool : Tool {
             interpolation = timePassed / lerpTime;
             
             // Rotate lerp
-            _newJointNode.transform.rotation = Quaternion.Lerp(startRot, endRot, interpolation);
+            _newJointNode.curPiece.transform.rotation = Quaternion.Lerp(startRot, endRot, interpolation);
             // Position lerp
-            _newJointNode.transform.position = Vector3.Lerp(startPos, endPos, interpolation);
+            _newJointNode.curPiece.transform.position = Vector3.Lerp(startPos, endPos, interpolation);
 
             yield return null;
         }

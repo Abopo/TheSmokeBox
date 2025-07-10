@@ -9,7 +9,7 @@ public class ShapeChecker : MonoBehaviour {
     List<Vector3> _insideVerts = new List<Vector3>(); // Verts that are contained within any colliders
     List<Vector3> _outsideVerts = new List<Vector3>(); // Verts that are not contained within any colliders
 
-    [SerializeField] Submission _testSubmission;
+    Submission _submission;
 
     [SerializeField] Material _guideOff;
     [SerializeField] Material _guideOn;
@@ -17,18 +17,22 @@ public class ShapeChecker : MonoBehaviour {
 
     List<VertPoint> _vertPoints = new List<VertPoint>();
 
+    public Collider[] Colliders { get { return _colliders; } }
     private void Awake() {
-        _colliders = GetComponentsInChildren<Collider>();
+        _submission = FindFirstObjectByType<Submission>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        if (_testSubmission != null) {
-            StartCoroutine(CheckSubmissionContainment());
-        }
+        Submission.OnChanged.AddListener(RunShapeCheck);
+        _colliders = GetComponentsInChildren<Collider>();
     }
 
     // Update is called once per frame
     void Update() {
+    }
+
+    void RunShapeCheck() {
+        //StartCoroutine(CheckSubmissionContainment());
     }
 
     /// <summary>
@@ -38,7 +42,7 @@ public class ShapeChecker : MonoBehaviour {
         _outsideVerts.Clear();
         
         // Get every vert in the submission
-        List<Vector3> allVertsWorld = GetAllVertsWorld(_testSubmission);
+        List<Vector3> allVertsWorld = GetAllVertsWorld(_submission);
         // Make vert points for each vert
         InitVertPoints(allVertsWorld);
 
@@ -70,7 +74,7 @@ public class ShapeChecker : MonoBehaviour {
 
         // This is the end of the function, for testing just run it again
         // TODO: Only run when the submission transform changes
-        StartCoroutine(CheckSubmissionContainment());
+        //StartCoroutine(CheckSubmissionContainment());
     }
 
     List<Vector3> GetAllVertsWorld(Submission submission) {
@@ -79,7 +83,7 @@ public class ShapeChecker : MonoBehaviour {
 
         foreach (var piece in submission.WoodPieces) {
             foreach(var vert in piece.GetComponent<MeshFilter>().mesh.vertices) {
-                vertWorld = submission.transform.TransformPoint(vert);
+                vertWorld = piece.transform.TransformPoint(vert);
                 // Try not to include duplicate verts
                 if (!vertsWorld.Contains(vertWorld)) {
                     vertsWorld.Add(vertWorld);
@@ -106,5 +110,10 @@ public class ShapeChecker : MonoBehaviour {
             _vertPoints[i].SetOff();
             _vertPoints[i].transform.position = verts[i];
         }
+    }
+
+    public void AddShape(GameObject shapeObj) {
+        Instantiate(shapeObj, transform);
+        _colliders = GetComponentsInChildren<Collider>();
     }
 }
