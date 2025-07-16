@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cylinder (w)
   m_EditorClassIdentifier: 
   itemName: Cylinder (W)
-  price: 1
+  price: 4
   mesh: {fileID: 2534964839176971238, guid: 107745fa49803794f94c4a88e1581fd4, type: 3}
   rotation: {x: -90, y: 0, z: 0}
   category: 0
-  type: 3
+  type: 0

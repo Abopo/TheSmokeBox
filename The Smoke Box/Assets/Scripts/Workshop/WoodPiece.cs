@@ -56,8 +56,6 @@ public class WoodPiece : MonoBehaviour {
     public void MakeDebugData() {
         if (_shopData != null) {
             _shopData.price = Random.Range(1, 5);
-            _shopData.category = (PIECE_CATEGORY)Random.Range(0, (int)PIECE_CATEGORY.NUM_CATS);
-            _shopData.type = (WOOD_TYPE)Random.Range(0, (int)WOOD_TYPE.NUM_TYPES);
         }
     }
 

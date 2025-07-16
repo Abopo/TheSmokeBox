@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Snake
   m_EditorClassIdentifier: 
   itemName: Snake
-  price: 4
+  price: 1
   mesh: {fileID: 2534964839176971238, guid: 31a96eb56d6d56b43b0fa0b3c4c408ad, type: 3}
   rotation: {x: 0, y: 0, z: 0}
   category: 1
-  type: 4
+  type: 0

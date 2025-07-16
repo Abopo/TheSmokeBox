@@ -14,4 +14,13 @@ public class ShopItemData : ScriptableObject {
     public Vector3 rotation;
     public PIECE_CATEGORY category;
     public WOOD_TYPE type;
+
+    public void CopyData(ShopItemData inData) {
+        itemName = inData.itemName;
+        price = inData.price;
+        mesh = inData.mesh;
+        rotation = inData.rotation;
+        category = inData.category;
+        type = inData.type;
+    }
 }

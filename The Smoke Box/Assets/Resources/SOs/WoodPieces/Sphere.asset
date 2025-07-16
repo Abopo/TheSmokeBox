@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sphere
   m_EditorClassIdentifier: 
   itemName: Sphere
-  price: 1
+  price: 3
   mesh: {fileID: 4711208715938537054, guid: f5392892c82979e4881e8c6cce3b31ae, type: 3}
   rotation: {x: 0, y: 0, z: 0}
   category: 0

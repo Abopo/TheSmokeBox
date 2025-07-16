@@ -27,9 +27,11 @@ public class Request_Wood : Request
     protected override void CheckRequestStatus() {
         base.CheckRequestStatus();
 
-        _numTypePieces = CountWoodPieces();
-        _typePercent = (float)_numTypePieces / (float)(_submission.WoodPieces.Length - 1);
-        _text.text = GetRequestText();
+        if (_submission.WoodPieces.Length > 1) {
+            _numTypePieces = CountWoodPieces();
+            _typePercent = (float)_numTypePieces / (float)(_submission.WoodPieces.Length - 1);
+            _text.text = GetRequestText();
+        }
     }
 
     int CountWoodPieces() {

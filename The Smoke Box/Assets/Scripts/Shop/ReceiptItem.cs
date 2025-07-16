@@ -26,10 +26,7 @@ public class ReceiptItem : MonoBehaviour {
     public void InitializeItem(ShopItemData data) {
         itemData = ScriptableObject.CreateInstance<ShopItemData>();
 
-        itemData.price = data.price;
-        itemData.itemName = data.itemName;
-        itemData.mesh = data.mesh;
-        itemData.rotation = data.rotation;
+        itemData.CopyData(data);
 
         _nameText.text = data.itemName;
         price = data.price;

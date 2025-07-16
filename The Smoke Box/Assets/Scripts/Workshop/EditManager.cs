@@ -46,6 +46,7 @@ public class EditManager : MonoBehaviour {
 
     EditorCanvas _canvas;
     public EditAudio editAudio;
+    WoodInfoMenu _woodInfo;
 
     public static EditManager Instance;
 
@@ -77,6 +78,7 @@ public class EditManager : MonoBehaviour {
         _cameraLerp = Camera.main.GetComponent<LerpTo>();
         _canvas = GetComponentInChildren<EditorCanvas>();
         editAudio = GetComponentInChildren<EditAudio>();
+        _woodInfo = GetComponentInChildren<WoodInfoMenu>(true);
 
         LookAtSubmission();
 
@@ -326,7 +328,10 @@ public class EditManager : MonoBehaviour {
 
     void OnPickUpFinished() {
         OnPickedUpPiece.Invoke();
-        
+
+        _woodInfo.ShowMenu();
+        _woodInfo.SetInfo(curPiece.Data);
+
         curPiece.lerp.OnLerpFinished.RemoveListener(OnPickUpFinished);
     }
 
@@ -336,6 +341,8 @@ public class EditManager : MonoBehaviour {
             curPiece.Drop();
             curPiece = null;
         }
+
+        _woodInfo.HideMenu();
 
         OnDroppedPiece.Invoke();
     }
